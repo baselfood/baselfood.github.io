@@ -63,7 +63,7 @@ function makeDarkModeToggle() {
     </svg>`;
     svg.id = "darkModeToggle";
     svg.onclick = function() {
-        toggleDarkmode(9)
+        toggleDarkmode();
     }
     return svg;
 }
