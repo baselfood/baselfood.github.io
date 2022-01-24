@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Open+Sans&display=swap");
+
+body {
+    margin: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    width: 100vw;
+    height: 10vh;
+    background-color: navy;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    font-family: 'Raleway', sans-serif;
+}
+
+#header #logo {
+    position: fixed;
+    top: 1vh;
+    left: 10vw;
+    width: auto;
+    height: 8vh;
+    cursor: pointer;
+}
+
+#header #collapseSidebar {
+    padding: 1vh;
+    position: fixed;
+    top: 1vh;
+    left: 1vw;
+    width: auto;
+    height: 6vh;
+    cursor: pointer;
+    border-radius: 4vh;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.25s ease;
+}
+
+#header #collapseSidebar:hover {
+    animation-name: fade;
+    animation-duration: 0.25s;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#header #collapseSidebar:active {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#header #aboutUs {
+    position: fixed;
+    left: 23vw;
+    top: 3.5vh;
+    color: white;
+}
+
+@keyframes sideBarInactive {
+    from {
+        left: 0vw;
+    } to {
+        left: -15vw;
+    }
+}
+
+@keyframes sideBarActive {
+    from {
+        left: -15vw;
+    } to {
+        left: 0vw; 
+    }
+}
+
+#sidebar {
+    top: 10vh;
+    position: fixed;
+    height: 90vh;
+    width: 11vw;
+    padding: 0px 2vw;
+    background-color: navy;
+	/*Start of the fuck*/
+	max-height: 90%;
+	overflow: scroll;
+	/*What the fuck*/
+}
+
+#sidebar:not(.active):not(.inactive) {
+    left: -15vw; 
+}
+
+#sidebar.inactive {
+    top: 10vh;
+    left: -15vw; 
+    animation-name: sideBarInactive;
+    animation-duration: 0.3s;
+}
+
+#sidebar.active {
+    top: 10vh;
+    left: 0vw; 
+    animation-name: sideBarActive;
+    animation-duration: 0.3s;
+}
+
+#sidebar * {
+    width: inherit;
+    top: inherit;
+    left: inherit;
+    position: fixed;
+}
+
+#sidebar p {
+    color: beige;
+    font-family: 'Raleway', sans-serif;
+    padding: 1vh 1vw;
+}
+
+@keyframes wideCon {
+    from {
+        margin-left: 20vw;
+    } to {
+        margin-left: 5vw;
+    }
+}
+
+@keyframes smallCon {
+    from {
+        margin-left: 5vw;
+    } to {
+        margin-left: 20vw;
+    }
+}
+
+#content {
+    margin-top: 12vh;
+    margin-left: 20vw;
+    margin-right: 5vw;
+}
+
+#content:not(.active):not(.inactive) {
+    margin-left: 5vw;
+}
+
+#content.inactive {
+    animation-name: wideCon;
+    animation-duration: 0.3s;
+    margin-left: 5vw;
+}
+
+#content.active {
+    margin-left: 20vw;
+    animation-name: smallCon;
+    animation-duration: 0.3s;
+}
+
+#content > * {
+    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
+    margin: 5vh auto;
+    text-align: center;
+    width: auto;
+}
+
+#content p {
+    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: normal;
+}
+
+#content #title {
+    margin: 3vh auto 10vh;
+    font-weight: bolder;
+    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+#content #ratingTable {
+    border-collapse: collapse;
+}
+
+#content #ratingTable td, #content #ratingTable th {
+    border: 1px solid black;
+    padding: 1vh 0.5vw;
+}
+
+#content #ratingTable .star {
+    height: 2vw;
+    width: auto;
+}
+
+#content #infoBox {
+    border-collapse: collapse;
+}
+
+#content #infoBox tr {
+    border: 1px solid black;
+}
+
+#content #infoBox td {
+    padding: 1vh 0.5vw;
+}
+
+#content #infoBox .infoName {
+    text-align: left;
+}
+
+#content #infoBox .infoValue {
+    text-align: right;
+}
+
+#content #images img {
+    min-width: 20vw;
+    min-height: 20vw;
+    max-width: 35vw;
+    max-height: 30vw;
+    margin: 4vh 2vw;
+    height: auto;
+}
+
+
+@keyframes footerContract {
+    from {
+		margin-left: 0vw;
+	} to {
+		margin-left: 15vw;
+	}
+}
+
+@keyframes footerExpand {
+	from {
+		margin-left: 15vw;
+	} to {
+		margin-left: 0vw;
+	}
+}
+
+#footer {
+	position: relative;
+    height: 100px;
+    padding: 0px;
+    margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+    bottom: 0px;
+    background-color: navy;
+    color: white;
+    font-family: "Raleway", sans-serif;
+}
+
+#footer:not(.active):not(.inactive) {
+	margin-left: 0vw;
+}
+
+#footer.inactive {
+    animation-name: footerExpand;
+    animation-duration: 0.3s;
+    margin-left: 0vw;
+}
+
+#footer.active {
+    margin-left: 15vw;
+    animation-name: footerContract;
+    animation-duration: 0.3s;
+}
+
+#footer p {
+    padding: 1vh 1vw;
+}
