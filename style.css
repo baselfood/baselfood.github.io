@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Open+Sans&display=swap");
 
+:root {
+    --dark-mode-color: rgb(42, 42, 42);
+}
+
 body {
     margin: 0px;
 }
@@ -59,6 +63,27 @@ html {
     color: white;
 }
 
+#header #darkModeToggle {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 1.5;
+    height: 8vh;
+    width: auto;
+}
+
+#header #darkModeToggle g circle {
+    fill: rgb(235,235,235);
+}
+
+#header #darkModeToggle g path {
+    fill: none;
+    stroke: rgb(235,235,235);
+    stroke-width: 11.2px;
+}
+
+
 @keyframes sideBarInactive {
     from {
         left: 0vw;
@@ -82,10 +107,10 @@ html {
     width: 11vw;
     padding: 0px 2vw;
     background-color: navy;
-	/*Start of the fuck*/
-	max-height: 90%;
-	overflow: scroll;
-	/*What the fuck*/
+    /*Start of the fuck*/
+    max-height: 90%;
+    overflow: scroll;
+    /*What the fuck*/
 }
 
 #sidebar:not(.active):not(.inactive) {
@@ -135,6 +160,30 @@ html {
     }
 }
 
+@keyframes darkToBright {
+    from {
+        color: white;
+        border-color: white;
+        background-color: var(--dark-mode-color);
+    } to {
+        color: black;
+        border-color: black;
+        background-color: white;
+    }
+}
+
+@keyframes brightToDark {
+    from {
+        color: black;
+        border-color: black;
+        background-color: white;
+    } to {
+        color: white;
+        border-color: white;
+        background-color: var(--dark-mode-color);
+    }
+}
+
 #content {
     margin-top: 12vh;
     margin-left: 20vw;
@@ -170,6 +219,28 @@ html {
     font-weight: normal;
 }
 
+.dark{
+    color: white;
+    border-color: white !important;
+    background-color: var(--dark-mode-color);
+}
+
+.dark.animate {
+    animation-name: brightToDark;
+    animation-duration: 1s;
+}
+
+.bright {
+    color: black;
+    border-color: black !important;
+    background-color: white;
+}
+
+.bright.animate {
+    animation-name: darkToBright;
+    animation-duration: 1s;
+}
+
 #content #title {
     margin: 3vh auto 10vh;
     font-weight: bolder;
@@ -182,7 +253,8 @@ html {
 }
 
 #content #ratingTable td, #content #ratingTable th {
-    border: 1px solid black;
+    border: 1px solid;
+    border-color: black;
     padding: 1vh 0.5vw;
 }
 
@@ -223,27 +295,27 @@ html {
 
 @keyframes footerContract {
     from {
-		margin-left: 0vw;
-	} to {
-		margin-left: 15vw;
-	}
+        margin-left: 0vw;
+    } to {
+        margin-left: 15vw;
+    }
 }
 
 @keyframes footerExpand {
-	from {
-		margin-left: 15vw;
-	} to {
-		margin-left: 0vw;
-	}
+    from {
+        margin-left: 15vw;
+    } to {
+        margin-left: 0vw;
+    }
 }
 
 #footer {
-	position: relative;
+    position: relative;
     height: 100px;
     padding: 0px;
     margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
     bottom: 0px;
     background-color: navy;
     color: white;
@@ -251,7 +323,7 @@ html {
 }
 
 #footer:not(.active):not(.inactive) {
-	margin-left: 0vw;
+    margin-left: 0vw;
 }
 
 #footer.inactive {

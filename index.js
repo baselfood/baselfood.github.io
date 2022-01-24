@@ -1,38 +1,19 @@
 const baseURL = "file:///Users/gian/Desktop/Foodblog";
-var currentMode = "dark";
+var currentMode = "bright";
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
 }
 
-function makeHeader() {
-    const headerElem = document.createElement("div");
-    headerElem.setAttribute("id", "header");
-    const logo = document.createElement("img");
-    logo.setAttribute("src", `${baseURL}/images/Logo.png`);
-    logo.setAttribute("id", "logo");
-    logo.setAttribute("onclick", `location.href = "${baseURL}/index.html"`);
-    const dropDown = document.createElement("div");
-    dropDown.setAttribute("id", "dropdown");
-    const aboutUs = document.createElement("a");
-    aboutUs.innerText = "Über uns";
-    aboutUs.setAttribute("id", "aboutUs");
-    aboutUs.setAttribute("href", `${baseURL}/aboutus/index.html`)
-    const collapseSidebar = document.createElement("img");
-    collapseSidebar.setAttribute("id", "collapseSidebar");
-    collapseSidebar.setAttribute("src", `${baseURL}/images/menucollapse.png`);
-    collapseSidebar.setAttribute("onclick", "collapseSidebar()");
-    headerElem.appendChild(collapseSidebar);
-    headerElem.appendChild(logo);
-    headerElem.appendChild(dropDown);
-    headerElem.appendChild(aboutUs);
-    return headerElem;
-}
-
 function toggleDarkmode() {
+    const body = document.body;
+    const Tables = document.querySelectorAll("#content > table *")
     const content = document.getElementById("content");
-    const textElems = document.querySelectorAll("p, td, th")
-    const elemsToSwitch = [...textElems, content]
+    const textElems = document.querySelectorAll("#content > p, td, th")
+    const elemsToSwitch = [...Tables, ...textElems, content, body, ]
+    if (!elemsToSwitch[0].classList.contains("animate")){
+        elemsToSwitch.forEach(x => x.classList.add("animate"))
+    }
     if (currentMode == "dark") {
         currentMode = "bright"
         elemsToSwitch.forEach(x => {
@@ -48,7 +29,67 @@ function toggleDarkmode() {
     }
 }
 
-async function makeFooter(text) {
+function makeDarkModeToggle() {
+    let svg = document.createElement("div");
+    svg.innerHTML = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
+    <g transform="matrix(0.69,0,0,0.69,20.65,35.14)">
+    <circle cx="115" cy="94" r="50"/>
+    </g>
+    <g transform="matrix(1,0,0,0.853659,0,2.34146)">
+    <path d="M100,16L100,57"/>
+    </g>
+    <g transform="matrix(-1,1.22465e-16,-1.04543e-16,-0.853659,200,197.644)">
+    <path d="M100,16L100,57"/>
+    </g>
+    <g transform="matrix(-1.83697e-16,-1,0.853659,-1.56815e-16,2.35632,200)">
+    <path d="M100,16L100,57"/>
+    </g>
+    <g transform="matrix(6.12323e-17,1,-0.853659,5.22715e-17,197.644,3.55271e-15)">
+    <path d="M100,16L100,57"/>
+    </g>
+    <g transform="matrix(0.707495,0.706718,-0.603296,0.603959,98.1384,-39.5975)">
+    <path d="M100,16L100,57"/>
+    </g>
+    <g transform="matrix(-0.707495,-0.706718,0.603296,-0.603959,101.862,239.583)">
+    <path d="M100,16L100,57"/>
+    </g>
+    <g transform="matrix(0.706718,-0.707495,0.603959,0.603296,-39.5827,101.862)">
+    <path d="M100,16L100,57"/>
+    </g>
+    <g transform="matrix(-0.706718,0.707495,-0.603959,-0.603296,239.583,98.1384)">
+    <path d="M100,16L100,57"/>
+    </g>
+    </svg>`;
+    svg.id = "darkModeToggle";
+    return svg;
+}
+
+function makeHeader() {
+    const headerElem = document.createElement("div");
+    headerElem.setAttribute("id", "header");
+    const logo = document.createElement("img");
+    logo.setAttribute("src", `${baseURL}/images/Logo.png`);
+    logo.setAttribute("id", "logo");
+    logo.setAttribute("onclick", `location.href = "${baseURL}/index.html"`);
+    const aboutUs = document.createElement("a");
+    aboutUs.innerText = "Über uns";
+    aboutUs.setAttribute("id", "aboutUs");
+    aboutUs.setAttribute("href", `${baseURL}/aboutus/index.html`)
+    const collapseSidebar = document.createElement("img");
+    collapseSidebar.setAttribute("id", "collapseSidebar");
+    collapseSidebar.setAttribute("src", `${baseURL}/images/menucollapse.png`);
+    collapseSidebar.setAttribute("onclick", "collapseSidebar()");
+    const svg = makeDarkModeToggle();
+    headerElem.appendChild(svg)
+    headerElem.appendChild(collapseSidebar);
+    headerElem.appendChild(logo);
+    headerElem.appendChild(aboutUs);
+    return headerElem;
+}
+
+function makeFooter(text) {
     const footer = document.createElement("footer");
     footer.id = "footer";
     const content = document.createElement("p");
