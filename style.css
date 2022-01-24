@@ -64,6 +64,28 @@ html {
 }
 
 #header #darkModeToggle {
+    right: 2vw;
+    top: 1vh;
+    position: inherit;
+    cursor: pointer;
+    border-radius: 4vh;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.25s ease;
+}
+
+#header #darkModeToggle:hover {
+    animation-name: fade;
+    animation-duration: 0.25s;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#header #darkModeToggle:active {
+    animation-name: fade;
+    animation-duration: 0.25s;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#header #darkModeToggle svg {
     fill-rule: evenodd;
     clip-rule: evenodd;
     stroke-linecap: round;
@@ -286,8 +308,8 @@ html {
 #content #images img {
     min-width: 20vw;
     min-height: 20vw;
-    max-width: 35vw;
-    max-height: 30vw;
+    max-width: 33vw;
+    max-height: 35vw;
     margin: 4vh 2vw;
     height: auto;
 }
