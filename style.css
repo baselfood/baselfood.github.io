@@ -3,6 +3,7 @@
 
 :root {
     --dark-mode-color: rgb(42, 42, 42);
+    --slightly-brighter: #696969;
 }
 
 body {
@@ -96,12 +97,12 @@ html {
 }
 
 #header #darkModeToggle g circle {
-    fill: rgb(235,235,235);
+    fill: white;
 }
 
 #header #darkModeToggle g path {
     fill: none;
-    stroke: rgb(235,235,235);
+    stroke: white;
     stroke-width: 11.2px;
 }
 
@@ -161,7 +162,7 @@ html {
 }
 
 #sidebar p {
-    color: beige;
+    color: white;
     font-family: 'Raleway', sans-serif;
     padding: 1vh 1vw;
 }
@@ -186,10 +187,14 @@ html {
     from {
         color: white;
         border-color: white;
+        fill: white;
+        stroke: white;
         background-color: var(--dark-mode-color);
     } to {
         color: black;
         border-color: black;
+        fill: var(--slightly-brighter);
+        stroke: var(--slightly-brighter);
         background-color: white;
     }
 }
@@ -198,12 +203,42 @@ html {
     from {
         color: black;
         border-color: black;
+        fill: var(--slightly-brighter);
+        stroke: var(--slightly-brighter);
         background-color: white;
     } to {
         color: white;
         border-color: white;
+        fill: white;
+        stroke: white;
         background-color: var(--dark-mode-color);
     }
+}
+
+.dark{
+    color: white;
+    border-color: white !important;
+    fill: var(--slightly-brighter) !important;
+    stroke: var(--slightly-brighter) !important;
+    background-color: var(--dark-mode-color);
+}
+
+.dark.animate {
+    animation-name: brightToDark;
+    animation-duration: 1s;
+}
+
+.bright {
+    color: black;
+    border-color: black !important;
+    fill: white !important;
+    stroke: white !important;
+    background-color: white;
+}
+
+.bright.animate {
+    animation-name: darkToBright;
+    animation-duration: 1s;
 }
 
 #content {
@@ -239,28 +274,6 @@ html {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     font-size: large;
     font-weight: normal;
-}
-
-.dark{
-    color: white;
-    border-color: white !important;
-    background-color: var(--dark-mode-color);
-}
-
-.dark.animate {
-    animation-name: brightToDark;
-    animation-duration: 1s;
-}
-
-.bright {
-    color: black;
-    border-color: black !important;
-    background-color: white;
-}
-
-.bright.animate {
-    animation-name: darkToBright;
-    animation-duration: 1s;
 }
 
 #content #title {

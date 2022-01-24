@@ -7,10 +7,11 @@ Number.prototype.clamp = function(min, max) {
 
 function toggleDarkmode() {
     const body = document.body;
-    const Tables = document.querySelectorAll("#content > table *")
+    const svgChildren = document.querySelectorAll("#darkModeToggle circle, #darkModeToggle path");
+    const Tables = document.querySelectorAll("#content > table *");
     const content = document.getElementById("content");
-    const textElems = document.querySelectorAll("#content > p, td, th")
-    const elemsToSwitch = [...Tables, ...textElems, content, body, ]
+    const textElems = document.querySelectorAll("#content > p, td, th");
+    const elemsToSwitch = [...Tables, ...textElems, ...svgChildren, content, body, ];
     if (!elemsToSwitch[0].classList.contains("animate")){
         elemsToSwitch.forEach(x => x.classList.add("animate"))
     }
