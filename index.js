@@ -31,8 +31,7 @@ function toggleDarkmode() {
 
 function makeDarkModeToggle() {
     let svg = document.createElement("div");
-    svg.innerHTML = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    svg.innerHTML = `
     <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
     <g transform="matrix(0.69,0,0,0.69,20.65,35.14)">
     <circle cx="115" cy="94" r="50"/>
@@ -63,6 +62,9 @@ function makeDarkModeToggle() {
     </g>
     </svg>`;
     svg.id = "darkModeToggle";
+    svg.onclick = function() {
+        toggleDarkmode(9)
+    }
     return svg;
 }
 
@@ -199,7 +201,7 @@ function makeInfoBox(dict) {
             infoValue.innerText = dict[info];
             infoValue.classList.add("infoValue");
         } else {
-            infoValue.innerHTML = `<a href="${dict[info]}">${dict[info]}</a>`
+            infoValue.innerHTML = `<a href="${dict[info]}" target="_blank">${dict[info]}</a>`
             infoValue.classList.add("infoValue");
         }
         tableRow.appendChild(infoName);
