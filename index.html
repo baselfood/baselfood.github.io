@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodblog</title>
+    <title>Foodcock</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
     <script src="./index.js"></script>
     <script type="text/javascript">
+        const favicons = makeFavicons();
+        document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
         let content = makeMainContent("Alchemist", `Das Alchemist ist ein cooles Restaurant an der Schifflände. Das Konzept des Restaurants ist es eine coole, angenehme, freundschaftliche Atmosphäre zu schaffen. 
