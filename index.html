@@ -10,6 +10,8 @@
 <body>
     <script src="./index.js"></script>
     <script type="text/javascript">
+        const favicons = makeFavicons();
+        document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
         let content = makeMainContent("Alchemist", `Das Alchemist ist ein cooles Restaurant an der Schifflände. Das Konzept des Restaurants ist es eine coole, angenehme, freundschaftliche Atmosphäre zu schaffen. 
