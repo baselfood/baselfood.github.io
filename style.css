@@ -193,8 +193,8 @@ html {
     } to {
         color: black;
         border-color: black;
-        fill: var(--slightly-brighter);
-        stroke: var(--slightly-brighter);
+        fill: white !important;
+        stroke: white !important;
         background-color: white;
     }
 }
