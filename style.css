@@ -401,6 +401,18 @@ html {
         margin: 4vh 2vw;
         height: auto !important;
     }
+    #sidebar {
+        top: 10vh;
+        position: fixed;
+        height: 90vh;
+        width: 66vw;
+        padding: 0px 2vw;
+        background-color: navy;
+        /*Start of the fuck*/
+        max-height: 90%;
+        overflow: scroll;
+        /*What the fuck*/
+    }
 }
 
 @media (hover:none), (hover:on-demand) {  /*hover rules*/
