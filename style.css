@@ -58,6 +58,8 @@ html {
 }
 
 #header #collapseSidebar:active {
+    animation-name: fade;
+    animation-duration: 0.25s;
     background-color: rgba(255, 255, 255, 0.75);
 }
 
@@ -206,7 +208,7 @@ html {
     }
 }
 
-.dark{
+.dark {
     color: white;
     border-color: white !important;
     fill: var(--slightly-brighter) !important;
@@ -402,5 +404,14 @@ html {
 }
 
 @media (hover:none), (hover:on-demand) {  /*hover rules*/
-    
+    #header #collapseSidebar:hover {
+        animation-name: fade;
+        animation-duration: 0.25s;
+        background-color: transparent !important;
+    }
+    #header #darkModeToggle:hover {
+        animation-name: fade;
+        animation-duration: 0.25s;
+        background-color: transparent !important;
+    }
 }
