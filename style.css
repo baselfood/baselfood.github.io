@@ -3,7 +3,7 @@
 
 :root {
     --dark-mode-color: rgb(42, 42, 42);
-    --slightly-brighter: hsl(0, 0%, 41%);
+    --slightly-brighter: #696969;
 }
 
 body {
