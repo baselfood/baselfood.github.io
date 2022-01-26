@@ -187,14 +187,14 @@ html {
     from {
         color: white;
         border-color: white;
-        fill: white;
-        stroke: white;
+        fill: var(--slightly-brighter) !important;
+        stroke: var(--slightly-brighter) !important;
         background-color: var(--dark-mode-color);
     } to {
         color: black;
         border-color: black;
-        fill: var(--slightly-brighter);
-        stroke: var(--slightly-brighter);
+        fill: white !important;
+        stroke: white !important;
         background-color: white;
     }
 }
@@ -203,14 +203,14 @@ html {
     from {
         color: black;
         border-color: black;
-        fill: var(--slightly-brighter);
-        stroke: var(--slightly-brighter);
+        fill: white !important;
+        stroke: white !important;
         background-color: white;
     } to {
         color: white;
         border-color: white;
-        fill: white;
-        stroke: white;
+        fill: var(--slightly-brighter) !important;
+        stroke: var(--slightly-brighter) !important;
         background-color: var(--dark-mode-color);
     }
 }
