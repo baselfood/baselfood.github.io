@@ -117,12 +117,14 @@ function makeFavicons() {
     return favicons;
 }
 
-function makeFooter(text) {
+function makeFooter() {
     const footer = document.createElement("footer");
     footer.id = "footer";
-    const content = document.createElement("p");
-    content.innerText = text;
-    footer.appendChild(content);
+    const contact = document.createElement("a");
+    contact.innerText = "Kontaktier uns!"
+    contact.target = "_blank"
+    contact.href = "mailto:baselfoodblog@gmail.com"
+    footer.appendChild(contact);
     return footer
 }
 
