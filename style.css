@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Open+Sans&display=swap");
 
+/*---------------------------------------------------------------------------------------------*/
+
 :root {
     --dark-mode-color: rgb(42, 42, 42);
     --slightly-brighter: #696969;
@@ -13,6 +15,8 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/*---------------------------------------------------------------------------------------------*/
 
 #header {
     width: 100vw;
@@ -106,6 +110,7 @@ html {
     stroke-width: 11.2px;
 }
 
+/*---------------------------------------------------------------------------------------------*/
 
 @keyframes sideBarInactive {
     from {
@@ -167,21 +172,7 @@ html {
     padding: 1vh 1vw;
 }
 
-@keyframes wideCon {
-    from {
-        margin-left: 20vw;
-    } to {
-        margin-left: 5vw;
-    }
-}
-
-@keyframes smallCon {
-    from {
-        margin-left: 5vw;
-    } to {
-        margin-left: 20vw;
-    }
-}
+/*---------------------------------------------------------------------------------------------*/
 
 @keyframes darkToBright {
     from {
@@ -241,10 +232,29 @@ html {
     animation-duration: 1s;
 }
 
+/*---------------------------------------------------------------------------------------------*/
+
+@keyframes wideCon {
+    from {
+        margin-left: 20vw;
+    } to {
+        margin-left: 5vw;
+    }
+}
+
+@keyframes smallCon {
+    from {
+        margin-left: 5vw;
+    } to {
+        margin-left: 20vw;
+    }
+}
+
 #content {
     margin-top: 12vh;
     margin-left: 20vw;
     margin-right: 5vw;
+    font-size: 3vh;
 }
 
 #content:not(.active):not(.inactive) {
@@ -300,6 +310,7 @@ html {
 
 #content #infoBox {
     border-collapse: collapse;
+    font-size: 2vh;
 }
 
 #content #infoBox tr {
@@ -327,6 +338,7 @@ html {
     height: auto;
 }
 
+/*---------------------------------------------------------------------------------------------*/
 
 @keyframes footerContract {
     from {
@@ -375,4 +387,20 @@ html {
 
 #footer p {
     padding: 1vh 1vw;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+@media (pointer:coarse) { /*generic mobile*/
+    #content #images img {
+        max-width: none;
+        max-height: none;
+        width: 80vw;
+        margin: 4vh 2vw;
+        height: auto !important;
+    }
+}
+
+@media (hover:none), (hover:on-demand) {  /*hover rules*/
+    
 }
