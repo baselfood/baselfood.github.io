@@ -187,8 +187,8 @@ html {
     from {
         color: white;
         border-color: white;
-        fill: var(--slightly-brighter) !important;
-        stroke: var(--slightly-brighter) !important;
+        fill: var(--slightly-brighter);
+        stroke: var(--slightly-brighter);
         background-color: var(--dark-mode-color);
     } to {
         color: black;
@@ -203,14 +203,14 @@ html {
     from {
         color: black;
         border-color: black;
-        fill: white !important;
-        stroke: white !important;
+        fill: white;
+        stroke: white;
         background-color: white;
     } to {
         color: white;
         border-color: white;
-        fill: var(--slightly-brighter) !important;
-        stroke: var(--slightly-brighter) !important;
+        fill: var(--slightly-brighter);
+        stroke: var(--slightly-brighter);
         background-color: var(--dark-mode-color);
     }
 }

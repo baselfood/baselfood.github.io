@@ -8,6 +8,7 @@ Number.prototype.clamp = function(min, max) {
 function toggleDarkmode() {
     const body = document.body;
     const svgChildren = document.querySelectorAll("#darkModeToggle circle, #darkModeToggle path");
+    const svg = document.getElementById("darkModeToggle");
     const Tables = document.querySelectorAll("#content > table *");
     const content = document.getElementById("content");
     const textElems = document.querySelectorAll("#content > p, td, th");
