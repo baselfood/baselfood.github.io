@@ -3,7 +3,7 @@
 
 :root {
     --dark-mode-color: rgb(42, 42, 42);
-    --slightly-brighter: #696969;
+    --slightly-brighter: hsl(0, 0%, 41%);
 }
 
 body {
@@ -187,8 +187,8 @@ html {
     from {
         color: white;
         border-color: white;
-        fill: white;
-        stroke: white;
+        fill: var(--slightly-brighter);
+        stroke: var(--slightly-brighter);
         background-color: var(--dark-mode-color);
     } to {
         color: black;
@@ -203,14 +203,14 @@ html {
     from {
         color: black;
         border-color: black;
-        fill: var(--slightly-brighter);
-        stroke: var(--slightly-brighter);
+        fill: white;
+        stroke: white;
         background-color: white;
     } to {
         color: white;
         border-color: white;
-        fill: white;
-        stroke: white;
+        fill: var(--slightly-brighter);
+        stroke: var(--slightly-brighter);
         background-color: var(--dark-mode-color);
     }
 }
