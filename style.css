@@ -148,14 +148,12 @@ html {
 }
 
 #sidebar.inactive {
-    top: 10vh;
     left: -15vw; 
     animation-name: sideBarInactive;
     animation-duration: 0.3s;
 }
 
 #sidebar.active {
-    top: 10vh;
     left: 0vw; 
     animation-name: sideBarActive;
     animation-duration: 0.3s;
@@ -401,10 +399,29 @@ html {
         margin: 4vh 2vw;
         height: auto !important;
     }
+    
+    /*-----------------------------------------------------------------------------------------*/
+
+    @keyframes sideBarInactiveMobile {
+    from {
+        left: 0vw;
+    } to {
+        left: -71vw;
+    }
+}
+
+@keyframes sideBarActiveMobile {
+    from {
+        left: -71vw;
+    } to {
+        left: 0vw; 
+    }
+}
+    
     #sidebar {
         top: 10vh;
         position: fixed;
-        height: 90vh;
+        height: 100vh;
         width: 66vw;
         padding: 0px 2vw;
         background-color: navy;
@@ -412,6 +429,46 @@ html {
         max-height: 90%;
         overflow: scroll;
         /*What the fuck*/
+    }
+    
+    #sidebar:not(.active):not(.inactive) {
+        left: -71vw; 
+    }
+    
+    #sidebar.inactive {
+        left: -71vw; 
+        animation-name: sideBarInactiveMobile;
+        animation-duration: 0.3s;
+    }
+    
+    #sidebar.active {
+        left: 0vw; 
+        animation-name: sideBarActiveMobile;
+        animation-duration: 0.3s;
+    }
+
+    #sidebar p {
+        margin-block-start: 1vh;
+        margin-block-end: 1vh;
+        margin-left: 2vw !important;
+    }
+    
+    /*-----------------------------------------------------------------------------------------*/
+    
+    #content:not(.active):not(.inactive) {
+        margin-left: 5vw;
+    }
+    
+    #content.inactive {
+        margin-left: 5vw !important;
+        animation-name: none !important;
+        animation-duration: 0s;
+    }
+    
+    #content.active {
+        margin-left: 5vw !important;
+        animation-name: none !important;
+        animation-duration: 0s;
     }
 }
 
