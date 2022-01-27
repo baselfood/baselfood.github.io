@@ -1,6 +1,6 @@
 const baseURL = "file:///Users/gian/Desktop/Foodblog";
 var currentMode = "bright";
-const pastBlog = [
+const pastBlogs = [
     {
         name: "Alchemist",
         postDate: new Date("2.5.2022"),
@@ -8,6 +8,8 @@ const pastBlog = [
         writer: "Noée"
     }
 ]
+
+const isMobile = window.matchMedia("(pointer:coarse)").matches;
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
@@ -155,6 +157,21 @@ function collapseSidebar() {
             x.classList.add("active");
         })
     }
+}
+
+function makeSidebar() {
+    const sideBar = document.createElement("div");
+    sideBar.id = "sidebar";
+    for (let pastBlog of pastBlogs) {
+        let blog = document.createElement("div");
+        blog.classList.add("sideBarBlog");
+        if (`${baseURL}/${pastBlog.name.toLocaleLowerCase()}/index.html` == location.href) {
+            blog.id = "currentBlog";
+        }
+        blog.innerHTML = `<a href="${baseURL}/${pastBlog.name}/index.html">${pastBlog.name} - ${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}</a>`
+        sideBar.appendChild(blog);
+    }
+    return sideBar
 }
 
 function makeRatingTable(dict) {
