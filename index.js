@@ -1,5 +1,13 @@
 const baseURL = "file:///Users/gian/Desktop/Foodblog";
 var currentMode = "bright";
+const pastBlog = [
+    {
+        name: "Alchemist",
+        postDate: new Date("2.5.2022"),
+        coverImg: "alchemist/food.png",
+        writer: "Noée"
+    }
+]
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
@@ -11,7 +19,7 @@ function toggleDarkmode() {
     const svg = document.getElementById("darkModeToggle");
     const Tables = document.querySelectorAll("#content > table *");
     const textElems = document.querySelectorAll("#content > p, td, th");
-    const elemsToSwitch = [...Tables, ...textElems, ...svgChildren, body, ];
+    const elemsToSwitch = [...Tables, ...textElems, ...svgChildren, body, svg];
     if (!elemsToSwitch[0].classList.contains("animate")){
         elemsToSwitch.forEach(x => x.classList.add("animate"))
     }
