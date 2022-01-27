@@ -284,6 +284,7 @@ html {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     font-size: large;
     font-weight: normal;
+    margin: 2vh auto;
 }
 
 #content #title {
@@ -330,10 +331,10 @@ html {
 }
 
 #content #images img {
-    min-width: 20vw;
-    min-height: 20vw;
+    min-width: 10vw;
+    min-height: 10vw;
     max-width: 33vw;
-    max-height: 35vw;
+    max-height: 25vw;
     margin: 4vh 2vw;
     height: auto;
 }
@@ -367,6 +368,7 @@ html {
     background-color: navy;
     color: white;
     font-family: "Raleway", sans-serif;
+    text-align: center;
 }
 
 #footer:not(.active):not(.inactive) {
@@ -385,8 +387,13 @@ html {
     animation-duration: 0.3s;
 }
 
-#footer p {
+#footer p, #footer a {
     padding: 1vh 1vw;
+    margin: 1vh 1vw;
+}
+
+#footer a:visited {
+    color: white;
 }
 
 /*---------------------------------------------------------------------------------------------*/

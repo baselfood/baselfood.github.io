@@ -10,9 +10,8 @@ function toggleDarkmode() {
     const svgChildren = document.querySelectorAll("#darkModeToggle circle, #darkModeToggle path");
     const svg = document.getElementById("darkModeToggle");
     const Tables = document.querySelectorAll("#content > table *");
-    const content = document.getElementById("content");
     const textElems = document.querySelectorAll("#content > p, td, th");
-    const elemsToSwitch = [...Tables, ...textElems, ...svgChildren, content, body, ];
+    const elemsToSwitch = [...Tables, ...textElems, ...svgChildren, body, ];
     if (!elemsToSwitch[0].classList.contains("animate")){
         elemsToSwitch.forEach(x => x.classList.add("animate"))
     }
@@ -225,12 +224,14 @@ function makeInfoBox(dict) {
         infoName.classList.add("infoName")
         infoName.innerText = info.replaceAll("_", " ");
         let infoValue = document.createElement("td");
-        if (info != "Website") {
-            infoValue.innerText = dict[info];
-            infoValue.classList.add("infoValue");
-        } else {
+        infoValue.classList.add("infoValue");
+        if (info == "Website") {
             infoValue.innerHTML = `<a href="${dict[info]}" target="_blank">${dict[info]}</a>`
-            infoValue.classList.add("infoValue");
+            
+        } else if (info == "Email") {
+            infoValue.innerHTML = `<a href="mailto:${dict[info]}" target="_blank">${dict[info]}</a>`
+        } else {
+            infoValue.innerText = dict[info];
         }
         tableRow.appendChild(infoName);
         tableRow.appendChild(infoValue);
