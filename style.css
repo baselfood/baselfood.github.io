@@ -255,6 +255,7 @@ html {
     margin-left: 20vw;
     margin-right: 5vw;
     font-size: 3vh;
+    min-height: 76vh;
 }
 
 #content:not(.active):not(.inactive) {
@@ -284,7 +285,7 @@ html {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     font-size: large;
     font-weight: normal;
-    margin: 2vh auto;
+    margin: 3.5vh auto;
 }
 
 #content #title {
@@ -305,6 +306,7 @@ html {
 }
 
 #content #ratingTable .star {
+    min-height: 30px;
     height: 2vw;
     width: auto;
 }

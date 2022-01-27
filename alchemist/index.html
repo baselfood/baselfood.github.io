@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodblog</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <script src="../index.js"></script>
+    <script type="text/javascript">
+        const favicons = makeFavicons();
+        document.head.innerHTML += favicons;
+        let Header = makeHeader()
+        document.body.appendChild(Header)
+        let content = makeMainContent("Alchemist", `Das Alchemist ist ein cooles Restaurant an der Schifflände. Das Konzept des Restaurants ist es eine coole, angenehme, freundschaftliche Atmosphäre zu schaffen. Zudem ist es das Ziel so viel wie möglich in der Küche und an der Bar selber zu machen. Als Beispiel verkaufen sie keine Softdrinks wie Cola, Fanta, etc., sondern stellen ein Getränk mit Cola-Kraut Sirup und Wasser zur Verfügung.
+        Die Speisekarte besteht aus vielen kleinen Speisen wie Dips, Suppen, Pommes, Brot usw. und es gibt eine grosse Auswahl. Die kleinen Portionen sind zum Teilen gedacht. Also man bestellt viele kleine Speisen und stellt sie in die Mitte des Tisches und teilt. Dieses Restaurant bringt auf jeden Fall ein Erlebnis, weil man unter anderem seine Getränke selber mixen kann und die Präsentation der Getränke und Speisen sehr schön und anregend ist. Das Ambiente ist sehr toll, locker, geheimnisvoll und man fühlt sich schnell wohl. 
+        Der Service ist auch sehr nett und beantwortet gerne Fragen, wenn man zum ersten Mal dort ist und noch alles neu ist. Auf der Website kann man noch viel mehr erfahren z.B wie es zum Namen Alchemist kam, wieso genau es an diesem Ort ist, wieso sie dieses Menü und Essen für ihr Restaurant-Konzept gewählt haben und noch vieles mehr.`, 
+        [
+            "alchemist/door.png",
+            "alchemist/tube-system.png",
+            "alchemist/tube.png",
+            "alchemist/wax.png",
+            "alchemist/glace.png",
+            "break",
+            "alchemist/bottles.png",
+            "alchemist/food.png",
+            "alchemist/steamy-kitchen.png",
+            "alchemist/card.png",
+            "alchemist/chairs.png",
+        ], 
+        {
+            Ambiente: 4, 
+            Preis_Leistungs_Verhältnis: 3, 
+            Qualität_der_Speisen: 5, 
+            Quantität_der_Auswahl: 4, 
+            Lage: 4, 
+            Hygiene: 5, 
+            Service: 4.5, 
+            Ausstattung: 4
+        }, 
+        {
+            Addresse: "Schifflände 1 4051 Basel", 
+            Telefonnummer: "061 561 88 68",
+            Warme_Küche_bis: "22.00",
+            Email: "info@alchemistbasel.ch",
+            Website: "https://www.alchemistbasel.ch/"
+        }
+        )
+        document.body.appendChild(content)
+        const footer = makeFooter(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure culpa perferendis suscipit commodi dolore, consequuntur amet voluptates tenetur iusto doloremque excepturi, ipsum odio id repellat modi veritatis. Doloribus, laboriosam magnam?`)
+        document.body.appendChild(footer)
+    </script>
+    <div id="sidebar">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione alias culpa rem esse deleniti quia perferendis magnam recusandae magni delectus suscipit, tempore tempora nesciunt sit. Illum ipsam architecto ab adipisci.
+        </p>
+    </div>
+</body>
+</html>
