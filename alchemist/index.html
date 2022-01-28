@@ -10,7 +10,7 @@
 <body>
     <script src="../index.js"></script>
     <script type="text/javascript">
-        const favicons = makeFavicons();
+        let favicons = makeFavicons();
         document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
@@ -49,7 +49,9 @@
         }
         )
         document.body.appendChild(content)
-        const footer = makeFooter(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure culpa perferendis suscipit commodi dolore, consequuntur amet voluptates tenetur iusto doloremque excepturi, ipsum odio id repellat modi veritatis. Doloribus, laboriosam magnam?`)
+        let sideBar = makeSidebar();
+        document.body.appendChild(sideBar);
+        let footer = makeFooter(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure culpa perferendis suscipit commodi dolore, consequuntur amet voluptates tenetur iusto doloremque excepturi, ipsum odio id repellat modi veritatis. Doloribus, laboriosam magnam?`)
         document.body.appendChild(footer)
     </script>
     <div id="sidebar">

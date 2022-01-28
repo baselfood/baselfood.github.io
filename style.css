@@ -333,10 +333,10 @@ html {
 }
 
 #content #images img {
-    min-width: 10vw;
-    min-height: 10vw;
-    max-width: 33vw;
-    max-height: 25vw;
+    min-width: max(10vw, 250px);
+    min-height: max(10vw, 250px);
+    max-width: max(33vw, 600px);
+    max-height: max(25vw, 400px);
     margin: 4vh 2vw;
     height: auto;
 }

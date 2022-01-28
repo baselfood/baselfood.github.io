@@ -165,7 +165,7 @@ function makeSidebar() {
     for (let pastBlog of pastBlogs) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
-        if (`${baseURL}/${pastBlog.name.toLocaleLowerCase()}/index.html` == location.href) {
+        if (`${baseURL}/${pastBlog.name}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
             blog.id = "currentBlog";
         }
         blog.innerHTML = `<a href="${baseURL}/${pastBlog.name}/index.html">${pastBlog.name} - ${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}</a>`
