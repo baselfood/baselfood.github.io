@@ -25,7 +25,7 @@ html {
     position: fixed;
     left: 0px;
     top: 0px;
-    z-index: 10;
+    z-index: 9;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -131,11 +131,11 @@ html {
 }
 
 #sidebar {
+    z-index: 10;
     top: 10vh;
     position: fixed;
     height: 90vh;
-    width: 11vw;
-    padding: 0px 2vw;
+    width: 15vw;
     background-color: navy;
     /*Start of the fuck*/
     max-height: 90%;
@@ -159,18 +159,25 @@ html {
     animation-duration: 0.3s;
 }
 
-#sidebar * {
-    width: inherit;
-    top: inherit;
-    left: inherit;
-    position: fixed;
+#sidebar .sideBarBlog {
+    color: white !important;
+    font-family: 'Raleway', sans-serif;
+    padding: 2vh 1vw;
+    margin-bottom: -1px;
+    border-top: 1px solid rgb(118, 158, 158);
+    border-bottom: 1px solid rgb(118, 158, 158);
+    text-align: center;
+    cursor: pointer;
 }
 
-#sidebar p {
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    padding: 1vh 1vw;
+#sidebar .sideBarBlog a {
+    font-size: 2vh;
 }
+
+#sidebar .sideBarBlog#currentBlog {
+    background-color: rgb(0, 0, 75);
+}
+
 
 /*---------------------------------------------------------------------------------------------*/
 
@@ -335,7 +342,7 @@ html {
 #content #images img {
     min-width: max(10vw, 250px);
     min-height: max(10vw, 250px);
-    max-width: max(33vw, 600px);
+    max-width: max(33vw, 400px);
     max-height: max(25vw, 400px);
     margin: 4vh 2vw;
     height: auto;

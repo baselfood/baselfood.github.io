@@ -3,9 +3,15 @@ var currentMode = "bright";
 const pastBlogs = [
     {
         name: "Alchemist",
-        postDate: new Date("2.5.2022"),
+        postDate: new Date("2/5/2022"),
         coverImg: "alchemist/food.png",
         writer: "Noée"
+    },
+    {
+        name: "FAlschemist",
+        postDate: new Date("2/25/2022"),
+        coverImg: "alchemist/chairs.png",
+        writer: "Arik"
     }
 ]
 
@@ -168,7 +174,10 @@ function makeSidebar() {
         if (`${baseURL}/${pastBlog.name}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
             blog.id = "currentBlog";
         }
-        blog.innerHTML = `<a href="${baseURL}/${pastBlog.name}/index.html">${pastBlog.name} - ${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}</a>`
+        blog.onclick = function() {
+            location.href = `${baseURL}/${pastBlog.name}/index.html`
+        }
+        blog.innerHTML = `<span>${pastBlog.name} - ${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}</span>`
         sideBar.appendChild(blog);
     }
     return sideBar
