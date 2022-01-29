@@ -6,6 +6,7 @@
 :root {
     --dark-mode-color: rgb(42, 42, 42);
     --slightly-brighter: #696969;
+    --sidebar-width: max(15vw, 150px);
 }
 
 body {
@@ -118,13 +119,13 @@ html {
     from {
         left: 0vw;
     } to {
-        left: -15vw;
+        left: calc(0px - var(--sidebar-width));
     }
 }
 
 @keyframes sideBarActive {
     from {
-        left: -15vw;
+        left: calc(0px - var(--sidebar-width));
     } to {
         left: 0vw; 
     }
@@ -135,7 +136,7 @@ html {
     top: 10vh;
     position: fixed;
     height: 90vh;
-    width: 15vw;
+    width: var(--sidebar-width);
     background-color: navy;
     /*Start of the fuck*/
     max-height: 90%;
@@ -144,11 +145,11 @@ html {
 }
 
 #sidebar:not(.active):not(.inactive) {
-    left: -15vw; 
+    left: calc(0px - var(--sidebar-width)); 
 }
 
 #sidebar.inactive {
-    left: -15vw; 
+    left: calc(0px - var(--sidebar-width)); 
     animation-name: sideBarInactive;
     animation-duration: 0.3s;
 }
@@ -170,8 +171,8 @@ html {
     cursor: pointer;
 }
 
-#sidebar .sideBarBlog a {
-    font-size: 2vh;
+#sidebar .sideBarBlog span {
+    font-size: 1.8vh;
 }
 
 #sidebar .sideBarBlog#currentBlog {
@@ -243,7 +244,7 @@ html {
 
 @keyframes wideCon {
     from {
-        margin-left: 20vw;
+        margin-left: calc(5vw + var(--sidebar-width));
     } to {
         margin-left: 5vw;
     }
@@ -253,13 +254,12 @@ html {
     from {
         margin-left: 5vw;
     } to {
-        margin-left: 20vw;
+        margin-left: calc(5vw + var(--sidebar-width));
     }
 }
 
 #content {
     margin-top: 12vh;
-    margin-left: 20vw;
     margin-right: 5vw;
     font-size: 3vh;
     min-height: 76vh;
@@ -276,7 +276,7 @@ html {
 }
 
 #content.active {
-    margin-left: 20vw;
+    margin-left: calc(5vw + var(--sidebar-width));
     animation-name: smallCon;
     animation-duration: 0.3s;
 }
@@ -354,13 +354,13 @@ html {
     from {
         margin-left: 0vw;
     } to {
-        margin-left: 15vw;
+        margin-left: var(--sidebar-width);
     }
 }
 
 @keyframes footerExpand {
     from {
-        margin-left: 15vw;
+        margin-left: var(--sidebar-width);
     } to {
         margin-left: 0vw;
     }
@@ -391,7 +391,7 @@ html {
 }
 
 #footer.active {
-    margin-left: 15vw;
+    margin-left: var(--sidebar-width);
     animation-name: footerContract;
     animation-duration: 0.3s;
 }

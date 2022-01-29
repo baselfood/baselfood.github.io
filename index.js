@@ -5,13 +5,15 @@ const pastBlogs = [
         name: "Alchemist",
         postDate: new Date("2/5/2022"),
         coverImg: "alchemist/food.png",
-        writer: "Noée"
+        writer: "Noée",
+        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände."
     },
     {
         name: "FAlschemist",
         postDate: new Date("2/25/2022"),
         coverImg: "alchemist/chairs.png",
-        writer: "Arik"
+        writer: "Arik",
+        shortDescription: "Das FAlschemist gibt es nicht."
     }
 ]
 
@@ -293,21 +295,29 @@ function makeMainContent(title, text, imgs, ratings, infoBox) {
                 if (img == "break") {
                     breakElem = document.createElement("br")
                     images.appendChild(breakElem)
-                } else {
-                    let newImg = new Image();
-                    newImg.src = `${baseURL}/images/${img}`;
-                    images.appendChild(newImg)
-                }
+                } else if (img.split("").slice(0, 8).join("") == "https://") {
+                let newImg = new Image();
+                newImg.src = img;
+                images.appendChild(newImg);
+            } else {
+                let newImg = new Image();
+                newImg.src = `${baseURL}/images/${img}`;
+                images.appendChild(newImg)
             }
-        } else if (imgs.constructor == String) {
-            let newImg = new Image()
-            newImg.src = `${baseURL}/images/${imgs}`
-            images.appendChild(newImg)
-        } else {
-            console.error('Bilder mönn entweder e "String" oder e [Array] si.')
         }
-        images.id = "images"
-        content.appendChild(images);
+    } else if (imgs.constructor == String && img.split("").slice(0, 8).join("") == "https://") {
+        let newImg = new Image();
+        newImg.src = img;
+        images.appendChild(newImg);
+    } else if (imgs.constructor == String) {
+        let newImg = new Image();
+        newImg.src = `${baseURL}/images/${img}`;
+        images.appendChild(newImg)
+    } else {
+        console.error('Bilder mönn entweder e "String" oder e [Array] si.');
+    }
+    images.id = "images";
+    content.appendChild(images);
     }
     content.setAttribute("id", "content");
     text = text.split("\n")
