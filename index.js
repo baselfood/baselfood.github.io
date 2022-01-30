@@ -277,6 +277,14 @@ function makeInfoBox(dict) {
     return Table;
 }
 
+function makeLandingPage() {
+    const content = document.createElement("article");
+    let titleElem = document.createElement("h1");
+    for (let pastBlog in pastBlogs) {
+
+    }
+}
+
 function makeMainContent(title, text, imgs, ratings, infoBox) {
     const content = document.createElement("article");
     let titleElem = document.createElement("h1");
