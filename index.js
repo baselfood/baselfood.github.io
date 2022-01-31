@@ -279,10 +279,39 @@ function makeInfoBox(dict) {
 
 function makeLandingPage() {
     const content = document.createElement("article");
-    let titleElem = document.createElement("h1");
-    for (let pastBlog in pastBlogs) {
 
+    let titleElem = document.createElement("h1");
+    titleElem.innerText = "Baselfood - Der Foodblog für die Region Basel";
+    titleElem.id = "title";
+    content.appendChild(titleElem);
+    
+    for (let pastBlog in pastBlogs) {
+        let containingDiv = document.createElement("div");
+
+        let blogTitle = document.createElement("h2");
+        blogTitle.innerText = pastBlog.name;
+        blogTitle.classList.add("blogTitle");
+
+        let blogImg = new Image();
+        blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
+        blogImg.classList.add("blogImg");
+
+        let blogDescription = document.createElement("p");
+        blogDescription.innerText = pastBlog.shortDescription;
+        blogDescription.classList.add("blogDescription");
+
+        let blogDate = document.createElement("p");
+        blogDate.innerText = pastBlog.postDate.toLocaleDateString("de-de");
+        blogDate.classList.add("blogDate");
+
+        containingDiv.classList.add("blog");
+        containingDiv.appendChild(blogTitle);
+        containingDiv.appendChild(blogImg);
+        containingDiv.appendChild(blogDescription);
+        containingDiv.appendChild(blogDate);
+        content.appendChild(containingDiv);
     }
+    return content;
 }
 
 function makeMainContent(title, text, imgs, ratings, infoBox) {
