@@ -279,16 +279,17 @@ function makeInfoBox(dict) {
 
 function makeLandingPage() {
     const content = document.createElement("article");
+    content.id = "content";
 
     let titleElem = document.createElement("h1");
     titleElem.innerText = "Baselfood - Der Foodblog für die Region Basel";
     titleElem.id = "title";
     content.appendChild(titleElem);
-    
-    for (let pastBlog in pastBlogs) {
+
+    for (let pastBlog of pastBlogs) {
         let containingDiv = document.createElement("div");
 
-        let blogTitle = document.createElement("h2");
+        let blogTitle = document.createElement("h3");
         blogTitle.innerText = pastBlog.name;
         blogTitle.classList.add("blogTitle");
 
