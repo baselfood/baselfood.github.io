@@ -306,6 +306,8 @@ function makeLandingPage() {
         blogDate.classList.add("blogDate");
 
         containingDiv.classList.add("blog");
+        containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.name}/index.html`;
+
         containingDiv.appendChild(blogTitle);
         containingDiv.appendChild(blogImg);
         containingDiv.appendChild(blogDescription);

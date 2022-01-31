@@ -343,7 +343,7 @@ html {
     min-width: max(10vw, 250px);
     min-height: max(10vw, 250px);
     max-width: max(33vw, 400px);
-    max-height: max(25vw, 400px);
+    max-height: max(25vw, 300px);
     margin: 4vh 2vw;
     height: auto;
 }
@@ -403,6 +403,33 @@ html {
 
 #footer a:visited {
     color: white;
+}
+
+/*------------------------------Landing page stuff - ignore------------------------------------*/
+
+#content .blog {
+    margin: 3vh 2vw;
+    display: inline-block;
+    border: 10px solid rgba(30, 30, 30, 0.75);
+    border-radius: 7.5%;
+    width: min-content;
+    height: min-content;
+}
+
+#content .blog > * {
+    margin: 3vh 2vw;
+    display: inherit;
+}
+
+#content .blog:hover {
+    cursor: pointer;
+}
+
+#content .blogImg {
+    min-width: max(7vw, 150px);
+    min-height: max(7vw, 150px);
+    max-width: max(25vw, 270px);
+    max-height: max(18vw, 200px);
 }
 
 /*---------------------------------------------------------------------------------------------*/
