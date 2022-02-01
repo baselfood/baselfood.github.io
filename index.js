@@ -170,7 +170,7 @@ function collapseSidebar() {
 function makeSidebar() {
     const sideBar = document.createElement("div");
     sideBar.id = "sidebar";
-    for (let pastBlog of pastBlogs) {
+    for (let pastBlog of pastBlogs.reverse()) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
         if (`${baseURL}/${pastBlog.name}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
@@ -286,7 +286,7 @@ function makeLandingPage() {
     titleElem.id = "title";
     content.appendChild(titleElem);
 
-    for (let pastBlog of pastBlogs) {
+    for (let pastBlog of pastBlogs.reverse()) {
         let containingDiv = document.createElement("div");
 
         let blogTitle = document.createElement("h3");
