@@ -7,6 +7,7 @@
     --dark-mode-color: rgb(42, 42, 42);
     --slightly-brighter: #696969;
     --sidebar-width: max(15vw, 150px);
+    --content-width: calc(100vw - var(--sidebar-width) - 10vw);
 }
 
 body {
@@ -407,18 +408,22 @@ html {
 
 /*------------------------------Landing page stuff - ignore------------------------------------*/
 
+@keyframes hoverBlog {
+
+}
+
+/*text-shadow: -1px 1px 0 #000,
+                          1px 1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px -1px 0 #000;*/
+
 #content .blog {
     margin: 3vh 2vw;
+    width: max(23vw, 300px);
+    height: max(40vh, 400px);
     display: inline-block;
     border: 10px solid rgba(30, 30, 30, 0.75);
     border-radius: 7.5%;
-    width: min-content;
-    height: min-content;
-}
-
-#content .blog > * {
-    margin: 3vh 2vw;
-    display: inherit;
 }
 
 #content .blog:hover {
@@ -426,10 +431,8 @@ html {
 }
 
 #content .blogImg {
-    min-width: max(7vw, 150px);
-    min-height: max(7vw, 150px);
-    max-width: max(25vw, 270px);
-    max-height: max(18vw, 200px);
+    width: max(20vw, 250px);
+    height: auto;
 }
 
 /*---------------------------------------------------------------------------------------------*/

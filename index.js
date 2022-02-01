@@ -14,6 +14,13 @@ const pastBlogs = [
         coverImg: "alchemist/chairs.png",
         writer: "Arik",
         shortDescription: "Das FAlschemist gibt es nicht."
+    },
+    {
+        name: "Fortnite",
+        postDate: new Date("9/6/2069"),
+        coverImg: "alchemist/bottles.png",
+        writer: "Gian",
+        shortDescription: "Fortnite Battle Royale"
     }
 ]
 
@@ -286,6 +293,9 @@ function makeLandingPage() {
     titleElem.id = "title";
     content.appendChild(titleElem);
 
+    const blogs = document.createElement("div");
+    blogs.id = "blogs";
+
     for (let pastBlog of pastBlogs.reverse()) {
         let containingDiv = document.createElement("div");
 
@@ -312,8 +322,9 @@ function makeLandingPage() {
         containingDiv.appendChild(blogImg);
         containingDiv.appendChild(blogDescription);
         containingDiv.appendChild(blogDate);
-        content.appendChild(containingDiv);
+        blogs.appendChild(containingDiv);
     }
+    content.appendChild(blogs);
     return content;
 }
 
