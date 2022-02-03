@@ -403,7 +403,7 @@ html {
 }
 
 #footer a:visited {
-    color: white;
+    color: white !important;
 }
 
 /*------------------------------Landing page stuff - ignore------------------------------------*/

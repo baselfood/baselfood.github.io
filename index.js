@@ -1,30 +1,32 @@
-const baseURL = "file:///Users/gian/Desktop/Foodblog";
+const baseURL = "file://ucs-sla-01.intra.edubs.ch/gian.zellweger1/Dokumente/Desktop/baselfood.blog";
 var currentMode = "bright";
+const isMobile = window.matchMedia("(pointer:coarse)").matches;
 const pastBlogs = [
     {
         name: "Alchemist",
+		urlName: "Alchemist",
         postDate: new Date("2/5/2022"),
         coverImg: "alchemist/food.png",
         writer: "Noée",
         shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände."
     },
     {
-        name: "FAlschemist",
-        postDate: new Date("2/25/2022"),
+        name: "Café Streuli",
+		urlName: "Streuli",
+        postDate: new Date("2/5/2022"),
         coverImg: "alchemist/chairs.png",
         writer: "Arik",
-        shortDescription: "Das FAlschemist gibt es nicht."
+        shortDescription: ""
     },
     {
-        name: "Fortnite",
-        postDate: new Date("9/6/2069"),
+        name: "Wiesengarten Musetti",
+		urlName: "Musetti",
+        postDate: new Date("2/5/2022"),
         coverImg: "alchemist/bottles.png",
-        writer: "Gian",
-        shortDescription: "Fortnite Battle Royale"
+        writer: "Arik",
+        shortDescription: "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage."
     }
 ]
-
-const isMobile = window.matchMedia("(pointer:coarse)").matches;
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
@@ -180,11 +182,11 @@ function makeSidebar() {
     for (let pastBlog of pastBlogs.reverse()) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
-        if (`${baseURL}/${pastBlog.name}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
+        if (`${baseURL}/${pastBlog.urlName}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
             blog.id = "currentBlog";
         }
         blog.onclick = function() {
-            location.href = `${baseURL}/${pastBlog.name}/index.html`
+            location.href = `${baseURL}/${pastBlog.urlName}/index.html`
         }
         blog.innerHTML = `<span>${pastBlog.name} - ${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}</span>`
         sideBar.appendChild(blog);
@@ -343,10 +345,10 @@ function makeMainContent(title, text, imgs, ratings, infoBox) {
         const images = document.createElement("div")
         if (imgs.constructor == Array) {
             for (let img of imgs) {
-                if (img == "break") {
+            if (img == "break") {
                     breakElem = document.createElement("br")
                     images.appendChild(breakElem)
-                } else if (img.split("").slice(0, 8).join("") == "https://") {
+            } else if (img.split("").slice(0, 8).join("") == "https://" || img.split("").slice(0, 7).join("") == "http://") {
                 let newImg = new Image();
                 newImg.src = img;
                 images.appendChild(newImg);
