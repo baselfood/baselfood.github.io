@@ -16,7 +16,7 @@ const pastBlogs = [
         postDate: new Date("2/5/2022"),
         coverImg: "alchemist/chairs.png",
         writer: "Arik",
-        shortDescription: ""
+        shortDescription: "Das Café Streuli liegt etwas versteckt auf dem Bruderholz, in dem man Café, Gebäck, Konfekt und ein Snackangebot verzehren kann."
     },
     {
         name: "Wiesengarten Musetti",
@@ -25,7 +25,15 @@ const pastBlogs = [
         coverImg: "alchemist/bottles.png",
         writer: "Arik",
         shortDescription: "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage."
-    }
+    },
+    {
+        name: "Café Bar Elisabethen",
+        urlName: "Elisabethen",
+        postDate: new Date("2/5/2022"),
+        coverImg: "elisabethen/entrance.png",
+        writer: "Noée",
+        shortDescription: ""
+    },
 ]
 
 Number.prototype.clamp = function(min, max) {
