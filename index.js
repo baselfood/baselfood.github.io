@@ -14,7 +14,7 @@ const pastBlogs = [
         name: "Café Streuli",
         urlName: "Streuli",
         postDate: new Date("2/5/2022"),
-        coverImg: "alchemist/chairs.png",
+        coverImg: "https://hummel.cafe-streuli.ch/fileadmin/_processed_/d/0/csm_Feingebaeck_8e4f068eef.jpg",
         writer: "Arik",
         shortDescription: "Das Café Streuli liegt etwas versteckt auf dem Bruderholz, in dem man Café, Gebäck, Konfekt und ein Snackangebot verzehren kann."
     },
@@ -22,7 +22,7 @@ const pastBlogs = [
         name: "Wiesengarten Musetti",
         urlName: "Musetti",
         postDate: new Date("2/5/2022"),
-        coverImg: "alchemist/bottles.png",
+        coverImg: "http://www.wiesengartenmusetti.ch/images/show/imp_14.jpg",
         writer: "Arik",
         shortDescription: "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage."
     },
@@ -345,7 +345,11 @@ function makeLandingPage() {
         blogTitle.classList.add("blogTitle");
         
         let blogImg = new Image();
-        blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
+        if (pastBlog.coverImg.split("").slice(0, 8).join("") == "https://" || pastBlog.coverImg.split("").slice(0, 7).join("") == "http://") {
+            blogImg.src = pastBlog.coverImg;
+        } else {
+            blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
+        }
         blogImg.classList.add("blogImg");
         
         let blogDescription = document.createElement("p");
@@ -397,7 +401,7 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
                 images.appendChild(newImg)
             }
         }
-    } else if (imgs.constructor == String && img.split("").slice(0, 8).join("") == "https://") {
+    } else if (imgs.constructor == String && imgs.split("").slice(0, 8).join("") == "https://" || imgs.split("").slice(0, 7).join("") == "http://") {
     let newImg = new Image();
     newImg.src = img;
     images.appendChild(newImg);
