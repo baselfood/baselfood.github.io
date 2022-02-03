@@ -340,6 +340,29 @@ html {
     text-align: right;
 }
 
+#content #openingTimesTable {
+    border-collapse: collapse;
+    font-size: 2vh;
+    margin: 0px auto;
+    font-size: large;
+}
+
+#content #openingTimesTable tr {
+    border: 1px solid black;
+}
+
+#content #openingTimesTable td {
+    padding: 1vh 0.5vw;
+}
+
+#content #openingTimesTable .openingTime {
+    text-align: right;
+}
+
+#content #openingTimesTable .openingDays {
+    text-align: left;
+}
+
 #content #images img {
     min-width: max(10vw, 250px);
     min-height: max(10vw, 250px);

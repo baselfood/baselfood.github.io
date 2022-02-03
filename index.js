@@ -1,10 +1,10 @@
-const baseURL = "file://ucs-sla-01.intra.edubs.ch/gian.zellweger1/Dokumente/Desktop/baselfood.blog";
+const baseURL = "file:///Users/gian/Desktop/Foodblog";
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse)").matches;
 const pastBlogs = [
     {
         name: "Alchemist",
-		urlName: "Alchemist",
+        urlName: "Alchemist",
         postDate: new Date("2/5/2022"),
         coverImg: "alchemist/food.png",
         writer: "Noée",
@@ -12,7 +12,7 @@ const pastBlogs = [
     },
     {
         name: "Café Streuli",
-		urlName: "Streuli",
+        urlName: "Streuli",
         postDate: new Date("2/5/2022"),
         coverImg: "alchemist/chairs.png",
         writer: "Arik",
@@ -20,7 +20,7 @@ const pastBlogs = [
     },
     {
         name: "Wiesengarten Musetti",
-		urlName: "Musetti",
+        urlName: "Musetti",
         postDate: new Date("2/5/2022"),
         coverImg: "alchemist/bottles.png",
         writer: "Arik",
@@ -272,7 +272,6 @@ function makeInfoBox(dict) {
         infoValue.classList.add("infoValue");
         if (info == "Website") {
             infoValue.innerHTML = `<a href="${dict[info]}" target="_blank">${dict[info]}</a>`
-            
         } else if (info == "Email") {
             infoValue.innerHTML = `<a href="mailto:${dict[info]}" target="_blank">${dict[info]}</a>`
         } else {
@@ -286,40 +285,72 @@ function makeInfoBox(dict) {
     return Table;
 }
 
+function makeOpeningTimes(openingTimes) {
+    if (openingTimes.constructor != Object) {
+        console.error("D'Öffnigszite mien als {Object} formattiert si.");
+    }
+    const containingDiv = document.createElement("div");
+
+    const openingTimesTitle = document.createElement("h3");
+    openingTimesTitle.innerText = "Öffnungszeiten";
+    openingTimesTitle.id = "openingTimesTitle"
+    containingDiv.appendChild(openingTimesTitle);
+
+    const Table = document.createElement("table");
+    const Tbody = document.createElement("tbody");
+
+    for (let openingTimeElem in openingTimes) {
+        let tableRow = document.createElement("tr");
+        let openingDays = document.createElement("td");
+        openingDays.classList.add("openingDays")
+        openingDays.innerText = openingTimeElem.replaceAll("_", " ");
+        let openingTime = document.createElement("td");
+        openingTime.classList.add("openingTime");
+        openingTime.innerText = openingTimes[openingTimeElem];
+        tableRow.appendChild(openingDays);
+        tableRow.appendChild(openingTime);
+        Tbody.appendChild(tableRow);
+    }
+    Table.appendChild(Tbody);
+    Table.id = "openingTimesTable";
+    containingDiv.appendChild(Table)
+    return containingDiv;
+}
+
 function makeLandingPage() {
     const content = document.createElement("article");
     content.id = "content";
-
+    
     let titleElem = document.createElement("h1");
     titleElem.innerText = "Baselfood - Der Foodblog für die Region Basel";
     titleElem.id = "title";
     content.appendChild(titleElem);
-
+    
     const blogs = document.createElement("div");
     blogs.id = "blogs";
-
+    
     for (let pastBlog of pastBlogs.reverse()) {
         let containingDiv = document.createElement("div");
-
+        
         let blogTitle = document.createElement("h3");
         blogTitle.innerText = pastBlog.name;
         blogTitle.classList.add("blogTitle");
-
+        
         let blogImg = new Image();
         blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
         blogImg.classList.add("blogImg");
-
+        
         let blogDescription = document.createElement("p");
         blogDescription.innerText = pastBlog.shortDescription;
         blogDescription.classList.add("blogDescription");
-
+        
         let blogDate = document.createElement("p");
         blogDate.innerText = pastBlog.postDate.toLocaleDateString("de-de");
         blogDate.classList.add("blogDate");
-
+        
         containingDiv.classList.add("blog");
-        containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.name}/index.html`;
-
+        containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/index.html`;
+        
         containingDiv.appendChild(blogTitle);
         containingDiv.appendChild(blogImg);
         containingDiv.appendChild(blogDescription);
@@ -330,25 +361,25 @@ function makeLandingPage() {
     return content;
 }
 
-function makeMainContent(title, text, imgs, ratings, infoBox) {
+function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
     const content = document.createElement("article");
     let titleElem = document.createElement("h1");
     titleElem.setAttribute("id", "title");
     titleElem.innerText = title;
     content.appendChild(titleElem);
     if (infoBox) {
-        let infoBoxTable = makeInfoBox(infoBox)
-        infoBoxTable.id = "infoBox"
-        content.appendChild(infoBoxTable)
+        let infoBoxTable = makeInfoBox(infoBox);
+        infoBoxTable.id = "infoBox";
+        content.appendChild(infoBoxTable);
     }
     if (imgs) {
         const images = document.createElement("div")
         if (imgs.constructor == Array) {
             for (let img of imgs) {
-            if (img == "break") {
+                if (img == "break") {
                     breakElem = document.createElement("br")
                     images.appendChild(breakElem)
-            } else if (img.split("").slice(0, 8).join("") == "https://" || img.split("").slice(0, 7).join("") == "http://") {
+                } else if (img.split("").slice(0, 8).join("") == "https://" || img.split("").slice(0, 7).join("") == "http://") {
                 let newImg = new Image();
                 newImg.src = img;
                 images.appendChild(newImg);
@@ -359,31 +390,36 @@ function makeMainContent(title, text, imgs, ratings, infoBox) {
             }
         }
     } else if (imgs.constructor == String && img.split("").slice(0, 8).join("") == "https://") {
-        let newImg = new Image();
-        newImg.src = img;
-        images.appendChild(newImg);
-    } else if (imgs.constructor == String) {
-        let newImg = new Image();
-        newImg.src = `${baseURL}/images/${img}`;
-        images.appendChild(newImg)
-    } else {
-        console.error('Bilder mönn entweder e "String" oder e [Array] si.');
+    let newImg = new Image();
+    newImg.src = img;
+    images.appendChild(newImg);
+} else if (imgs.constructor == String) {
+    let newImg = new Image();
+    newImg.src = `${baseURL}/images/${img}`;
+    images.appendChild(newImg)
+} else {
+    console.error('Bilder mönn entweder e "String" oder e [Array] si.');
+}
+images.id = "images";
+content.appendChild(images);
+}
+if (openingTimes) {
+        let openingTimesTable = makeOpeningTimes(openingTimes);
+        openingTimesTable.id = "openingTimes";
+        content.appendChild(openingTimesTable);
     }
-    images.id = "images";
-    content.appendChild(images);
-    }
-    content.setAttribute("id", "content");
-    text = text.split("\n")
-    for (paragraph of text) {
-        let pElem = document.createElement("p")
-        pElem.setAttribute("class", "paragraph");
-        pElem.innerText = paragraph
-        content.appendChild(pElem)
-    }
-    if (ratings) {
-        let ratingTable = makeRatingTable(ratings)	
-        ratingTable.id = "ratingTable"
-        content.appendChild(ratingTable)
-    }
-    return content
+content.setAttribute("id", "content");
+text = text.split("\n")
+for (paragraph of text) {
+    let pElem = document.createElement("p")
+    pElem.setAttribute("class", "paragraph");
+    pElem.innerText = paragraph
+    content.appendChild(pElem)
+}
+if (ratings) {
+    let ratingTable = makeRatingTable(ratings)	
+    ratingTable.id = "ratingTable"
+    content.appendChild(ratingTable)
+}
+return content
 }
