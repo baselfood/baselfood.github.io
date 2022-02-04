@@ -111,10 +111,6 @@ function makeHeader() {
     logo.setAttribute("src", `${baseURL}/images/Logo.png`);
     logo.setAttribute("id", "logo");
     logo.setAttribute("onclick", `location.href = "${baseURL}/index.html"`);
-    const aboutUs = document.createElement("a");
-    aboutUs.innerText = "Über uns";
-    aboutUs.setAttribute("id", "aboutUs");
-    aboutUs.setAttribute("href", `${baseURL}/aboutus/index.html`)
     const collapseSidebar = document.createElement("img");
     collapseSidebar.setAttribute("id", "collapseSidebar");
     collapseSidebar.setAttribute("src", `${baseURL}/images/menucollapse.png`);
@@ -123,7 +119,13 @@ function makeHeader() {
     headerElem.appendChild(svg)
     headerElem.appendChild(collapseSidebar);
     headerElem.appendChild(logo);
-    headerElem.appendChild(aboutUs);
+    if (!isMobile) {
+        const aboutUs = document.createElement("a");
+        aboutUs.innerText = "Über uns";
+        aboutUs.setAttribute("id", "aboutUs");
+        aboutUs.setAttribute("href", `${baseURL}/aboutus/index.html`)
+        headerElem.appendChild(aboutUs);
+    }
     return headerElem;
 }
 
@@ -187,6 +189,17 @@ function collapseSidebar() {
 function makeSidebar() {
     const sideBar = document.createElement("div");
     sideBar.id = "sidebar";
+    if (isMobile) {
+        let blog = document.createElement("div");
+        blog.classList.add("sideBarBlog");
+        const aboutUs = document.createElement("span");
+        aboutUs.innerText = "Über uns";
+        blog.appendChild(aboutUs);
+        blog.onclick = function() {
+            location.href = `${baseURL}/aboutus/index.html`
+        }
+        sideBar.appendChild(blog);
+    }
     for (let pastBlog of pastBlogs.reverse()) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");

@@ -180,6 +180,17 @@ html {
     background-color: rgb(0, 0, 75);
 }
 
+#sidebar #aboutUs { /*Only for mobile*/
+    color: white !important;
+    font-family: 'Raleway', sans-serif;
+    padding: 2vh 1vw;
+    margin-bottom: -1px;
+    border-top: 1px solid rgb(118, 158, 158);
+    border-bottom: 1px solid rgb(118, 158, 158);
+    text-align: center;
+    cursor: pointer;
+}
+
 
 /*---------------------------------------------------------------------------------------------*/
 
@@ -534,6 +545,12 @@ html {
         margin-left: 5vw !important;
         animation-name: none !important;
         animation-duration: 0s;
+    }
+    
+    #content #ratingTable .star {
+        min-height: 0px !important;
+        width: 5vw;
+        height: auto;
     }
 }
 
