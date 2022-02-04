@@ -431,19 +431,11 @@ html {
 
 /*------------------------------Landing page stuff - ignore------------------------------------*/
 
-@keyframes hoverBlog {
-
-}
-
-/*text-shadow: -1px 1px 0 #000,
-                          1px 1px 0 #000,
-                         1px -1px 0 #000,
-                        -1px -1px 0 #000;*/
-
 #content .blog {
     margin: 3vh 2vw;
+    padding: 0px 1.5vw;
     width: max(23vw, 300px);
-    height: max(40vh, 400px);
+    height: max(50vh, 500px);
     display: inline-block;
     border: 10px solid rgba(30, 30, 30, 0.75);
     border-radius: 7.5%;
@@ -451,6 +443,10 @@ html {
 
 #content .blog:hover {
     cursor: pointer;
+}
+
+#content .blog .blogTitle {
+    font-size: max(3vh, 30px);
 }
 
 #content .blogImg {
@@ -470,22 +466,22 @@ html {
     }
     
     /*-----------------------------------------------------------------------------------------*/
-
+    
     @keyframes sideBarInactiveMobile {
-    from {
-        left: 0vw;
-    } to {
-        left: -71vw;
+        from {
+            left: 0vw;
+        } to {
+            left: -71vw;
+        }
     }
-}
-
-@keyframes sideBarActiveMobile {
-    from {
-        left: -71vw;
-    } to {
-        left: 0vw; 
+    
+    @keyframes sideBarActiveMobile {
+        from {
+            left: -71vw;
+        } to {
+            left: 0vw; 
+        }
     }
-}
     
     #sidebar {
         top: 10vh;
@@ -515,7 +511,7 @@ html {
         animation-name: sideBarActiveMobile;
         animation-duration: 0.3s;
     }
-
+    
     #sidebar p {
         margin-block-start: 1vh;
         margin-block-end: 1vh;

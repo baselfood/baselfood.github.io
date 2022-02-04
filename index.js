@@ -8,7 +8,7 @@ const pastBlogs = [
         postDate: new Date("2/5/2022"),
         coverImg: "alchemist/food.png",
         writer: "Noée",
-        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände."
+        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit einer speziellen, diversen Speisekarte"
     },
     {
         name: "Café Streuli",
@@ -44,7 +44,7 @@ function toggleDarkmode() {
     const body = document.body;
     const svgChildren = document.querySelectorAll("#darkModeToggle circle, #darkModeToggle path");
     const svg = document.getElementById("darkModeToggle");
-    const Tables = document.querySelectorAll("#content > table *");
+    const Tables = document.querySelectorAll("#content table *");
     const textElems = document.querySelectorAll("#content > p, td, th");
     const elemsToSwitch = [...Tables, ...textElems, ...svgChildren, body, svg];
     if (!elemsToSwitch[0].classList.contains("animate")){
