@@ -32,7 +32,7 @@ const pastBlogs = [
         postDate: new Date("2/5/2022"),
         coverImg: "elisabethen/entrance.png",
         writer: "Noée",
-        shortDescription: ""
+        shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop."
     },
 ]
 
