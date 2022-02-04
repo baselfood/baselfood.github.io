@@ -434,7 +434,7 @@ html {
 #content .blog {
     margin: 3vh 2vw;
     padding: 0px 1.5vw;
-    width: max(23vw, 300px);
+    width: max(27vw, 330px);
     height: max(50vh, 500px);
     display: inline-block;
     border: 10px solid rgba(30, 30, 30, 0.75);
@@ -450,7 +450,7 @@ html {
 }
 
 #content .blogImg {
-    width: max(20vw, 250px);
+    width: max(23vw, 275px);
     height: auto;
 }
 

@@ -6,9 +6,9 @@ const pastBlogs = [
         name: "Alchemist",
         urlName: "Alchemist",
         postDate: new Date("2/5/2022"),
-        coverImg: "alchemist/food.png",
+        coverImg: "titleImgs/alchemist.png",
         writer: "Noée",
-        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit einer speziellen, diversen Speisekarte"
+        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Dips, Suppen, Pommes, Brot, jedoch nicht normal."
     },
     {
         name: "Café Streuli",
@@ -30,7 +30,7 @@ const pastBlogs = [
         name: "Café Bar Elisabethen",
         urlName: "Elisabethen",
         postDate: new Date("2/5/2022"),
-        coverImg: "elisabethen/entrance.png",
+        coverImg: "titleImgs/elisabethen.png",
         writer: "Noée",
         shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop."
     },
