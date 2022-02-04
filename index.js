@@ -8,7 +8,7 @@ const pastBlogs = [
         postDate: new Date("2/5/2022"),
         coverImg: "titleImgs/alchemist.png",
         writer: "Noée",
-        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Dips, Suppen, Pommes, Brot, jedoch nicht normal."
+        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Speisen wie z.B. Dips, Suppen, Pommes, Brot."
     },
     {
         name: "Café Streuli",

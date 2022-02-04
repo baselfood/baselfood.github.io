@@ -21,7 +21,7 @@ html {
 /*---------------------------------------------------------------------------------------------*/
 
 #header {
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     background-color: navy;
     position: fixed;
@@ -432,8 +432,8 @@ html {
 }
 
 #footer p, #footer a {
-    padding: 1vh 1vw;
-    margin: 1vh 1vw;
+    top: 1vh;
+    position: relative;
 }
 
 #footer a:visited {
@@ -476,6 +476,11 @@ html {
         height: auto !important;
     }
     
+    /*-----------------------------------------------------------------------------------------*/
+    #header #logo {
+        left: calc(50vw - 4vh);
+    }
+
     /*-----------------------------------------------------------------------------------------*/
     
     @keyframes sideBarInactiveMobile {
