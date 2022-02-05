@@ -42,9 +42,8 @@ Number.prototype.clamp = function(min, max) {
 
 function toggleDarkmode() {
     const body = document.body;
-    const svg = document.getElementById("darkModeToggle");
     const Tables = document.querySelectorAll("#content table *");
-    const textElems = document.querySelectorAll("#content > p, td, th");
+    const textElems = document.querySelectorAll("#content > p, #content > td, #content > th");
     const elemsToSwitch = [...Tables, ...textElems, body];
     if (!elemsToSwitch[0].classList.contains("animate")){
         elemsToSwitch.forEach(x => x.classList.add("animate"))
@@ -66,16 +65,20 @@ function toggleDarkmode() {
 
 function makeHeader() {
     const headerElem = document.createElement("div");
-    headerElem.setAttribute("id", "header");
-    const logo = document.createElement("img");
-    logo.setAttribute("src", `${baseURL}/images/Logo.png`);
-    logo.setAttribute("id", "logo");
-    logo.setAttribute("onclick", `location.href = "${baseURL}/index.html"`);
-    const collapseSidebar = document.createElement("img");
-    collapseSidebar.setAttribute("id", "collapseSidebar");
-    collapseSidebar.setAttribute("src", `${baseURL}/images/menucollapse.png`);
-    collapseSidebar.setAttribute("onclick", "collapseSidebar()");
-    const darkModeToggle = document.createElement("img");
+    headerElem.id = "header";
+    const logo = new Image();
+    logo.src = `${baseURL}/images/Logo.png`;
+    logo.id = "logo";
+    logo.onclick = function() {
+        location.href = "${baseURL}/index.html"
+    }
+    const collapseSidebar = new Image();
+    collapseSidebar.id = "collapseSidebar";
+    collapseSidebar.src = `${baseURL}/images/menucollapse.png`;
+    collapseSidebar.onclick = function () {
+        collapseSidebar()
+    };
+    const darkModeToggle = new Image();
     darkModeToggle.id = "darkModeToggle";
     darkModeToggle.src = `${baseURL}/images/mode-toggle.png`
     darkModeToggle.onclick = function() {
@@ -87,8 +90,8 @@ function makeHeader() {
     if (!isMobile) {
         const aboutUs = document.createElement("a");
         aboutUs.innerText = "Über uns";
-        aboutUs.setAttribute("id", "aboutUs");
-        aboutUs.setAttribute("href", `${baseURL}/aboutus/index.html`)
+        aboutUs.id = "aboutUs";
+        aboutUs.href = `${baseURL}/aboutus/index.html`;
         headerElem.appendChild(aboutUs);
     }
     return headerElem;
