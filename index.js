@@ -88,7 +88,7 @@ function collapseSidebar() {
 }
 
 function isURL(URL) {
-    return URL.split("").slice(0, 8).join("") == "https://" || URL.split("").slice(0, 7).join("") == "http://"
+    return URL.slice(0, 8) == "https://" || URL.slice(0, 7) == "http://"
 }
 
 function makeHeader() {
