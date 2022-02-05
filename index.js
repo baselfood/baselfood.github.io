@@ -87,6 +87,10 @@ function collapseSidebar() {
     }
 }
 
+function isURL(URL) {
+    return URL.split("").slice(0, 8).join("") == "https://" || URL.split("").slice(0, 7).join("") == "http://"
+}
+
 function makeHeader() {
     const headerElem = document.createElement("div");
     headerElem.id = "header";
@@ -94,7 +98,7 @@ function makeHeader() {
     logo.src = `${baseURL}/images/Logo.png`;
     logo.id = "logo";
     logo.onclick = function() {
-        location.href = "${baseURL}/index.html"
+        location.href = `${baseURL}/index.html`
     }
     const collapseSidebarElem = new Image();
     collapseSidebarElem.id = "collapseSidebar";
@@ -179,7 +183,10 @@ function makeSidebar() {
         blog.onclick = function() {
             location.href = `${baseURL}/${pastBlog.urlName}/index.html`
         }
-        blog.innerHTML = `<span>${pastBlog.name} - ${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}</span>`
+        let pElem = document.createElement("p");
+        let theDate = `${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}`;
+        pElem.innerText = `${pastBlog.name} - ${theDate}`;
+        blog.appendChild(pElem);
         sideBar.appendChild(blog);
     }
     return sideBar
@@ -249,9 +256,17 @@ function makeInfoBox(dict) {
         let infoValue = document.createElement("td");
         infoValue.classList.add("infoValue");
         if (info == "Website") {
-            infoValue.innerHTML = `<a href="${dict[info]}" target="_blank">${dict[info]}</a>`
+            let aElem = document.createElement("a");
+            aElem.href = dict[info];
+            aElem.target = "_blank";
+            aElem.innerText = dict[info];
+            infoValue.appendChild(aElem);
         } else if (info == "Email") {
-            infoValue.innerHTML = `<a href="mailto:${dict[info]}" target="_blank">${dict[info]}</a>`
+            let aElem = document.createElement("a");
+            aElem.href = `mailto:${dict[info]}`;
+            aElem.target = "_blank";
+            aElem.innerText = dict[info];
+            infoValue.appendChild(aElem);
         } else {
             infoValue.innerText = dict[info];
         }
@@ -316,7 +331,7 @@ function makeLandingPage() {
         blogTitle.classList.add("blogTitle");
         
         let blogImg = new Image();
-        if (pastBlog.coverImg.split("").slice(0, 8).join("") == "https://" || pastBlog.coverImg.split("").slice(0, 7).join("") == "http://") {
+        if (isURL(pastBlog.coverImg)) {
         blogImg.src = pastBlog.coverImg;
     } else {
         blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
@@ -362,7 +377,7 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
                 if (img == "break") {
                     breakElem = document.createElement("br")
                     images.appendChild(breakElem)
-                } else if (img.split("").slice(0, 8).join("") == "https://" || img.split("").slice(0, 7).join("") == "http://") {
+                } else if (isURL(img)) {
                 let newImg = new Image();
                 newImg.src = img;
                 images.appendChild(newImg);
@@ -372,7 +387,7 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
                 images.appendChild(newImg)
             }
         }
-    } else if (imgs.constructor == String && imgs.split("").slice(0, 8).join("") == "https://" || imgs.split("").slice(0, 7).join("") == "http://") {
+    } else if (imgs.constructor == String && isURL(imgs)) {
     let newImg = new Image();
     newImg.src = img;
     images.appendChild(newImg);
