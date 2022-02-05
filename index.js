@@ -36,6 +36,9 @@ const pastBlogs = [
     },
 ]
 
+const reverseBlogs = reverseBlogs;
+reverseBlogs;
+
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
 }
@@ -168,7 +171,7 @@ function makeSidebar() {
         }
         sideBar.appendChild(blog);
     }
-    for (let pastBlog of pastBlogs.reverse()) {
+    for (let pastBlog of reverseBlogs) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
         if (`${baseURL}/${pastBlog.urlName}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
@@ -318,7 +321,7 @@ function makeLandingPage() {
     const blogs = document.createElement("div");
     blogs.id = "blogs";
     
-    for (let pastBlog of pastBlogs.reverse()) {
+    for (let pastBlog of reverseBlogs) {
         let containingDiv = document.createElement("div");
         containingDiv.id = pastBlog.urlName;
         
