@@ -66,6 +66,28 @@ function toggleDarkmode() {
     }
 }
 
+function collapseSidebar() {
+    const sideBar = document.getElementById("sidebar")
+    const content = document.getElementById("content")
+    const footer = document.getElementById("footer");
+    const elemsToSwitch = [sideBar, content, footer];
+    if (sideBar.classList.contains("active")) {
+        elemsToSwitch.forEach(x => {
+            x.classList.remove("active")
+            x.classList.add("inactive");
+        })
+    } else if (sideBar.classList.contains("inactive")) {
+        elemsToSwitch.forEach(x => {
+            x.classList.remove("inactive")
+            x.classList.add("active");
+        })
+    } else {
+        elemsToSwitch.forEach(x => {
+            x.classList.add("active");
+        })
+    }
+}
+
 function makeHeader() {
     const headerElem = document.createElement("div");
     headerElem.id = "header";
@@ -75,10 +97,10 @@ function makeHeader() {
     logo.onclick = function() {
         location.href = "${baseURL}/index.html"
     }
-    const collapseSidebar = new Image();
-    collapseSidebar.id = "collapseSidebar";
-    collapseSidebar.src = `${baseURL}/images/menucollapse.png`;
-    collapseSidebar.onclick = function () {
+    const collapseSidebarElem = new Image();
+    collapseSidebarElem.id = "collapseSidebar";
+    collapseSidebarElem.src = `${baseURL}/images/menucollapse.png`;
+    collapseSidebarElem.onclick = function () {
         collapseSidebar()
     };
     const darkModeToggle = new Image();
@@ -88,7 +110,7 @@ function makeHeader() {
         toggleDarkmode();
     }
     headerElem.appendChild(darkModeToggle);
-    headerElem.appendChild(collapseSidebar);
+    headerElem.appendChild(collapseSidebarElem);
     headerElem.appendChild(logo);
     if (!isMobile) {
         const aboutUs = document.createElement("a");
@@ -133,28 +155,6 @@ function makeFooter() {
     contact.href = "mailto:baselfoodblog@gmail.com"
     footer.appendChild(contact);
     return footer
-}
-
-function collapseSidebar() {
-    const sideBar = document.getElementById("sidebar")
-    const content = document.getElementById("content")
-    const footer = document.getElementById("footer");
-    const elemsToSwitch = [sideBar, content, footer];
-    if (sideBar.classList.contains("active")) {
-        elemsToSwitch.forEach(x => {
-            x.classList.remove("active")
-            x.classList.add("inactive");
-        })
-    } else if (sideBar.classList.contains("inactive")) {
-        elemsToSwitch.forEach(x => {
-            x.classList.remove("inactive")
-            x.classList.add("active");
-        })
-    } else {
-        elemsToSwitch.forEach(x => {
-            x.classList.add("active");
-        })
-    }
 }
 
 function makeSidebar() {
@@ -209,36 +209,23 @@ function makeRatingTable(dict) {
         let criteriaName = document.createElement("td");
         criteriaName.innerText = criteria.replaceAll("_", " ");
         let criteriaValue = document.createElement("td");
-        if (Number.isInteger(currentVal)) {
-            for (var i = 0; i < currentVal; i++) {
-                let newImg = new Image();
-                newImg.src = `${baseURL}/images/full-star.png`;
-                newImg.classList.add("star");
-                criteriaValue.appendChild(newImg)
-            }
-            for (var i = currentVal; i < 5; i++) {
-                let newImg = new Image();
-                newImg.src = `${baseURL}/images/empty-star.png`;
-                newImg.classList.add("star");
-                criteriaValue.appendChild(newImg);
-            }
-        } else {
-            for (var i = 1; i < currentVal; i++) {
-                let newImg = new Image();
-                newImg.src = `${baseURL}/images/full-star.png`;
-                newImg.classList.add("star");
-                criteriaValue.appendChild(newImg)
-            }
+        for (var i = 1; i <= currentVal; i++) {
+            let newImg = new Image();
+            newImg.src = `${baseURL}/images/full-star.png`;
+            newImg.classList.add("star");
+            criteriaValue.appendChild(newImg)
+        }
+        if (!Number.isInteger(currentVal)) {
             let newImg = new Image();
             newImg.src = `${baseURL}/images/half-star.png`;
             newImg.classList.add("star");
             criteriaValue.appendChild(newImg);
-            for (var i = currentVal; i < 4; i++) {
-                let newImg = new Image();
-                newImg.src = `${baseURL}/images/empty-star.png`;
-                newImg.classList.add("star");
-                criteriaValue.appendChild(newImg);
-            }
+        }
+        for (var i = currentVal; i <= 4; i++) {
+            let newImg = new Image();
+            newImg.src = `${baseURL}/images/empty-star.png`;
+            newImg.classList.add("star");
+            criteriaValue.appendChild(newImg);
         }
         tableRow.appendChild(criteriaName);
         tableRow.appendChild(criteriaValue);
@@ -282,15 +269,15 @@ function makeOpeningTimes(openingTimes) {
         console.error("D'Öffnigszite mien als {Object} formattiert si.");
     }
     const containingDiv = document.createElement("div");
-
+    
     const openingTimesTitle = document.createElement("h3");
     openingTimesTitle.innerText = "Öffnungszeiten";
     openingTimesTitle.id = "openingTimesTitle"
     containingDiv.appendChild(openingTimesTitle);
-
+    
     const Table = document.createElement("table");
     const Tbody = document.createElement("tbody");
-
+    
     for (let openingTimeElem in openingTimes) {
         let tableRow = document.createElement("tr");
         let openingDays = document.createElement("td");
@@ -331,31 +318,31 @@ function makeLandingPage() {
         
         let blogImg = new Image();
         if (pastBlog.coverImg.split("").slice(0, 8).join("") == "https://" || pastBlog.coverImg.split("").slice(0, 7).join("") == "http://") {
-            blogImg.src = pastBlog.coverImg;
-        } else {
-            blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
-        }
-        blogImg.classList.add("blogImg");
-        
-        let blogDescription = document.createElement("p");
-        blogDescription.innerText = pastBlog.shortDescription;
-        blogDescription.classList.add("blogDescription");
-        
-        let blogDate = document.createElement("p");
-        blogDate.innerText = pastBlog.postDate.toLocaleDateString("de-de");
-        blogDate.classList.add("blogDate");
-        
-        containingDiv.classList.add("blog");
-        containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/index.html`;
-        
-        containingDiv.appendChild(blogTitle);
-        containingDiv.appendChild(blogImg);
-        containingDiv.appendChild(blogDescription);
-        containingDiv.appendChild(blogDate);
-        blogs.appendChild(containingDiv);
+        blogImg.src = pastBlog.coverImg;
+    } else {
+        blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
     }
-    content.appendChild(blogs);
-    return content;
+    blogImg.classList.add("blogImg");
+    
+    let blogDescription = document.createElement("p");
+    blogDescription.innerText = pastBlog.shortDescription;
+    blogDescription.classList.add("blogDescription");
+    
+    let blogDate = document.createElement("p");
+    blogDate.innerText = pastBlog.postDate.toLocaleDateString("de-de");
+    blogDate.classList.add("blogDate");
+    
+    containingDiv.classList.add("blog");
+    containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/index.html`;
+    
+    containingDiv.appendChild(blogTitle);
+    containingDiv.appendChild(blogImg);
+    containingDiv.appendChild(blogDescription);
+    containingDiv.appendChild(blogDate);
+    blogs.appendChild(containingDiv);
+}
+content.appendChild(blogs);
+return content;
 }
 
 function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
@@ -401,10 +388,10 @@ images.id = "images";
 content.appendChild(images);
 }
 if (openingTimes) {
-        let openingTimesTable = makeOpeningTimes(openingTimes);
-        openingTimesTable.id = "openingTimes";
-        content.appendChild(openingTimesTable);
-    }
+    let openingTimesTable = makeOpeningTimes(openingTimes);
+    openingTimesTable.id = "openingTimes";
+    content.appendChild(openingTimesTable);
+}
 content.id = "content";
 text = text.split("\n")
 for (paragraph of text) {
