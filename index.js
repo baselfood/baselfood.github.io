@@ -358,7 +358,7 @@ function makeLandingPage() {
 function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
     const content = document.createElement("article");
     let titleElem = document.createElement("h1");
-    titleElem.setAttribute("id", "title");
+    titleElem.id = "title";
     titleElem.innerText = title;
     content.appendChild(titleElem);
     if (infoBox) {
@@ -402,11 +402,11 @@ if (openingTimes) {
         openingTimesTable.id = "openingTimes";
         content.appendChild(openingTimesTable);
     }
-content.setAttribute("id", "content");
+content.id = "content";
 text = text.split("\n")
 for (paragraph of text) {
     let pElem = document.createElement("p")
-    pElem.setAttribute("class", "paragraph");
+    pElem.classList.add("paragraph");
     pElem.innerText = paragraph
     content.appendChild(pElem)
 }
