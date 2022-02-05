@@ -1,6 +1,6 @@
 const baseURL = "file:///home/gian.zellweger/Downloads/baselfood.blog";
 var currentMode = "bright";
-const isMobile = window.matchMedia("(pointer:coarse)").matches;
+const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
 const pastBlogs = [
     {
         name: "Alchemist",
@@ -352,6 +352,7 @@ function makeLandingPage() {
     
     for (let pastBlog of pastBlogs.reverse()) {
         let containingDiv = document.createElement("div");
+        containingDiv.id = pastBlog.urlName;
         
         let blogTitle = document.createElement("h3");
         blogTitle.innerText = pastBlog.name;
