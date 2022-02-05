@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Elisabethen</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <script src="../index.js"></script>
+    <script type="text/javascript">
+        let favicons = makeFavicons();
+        document.head.innerHTML += favicons;
+        let Header = makeHeader()
+        document.body.appendChild(Header)
+        let content = makeMainContent("Café Bar Elisabethen", `Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche. Im Sommer bietet sich ein wunderschöner Aussenbereich an, um einen Cappuccino zu trinken oder eine kleine Mahlzeit zu essen. Ausserdem hat es einen sehr herzigen kleinen Innenbereich, in dem man an kalten Wintertagen sein kann. 
+        In dem Onlineshop, sowie auch vor Ort in der Café Bar kann man Weine, wie auch Bio-Reis und andere Produkte kaufen. Als kleine Speisen bietet das Café Suppen oder Salate an. Das Highlight von der Café Bar Elisabethen ist jedoch der Kaffee, der fast genauso wie in Italien schmeckt. 
+        Das Personal ist sehr freundlich und man fühlt sich schnell wohl. Für einen kurzen Stop zum Aufwärmen eignet sich das Café sehr und ist daher empfehlenswert.`, 
+        [
+            "elisabethen/cake.png",
+            "elisabethen/bottles.png",
+            "elisabethen/stairs.png",
+            "elisabethen/window.png",
+            "elisabethen/chairs.png",
+            "break",
+            "elisabethen/entrance.png",
+            "elisabethen/people.png",
+        ], 
+        {
+            Ambiente: 5, 
+            Preis_Leistungs_Verhältnis: 4, 
+            Qualität_der_Speisen: 4, 
+            Quantität_der_Auswahl: 2, 
+            Lage: 4, 
+            Hygiene: 4, 
+            Service: 4, 
+            Ausstattung: 3
+        }, 
+        {
+            Adresse: "Elisabethenstrasse 14 4051 Basel", 
+            Telefonnummer: "079 511 72 38",
+            Email: "joernschaerer@delitalia.ch",
+            Website: "https://www.cafebarelisabethen.com/"
+        },
+        {
+            Dienstag_bis_Freitag: "7.00 bis 19.00",
+            Samstag_und_Sonntag: "10.00 bis 18.00"
+        }
+        );
+        document.body.appendChild(content);
+        let sideBar = makeSidebar();
+        document.body.appendChild(sideBar);
+        let footer = makeFooter();
+        document.body.appendChild(footer);
+    </script>
+</body>
+</html>
