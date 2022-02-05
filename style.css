@@ -21,7 +21,7 @@ html {
 /*---------------------------------------------------------------------------------------------*/
 
 #header {
-    width: 100%;
+    width: max(100%, 100vw);
     height: 10vh;
     background-color: navy;
     position: fixed;
@@ -442,15 +442,21 @@ html {
 
 /*------------------------------Landing page stuff - ignore------------------------------------*/
 
+#content #blogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #content .blog {
     margin: 3vh 2vw;
     padding: 0px 1.5vw;
     width: max(27vw, 330px);
-    height: max(50vh, 500px);
+    height: max(55vh, 550px);
     display: inline-block;
     border: 10px solid rgba(30, 30, 30, 0.75);
     border-radius: 7.5%;
-    position: relative;
+    position:static;
 }
 
 #content .blog:hover {
@@ -468,7 +474,7 @@ html {
 
 /*---------------------------------------------------------------------------------------------*/
 
-@media (pointer:coarse) { /*generic mobile*/
+@media (pointer:coarse), only screen and (max-width: 768px) { /*generic mobile*/
     #content #images img {
         max-width: none;
         max-height: none;
