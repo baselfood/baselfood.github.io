@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Streuli</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <script src="../index.js"></script>
+    <script type="text/javascript">
+        let favicons = makeFavicons();
+        document.head.innerHTML += favicons;
+        let Header = makeHeader()
+        document.body.appendChild(Header)
+        let content = makeMainContent("Café Streuli", `Das Café Streuli liegt etwas versteckt auf dem Bruderholz und ist ein eher kleines Café. Man wird freundlich begrüsst und der Service ist sehr gut. Das Angebot besteht aus Café, Gebäck, Konfekt und ein Snackangebot z.B. Sandwiches, belegte Brote usw. 
+        Die Preise sind etwa im Mittelbereich, und im Vergleich zu den Produkten angemessen. Das Café ist auch gut für eine kurze Wegzerrung oder einen Take-Away Kaffee. Das Café bietet zusätzlich einen Packet Dienst an, bei dem Pakete gegen eine Gebühr abgegeben werden können. `, 
+        [
+            "https://media-cdn.tripadvisor.com/media/photo-s/12/00/a2/6d/sidewalk-seating-and.jpg",
+			"https://media-cdn.tripadvisor.com/media/photo-s/12/00/a9/cb/interior-view.jpg",
+            "https://hummel.cafe-streuli.ch/fileadmin/_processed_/d/0/csm_Feingebaeck_8e4f068eef.jpg",
+			"break",
+            "https://tse1.mm.bing.net/th?id=OIP.b1u2jmFCGFLSmHUOKtes7QHaJQ&pid=Api"
+        ], 
+        {
+            Ambiente: 3.5, 
+            Preis_Leistungs_Verhältnis: 4, 
+            Qualität_der_Speisen: 4.5, 
+            Quantität_der_Auswahl: 3, 
+            Lage: 5, 
+            Hygiene: 4.5, 
+            Service: 4.5, 
+            Ausstattung: 3.5
+        }, 
+        {
+            Adresse: "Auf dem Hummel 2 4059 Bruderholz", 
+            Telefonnummer: "061 362 07 10 (zu Bürozeiten)",
+            Email: "streuli.hummel@bluewin.com",
+            Website: "https://hummel.cafe-streuli.ch/"
+        },
+        {
+            Montag_bis_Fritag: "07.00 bis 18.00",
+            Samstag: "08.00 bis 17.00",
+            Sonntag: "09.00 bis 17.00"
+        }
+        )
+        document.body.appendChild(content)
+        let sideBar = makeSidebar();
+        document.body.appendChild(sideBar);
+        let footer = makeFooter()
+        document.body.appendChild(footer)
+    </script>
+</body>
+</html>

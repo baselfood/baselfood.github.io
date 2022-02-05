@@ -1,4 +1,4 @@
-const baseURL = "file:///Users/gian/Desktop/Foodblog";
+const baseURL = "file:///home/gian.zellweger/Downloads/baselfood.blog";
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse)").matches;
 const pastBlogs = [
