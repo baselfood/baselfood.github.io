@@ -36,8 +36,8 @@ const pastBlogs = [
     },
 ]
 
-const reverseBlogs = reverseBlogs;
-reverseBlogs;
+const reverseBlogs = pastBlogs.reverse();
+pastBlogs.reverse();
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
