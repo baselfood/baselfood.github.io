@@ -36,8 +36,7 @@ const pastBlogs = [
     },
 ]
 
-const reverseBlogs = pastBlogs.reverse();
-pastBlogs.reverse();
+const reverseBlogs = structuredClone(pastBlogs).reverse();
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
