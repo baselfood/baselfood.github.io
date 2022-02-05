@@ -1,4 +1,4 @@
-const baseURL = "file:///home/gian.zellweger/Downloads/baselfood.blog";
+const baseURL = "file:///Users/gian/Desktop/Foodblog";
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
 const pastBlogs = [
@@ -42,11 +42,10 @@ Number.prototype.clamp = function(min, max) {
 
 function toggleDarkmode() {
     const body = document.body;
-    const svgChildren = document.querySelectorAll("#darkModeToggle circle, #darkModeToggle path");
     const svg = document.getElementById("darkModeToggle");
     const Tables = document.querySelectorAll("#content table *");
     const textElems = document.querySelectorAll("#content > p, td, th");
-    const elemsToSwitch = [...Tables, ...textElems, ...svgChildren, body, svg];
+    const elemsToSwitch = [...Tables, ...textElems, body];
     if (!elemsToSwitch[0].classList.contains("animate")){
         elemsToSwitch.forEach(x => x.classList.add("animate"))
     }
@@ -65,45 +64,6 @@ function toggleDarkmode() {
     }
 }
 
-function makeDarkModeToggle() {
-    let svg = document.createElement("div");
-    svg.innerHTML = `
-    <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
-    <g transform="matrix(0.69,0,0,0.69,20.65,35.14)">
-    <circle cx="115" cy="94" r="50"/>
-    </g>
-    <g transform="matrix(1,0,0,0.853659,0,2.34146)">
-    <path d="M100,16L100,57"/>
-    </g>
-    <g transform="matrix(-1,1.22465e-16,-1.04543e-16,-0.853659,200,197.644)">
-    <path d="M100,16L100,57"/>
-    </g>
-    <g transform="matrix(-1.83697e-16,-1,0.853659,-1.56815e-16,2.35632,200)">
-    <path d="M100,16L100,57"/>
-    </g>
-    <g transform="matrix(6.12323e-17,1,-0.853659,5.22715e-17,197.644,3.55271e-15)">
-    <path d="M100,16L100,57"/>
-    </g>
-    <g transform="matrix(0.707495,0.706718,-0.603296,0.603959,98.1384,-39.5975)">
-    <path d="M100,16L100,57"/>
-    </g>
-    <g transform="matrix(-0.707495,-0.706718,0.603296,-0.603959,101.862,239.583)">
-    <path d="M100,16L100,57"/>
-    </g>
-    <g transform="matrix(0.706718,-0.707495,0.603959,0.603296,-39.5827,101.862)">
-    <path d="M100,16L100,57"/>
-    </g>
-    <g transform="matrix(-0.706718,0.707495,-0.603959,-0.603296,239.583,98.1384)">
-    <path d="M100,16L100,57"/>
-    </g>
-    </svg>`;
-    svg.id = "darkModeToggle";
-    svg.onclick = function() {
-        toggleDarkmode();
-    }
-    return svg;
-}
-
 function makeHeader() {
     const headerElem = document.createElement("div");
     headerElem.setAttribute("id", "header");
@@ -115,8 +75,13 @@ function makeHeader() {
     collapseSidebar.setAttribute("id", "collapseSidebar");
     collapseSidebar.setAttribute("src", `${baseURL}/images/menucollapse.png`);
     collapseSidebar.setAttribute("onclick", "collapseSidebar()");
-    const svg = makeDarkModeToggle();
-    headerElem.appendChild(svg)
+    const darkModeToggle = document.createElement("img");
+    darkModeToggle.id = "darkModeToggle";
+    darkModeToggle.src = `${baseURL}/images/mode-toggle.png`
+    darkModeToggle.onclick = function() {
+        toggleDarkmode();
+    }
+    headerElem.appendChild(darkModeToggle);
     headerElem.appendChild(collapseSidebar);
     headerElem.appendChild(logo);
     if (!isMobile) {

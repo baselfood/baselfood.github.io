@@ -5,7 +5,6 @@
 
 :root {
     --dark-mode-color: rgb(42, 42, 42);
-    --slightly-brighter: #696969;
     --sidebar-width: max(15vw, 150px);
     --content-width: calc(100vw - var(--sidebar-width) - 10vw);
 }
@@ -73,9 +72,12 @@ html {
 }
 
 #header #darkModeToggle {
-    right: 2vw;
+    padding: 1vh;
+    position: fixed;
     top: 1vh;
-    position: inherit;
+    right: 2vw;
+    width: auto;
+    height: 6vh;
     cursor: pointer;
     border-radius: 4vh;
     background-color: rgba(255, 255, 255, 0);
@@ -92,26 +94,6 @@ html {
     animation-name: fade;
     animation-duration: 0.25s;
     background-color: rgba(255, 255, 255, 0.75);
-}
-
-#header #darkModeToggle svg {
-    fill-rule: evenodd;
-    clip-rule: evenodd;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 1.5;
-    height: 8vh;
-    width: auto;
-}
-
-#header #darkModeToggle g circle {
-    fill: white;
-}
-
-#header #darkModeToggle g path {
-    fill: none;
-    stroke: white;
-    stroke-width: 11.2px;
 }
 
 /*---------------------------------------------------------------------------------------------*/
@@ -198,14 +180,10 @@ html {
     from {
         color: white;
         border-color: white;
-        fill: var(--slightly-brighter);
-        stroke: var(--slightly-brighter);
         background-color: var(--dark-mode-color);
     } to {
         color: black;
         border-color: black;
-        fill: white !important;
-        stroke: white !important;
         background-color: white;
     }
 }
@@ -214,14 +192,10 @@ html {
     from {
         color: black;
         border-color: black;
-        fill: white;
-        stroke: white;
         background-color: white;
     } to {
         color: white;
         border-color: white;
-        fill: var(--slightly-brighter);
-        stroke: var(--slightly-brighter);
         background-color: var(--dark-mode-color);
     }
 }
@@ -229,8 +203,6 @@ html {
 .dark {
     color: white;
     border-color: white !important;
-    fill: var(--slightly-brighter) !important;
-    stroke: var(--slightly-brighter) !important;
     background-color: var(--dark-mode-color);
 }
 
@@ -242,8 +214,6 @@ html {
 .bright {
     color: black;
     border-color: black !important;
-    fill: white !important;
-    stroke: white !important;
     background-color: white;
 }
 
