@@ -225,44 +225,13 @@ html::-webkit-scrollbar {
 
 /*---------------------------------------------------------------------------------------------*/
 
-@keyframes wideCon {
-    from {
-        margin-left: calc(5vw + var(--sidebar-width));
-    } to {
-        margin-left: 5vw;
-    }
-}
-
-@keyframes smallCon {
-    from {
-        margin-left: 5vw;
-    } to {
-        margin-left: calc(5vw + var(--sidebar-width));
-    }
-}
-
 #content {
     margin-top: 12vh;
     margin-top: max(12vh, 100px);
     margin-right: 5vw;
     font-size: 3vh;
     min-height: 76vh;
-}
-
-#content:not(.active):not(.inactive) {
-    margin-left: 5vw;
-}
-
-#content.inactive {
-    animation-name: wideCon;
-    animation-duration: 0.3s;
-    margin-left: 5vw;
-}
-
-#content.active {
-    margin-left: calc(5vw + var(--sidebar-width));
-    animation-name: smallCon;
-    animation-duration: 0.3s;
+    margin-left: calc(var(--content-width) - var(--sidebar-pos))
 }
 
 #content > * {
