@@ -5,7 +5,7 @@
 
 :root {
     --dark-mode-color: rgb(42, 42, 42);
-    --sidebar-width: max(15vw, 150px);
+    --sidebar-width: max(15vw, 250px);
     --content-width: calc(100vw - var(--sidebar-width) - 10vw);
 }
 
@@ -123,10 +123,8 @@ html::-webkit-scrollbar {
     height: 90vh;
     width: var(--sidebar-width);
     background-color: navy;
-    /*Start of the fuck*/
     max-height: 90%;
     overflow: scroll;
-    /*What the fuck*/
 }
 
 #sidebar:not(.active):not(.inactive) {
@@ -411,10 +409,6 @@ html::-webkit-scrollbar {
 #footer p, #footer a {
     top: 1vh;
     position: relative;
-    color: white !important;
-}
-
-#footer a:visited {
     color: white !important;
 }
 

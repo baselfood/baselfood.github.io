@@ -1,7 +1,7 @@
 const baseURL = "file:///Users/gian/Desktop/Foodblog";
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
-const pastBlogs = [
+var pastBlogs = [
     {
         name: "Alchemist",
         urlName: "Alchemist",
@@ -33,8 +33,10 @@ const pastBlogs = [
         coverImg: "titleImgs/elisabethen.png",
         writer: "Noée",
         shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop."
-    },
+    }
 ]
+
+pastBlogs = pastBlogs.concat(pastBlogs).concat(pastBlogs);
 
 if (typeof structuredClone === "undefined") {
     function structuredClone(obj) {
@@ -142,7 +144,7 @@ function makeHeader() {
         aboutUs.href = `${baseURL}/aboutus/index.html`;
         headerElem.appendChild(aboutUs);
     }
-    
+
     headerElem.appendChild(darkModeToggle);
     return headerElem;
 }
