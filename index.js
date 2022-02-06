@@ -36,12 +36,24 @@ const pastBlogs = [
     },
 ]
 
-const structuredClone = obj => {
-  const oldState = history.state;
-  history.replaceState(obj, null);
-  const clonedObj = history.state;
-  history.replaceState(oldState, null);
-  return clonedObj;
+if (typeof structuredClone === "undefined") {
+    function structuredClone(obj) {
+        const oldState = history.state;
+        history.replaceState(obj, null);
+        const clonedObj = history.state;
+        history.replaceState(oldState, null);
+        return clonedObj;
+    }
+}
+
+if (typeof String.prototype.replaceAll == "undefined") {
+    String.prototype.replaceAll = function(find, replace) {
+        x = structuredClone(this)
+        while(x.includes("find")) {
+            x = x.replace(find, replace);
+        }
+        return x;
+    }
 }
 
 const reverseBlogs = structuredClone(pastBlogs).reverse();
@@ -340,31 +352,31 @@ function makeLandingPage() {
         
         let blogImg = new Image();
         if (isURL(pastBlog.coverImg)) {
-        blogImg.src = pastBlog.coverImg;
-    } else {
-        blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
+            blogImg.src = pastBlog.coverImg;
+        } else {
+            blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
+        }
+        blogImg.classList.add("blogImg");
+        
+        let blogDescription = document.createElement("p");
+        blogDescription.innerText = pastBlog.shortDescription;
+        blogDescription.classList.add("blogDescription");
+        
+        let blogDate = document.createElement("p");
+        blogDate.innerText = pastBlog.postDate.toLocaleDateString("de");
+        blogDate.classList.add("blogDate");
+        
+        containingDiv.classList.add("blog");
+        containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/index.html`;
+        
+        containingDiv.appendChild(blogTitle);
+        containingDiv.appendChild(blogImg);
+        containingDiv.appendChild(blogDescription);
+        containingDiv.appendChild(blogDate);
+        blogs.appendChild(containingDiv);
     }
-    blogImg.classList.add("blogImg");
-    
-    let blogDescription = document.createElement("p");
-    blogDescription.innerText = pastBlog.shortDescription;
-    blogDescription.classList.add("blogDescription");
-    
-    let blogDate = document.createElement("p");
-    blogDate.innerText = pastBlog.postDate.toLocaleDateString("de");
-    blogDate.classList.add("blogDate");
-    
-    containingDiv.classList.add("blog");
-    containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/index.html`;
-    
-    containingDiv.appendChild(blogTitle);
-    containingDiv.appendChild(blogImg);
-    containingDiv.appendChild(blogDescription);
-    containingDiv.appendChild(blogDate);
-    blogs.appendChild(containingDiv);
-}
-content.appendChild(blogs);
-return content;
+    content.appendChild(blogs);
+    return content;
 }
 
 function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
@@ -389,46 +401,46 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
                     breakElem = document.createElement("br")
                     images.appendChild(breakElem)
                 } else if (isURL(img)) {
-                let newImg = new Image();
-                newImg.src = img;
-                images.appendChild(newImg);
-            } else {
-                let newImg = new Image();
-                newImg.src = `${baseURL}/images/${img}`;
-                images.appendChild(newImg)
+                    let newImg = new Image();
+                    newImg.src = img;
+                    images.appendChild(newImg);
+                } else {
+                    let newImg = new Image();
+                    newImg.src = `${baseURL}/images/${img}`;
+                    images.appendChild(newImg)
+                }
             }
+        } else if (imgs.constructor == String && isURL(imgs)) {
+            let newImg = new Image();
+            newImg.src = img;
+            images.appendChild(newImg);
+        } else if (imgs.constructor == String) {
+            let newImg = new Image();
+            newImg.src = `${baseURL}/images/${img}`;
+            images.appendChild(newImg)
+        } else {
+            console.error('Bilder mönn entweder e "String" oder e [Array] si.');
         }
-    } else if (imgs.constructor == String && isURL(imgs)) {
-    let newImg = new Image();
-    newImg.src = img;
-    images.appendChild(newImg);
-} else if (imgs.constructor == String) {
-    let newImg = new Image();
-    newImg.src = `${baseURL}/images/${img}`;
-    images.appendChild(newImg)
-} else {
-    console.error('Bilder mönn entweder e "String" oder e [Array] si.');
-}
-images.id = "images";
-content.appendChild(images);
-}
-if (openingTimes) {
-    let openingTimesTable = makeOpeningTimes(openingTimes);
-    openingTimesTable.id = "openingTimes";
-    content.appendChild(openingTimesTable);
-}
-content.id = "content";
-text = text.split("\n")
-for (paragraph of text) {
-    let pElem = document.createElement("p")
-    pElem.classList.add("paragraph");
-    pElem.innerText = paragraph
-    content.appendChild(pElem)
-}
-if (ratings) {
-    let ratingTable = makeRatingTable(ratings)	
-    ratingTable.id = "ratingTable"
-    content.appendChild(ratingTable)
-}
-return content
+        images.id = "images";
+        content.appendChild(images);
+    }
+    if (openingTimes) {
+        let openingTimesTable = makeOpeningTimes(openingTimes);
+        openingTimesTable.id = "openingTimes";
+        content.appendChild(openingTimesTable);
+    }
+    content.id = "content";
+    text = text.split("\n")
+    for (paragraph of text) {
+        let pElem = document.createElement("p")
+        pElem.classList.add("paragraph");
+        pElem.innerText = paragraph
+        content.appendChild(pElem)
+    }
+    if (ratings) {
+        let ratingTable = makeRatingTable(ratings)	
+        ratingTable.id = "ratingTable"
+        content.appendChild(ratingTable)
+    }
+    return content
 }
