@@ -18,6 +18,7 @@ html {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
 html::-webkit-scrollbar {
     display: none;
 }
@@ -25,8 +26,8 @@ html::-webkit-scrollbar {
 /*---------------------------------------------------------------------------------------------*/
 
 #header {
-    width: 100%;
-    width: max(100%, 100vw);
+    width: 100%; /*Fallback value for all browsers which don't support max(). You may see this multiple times.*/
+    width: max(100%, 100vw); 
     height: 10vh;
     background-color: navy;
     position: fixed;
@@ -34,12 +35,16 @@ html::-webkit-scrollbar {
     top: 0px;
     z-index: 9;
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header * {
+    margin: 0px 1vw;
 }
 
 #header #logo {
-    position: fixed;
-    top: 1vh;
-    left: 10vw;
     width: auto;
     height: 8vh;
     cursor: pointer;
@@ -47,9 +52,6 @@ html::-webkit-scrollbar {
 
 #header #collapseSidebar {
     padding: 1vh;
-    position: fixed;
-    top: 1vh;
-    left: 1vw;
     width: auto;
     height: 6vh;
     cursor: pointer;
@@ -71,16 +73,11 @@ html::-webkit-scrollbar {
 }
 
 #header #aboutUs {
-    position: fixed;
-    left: 23vw;
-    top: 3.5vh;
     color: white;
 }
 
 #header #darkModeToggle {
     margin: 1vh;
-    position: fixed;
-    right: 2vw;
     width: auto;
     height: 8vh;
     cursor: pointer;
@@ -469,11 +466,6 @@ font-size: 3vh;
     }
     
     /*-----------------------------------------------------------------------------------------*/
-    #header #logo {
-        left: calc(50vw - 4vh);
-    }
-    
-    /*-----------------------------------------------------------------------------------------*/
     
     @keyframes sideBarInactiveMobile {
         from {
@@ -546,8 +538,12 @@ font-size: 3vh;
     
     #content #ratingTable .star {
         min-height: 0px !important;
-        width: 5vw;
+        width: 6vw;
         height: auto;
+    }
+
+    #content #ratingTable {
+        font-size: min(22px, 2.2vh);
     }
 }
 

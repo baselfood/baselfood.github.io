@@ -132,9 +132,9 @@ function makeHeader() {
     darkModeToggle.onclick = function() {
         toggleDarkmode();
     }
-    headerElem.appendChild(darkModeToggle);
     headerElem.appendChild(collapseSidebarElem);
     headerElem.appendChild(logo);
+
     if (!isMobile) {
         const aboutUs = document.createElement("a");
         aboutUs.innerText = "Über uns";
@@ -142,6 +142,8 @@ function makeHeader() {
         aboutUs.href = `${baseURL}/aboutus/index.html`;
         headerElem.appendChild(aboutUs);
     }
+    
+    headerElem.appendChild(darkModeToggle);
     return headerElem;
 }
 
