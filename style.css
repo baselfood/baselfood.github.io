@@ -409,6 +409,7 @@ html::-webkit-scrollbar {
 #footer p, #footer a {
     top: 1vh;
     position: relative;
+    color: white !important;
 }
 
 #footer a:visited {
