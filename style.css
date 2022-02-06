@@ -5,8 +5,9 @@
 
 :root {
     --dark-mode-color: rgb(42, 42, 42);
-    --sidebar-width: max(15vw, 250px);
-    --content-width: calc(100vw - var(--sidebar-width) - 10vw);
+    --sidebar-width: max(15vw, 200px);
+    --content-width: calc(90vw - var(--sidebar-width));
+    --sidebar-pos: calc(0px - var(--sidebar-width));
 }
 
 body {
@@ -26,13 +27,16 @@ html::-webkit-scrollbar {
 /*---------------------------------------------------------------------------------------------*/
 
 #header {
-    width: 100%; /*Fallback value for all browsers which don't support max(). You may see this multiple times.*/
-    width: max(100%, 100vw); 
-    height: 10vh;
-    background-color: navy;
     position: fixed;
+    box-sizing: border-box;
+    width: 100%; /*Fallback value for all browsers which don't support max(). You may see this multiple times.*/
+    width: max(100%, 100vw);
+    height: 10vh;
+    height: max(10vh, 80px);
     left: 0px;
     top: 0px;
+    padding: 1vh 1vw;
+    background-color: navy;
     z-index: 9;
     font-family: 'Raleway', sans-serif;
     display: flex;
@@ -40,22 +44,18 @@ html::-webkit-scrollbar {
     align-items: center;
 }
 
-#header * {
-    margin: 0px 1vw;
-}
-
 #header #logo {
-    width: auto;
     height: 8vh;
+    height: max(8vh, 62.5px);
     cursor: pointer;
 }
 
 #header #collapseSidebar {
     padding: 1vh;
-    width: auto;
     height: 6vh;
+    height: max(6vh, 50px);
     cursor: pointer;
-    border-radius: 4vh;
+    border-radius: 100%;
     background-color: rgba(255, 255, 255, 0);
     transition: background-color 0.25s ease;
 }
@@ -78,10 +78,10 @@ html::-webkit-scrollbar {
 
 #header #darkModeToggle {
     margin: 1vh;
-    width: auto;
     height: 8vh;
+    height: max(8vh, 62.5px);
     cursor: pointer;
-    border-radius: 4vh;
+    border-radius: 100%;
     background-color: rgba(255, 255, 255, 0);
     transition: background-color 0.25s ease;
 }
@@ -102,43 +102,43 @@ html::-webkit-scrollbar {
 
 @keyframes sideBarInactive {
     from {
-        left: 0vw;
+        --sidebar-pos: 0px;
     } to {
-        left: calc(0px - var(--sidebar-width));
+        --sidebar-pos: calc(0px - var(--sidebar-width));
     }
 }
 
 @keyframes sideBarActive {
     from {
-        left: calc(0px - var(--sidebar-width));
+        --sidebar-pos: calc(0px - var(--sidebar-width));
     } to {
-        left: 0vw; 
+        --sidebar-pos: 0px;
     }
 }
 
 #sidebar {
     z-index: 10;
+    left: var(--sidebar-pos);
     top: 10vh;
+    top: max(10vh, 80px);
     position: fixed;
     height: 90vh;
     width: var(--sidebar-width);
     background-color: navy;
     max-height: 90%;
     overflow: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
 }
 
-#sidebar:not(.active):not(.inactive) {
-    left: calc(0px - var(--sidebar-width)); 
-}
 
 #sidebar.inactive {
-    left: calc(0px - var(--sidebar-width)); 
     animation-name: sideBarInactive;
     animation-duration: 0.3s;
 }
 
 #sidebar.active {
-    left: 0vw; 
     animation-name: sideBarActive;
     animation-duration: 0.3s;
 }
@@ -243,6 +243,7 @@ html::-webkit-scrollbar {
 
 #content {
     margin-top: 12vh;
+    margin-top: max(12vh, 100px);
     margin-right: 5vw;
     font-size: 3vh;
     min-height: 76vh;
@@ -268,7 +269,6 @@ html::-webkit-scrollbar {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     margin: 5vh auto;
     text-align: center;
-    width: auto;
 }
 
 #content p {
@@ -298,7 +298,6 @@ html::-webkit-scrollbar {
 #content #ratingTable .star {
     min-height: 30px;
     height: 2vw;
-    width: auto;
 }
 
 #content #infoBox {
@@ -355,7 +354,6 @@ html::-webkit-scrollbar {
     max-height: 25vw;
     max-height: max(25vw, 300px);
     margin: 4vh 2vw;
-    height: auto;
 }
 
 /*---------------------------------------------------------------------------------------------*/
@@ -445,7 +443,6 @@ font-size: 3vh;
 #content .blogImg {
     width: 23vw;
     width: max(23vw, 275px);
-    height: auto;
 }
 
 /*---------------------------------------------------------------------------------------------*/
@@ -533,7 +530,6 @@ font-size: 3vh;
     #content #ratingTable .star {
         min-height: 0px !important;
         width: 6vw;
-        height: auto;
     }
 
     #content #ratingTable {

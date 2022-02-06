@@ -1,7 +1,7 @@
 const baseURL = "file:///Users/gian/Desktop/Foodblog";
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
-var pastBlogs = [
+const pastBlogs = [
     {
         name: "Alchemist",
         urlName: "Alchemist",
@@ -33,10 +33,8 @@ var pastBlogs = [
         coverImg: "titleImgs/elisabethen.png",
         writer: "Noée",
         shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop."
-    }
+    },
 ]
-
-pastBlogs = pastBlogs.concat(pastBlogs).concat(pastBlogs);
 
 if (typeof structuredClone === "undefined") {
     function structuredClone(obj) {
@@ -57,8 +55,6 @@ if (typeof String.prototype.replaceAll == "undefined") {
         return x;
     }
 }
-
-const reverseBlogs = structuredClone(pastBlogs).reverse();
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
@@ -144,7 +140,6 @@ function makeHeader() {
         aboutUs.href = `${baseURL}/aboutus/index.html`;
         headerElem.appendChild(aboutUs);
     }
-
     headerElem.appendChild(darkModeToggle);
     return headerElem;
 }
@@ -198,7 +193,7 @@ function makeSidebar() {
         }
         sideBar.appendChild(blog);
     }
-    for (let pastBlog of reverseBlogs) {
+    for (let pastBlog of pastBlogs) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
         if (`${baseURL}/${pastBlog.urlName}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
@@ -346,7 +341,7 @@ function makeLandingPage() {
     const blogs = document.createElement("div");
     blogs.id = "blogs";
     
-    for (let pastBlog of reverseBlogs) {
+    for (let pastBlog of pastBlogs) {
         let containingDiv = document.createElement("div");
         containingDiv.id = pastBlog.urlName;
         
