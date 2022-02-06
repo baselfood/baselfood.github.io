@@ -150,15 +150,16 @@ html::-webkit-scrollbar {
 #sidebar .sideBarBlog {
     color: white !important;
     font-family: 'Raleway', sans-serif;
-    padding: 2vh 1vw;
+    padding: 1.5vh 1vw;
     margin-bottom: -1px;
+    height: min-content;
     border-top: 1px solid rgb(118, 158, 158);
     border-bottom: 1px solid rgb(118, 158, 158);
     text-align: center;
     cursor: pointer;
 }
 
-#sidebar .sideBarBlog span {
+#sidebar .sideBarBlog p {
     font-size: 1.8vh;
 }
 

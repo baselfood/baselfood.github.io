@@ -36,6 +36,14 @@ const pastBlogs = [
     },
 ]
 
+const structuredClone = obj => {
+  const oldState = history.state;
+  history.replaceState(obj, null);
+  const clonedObj = history.state;
+  history.replaceState(oldState, null);
+  return clonedObj;
+}
+
 const reverseBlogs = structuredClone(pastBlogs).reverse();
 
 Number.prototype.clamp = function(min, max) {
@@ -343,7 +351,7 @@ function makeLandingPage() {
     blogDescription.classList.add("blogDescription");
     
     let blogDate = document.createElement("p");
-    blogDate.innerText = pastBlog.postDate.toLocaleDateString("de-de");
+    blogDate.innerText = pastBlog.postDate.toLocaleDateString("de");
     blogDate.classList.add("blogDate");
     
     containingDiv.classList.add("blog");
@@ -360,6 +368,9 @@ return content;
 }
 
 function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
+    const pageTitle = document.createElement("title");
+    pageTitle.innerText = title;
+    document.head.appendChild(pageTitle);
     const content = document.createElement("article");
     let titleElem = document.createElement("h1");
     titleElem.id = "title";
