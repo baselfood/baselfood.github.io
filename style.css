@@ -25,8 +25,8 @@ html::-webkit-scrollbar {
 /*---------------------------------------------------------------------------------------------*/
 
 #header {
-    width: max(100%, 100vw);
     width: 100%;
+    width: max(100%, 100vw);
     height: 10vh;
     background-color: navy;
     position: fixed;
@@ -351,14 +351,14 @@ html::-webkit-scrollbar {
 }
 
 #content #images img {
-    min-width: max(10vw, 250px);
     min-width: 10vw;
-    min-height: max(8vw, 200px);
+    min-width: max(10vw, 250px);
     min-height: 8vw;
-    max-width: max(33vw, 400px);
+    min-height: max(8vw, 200px);
     max-width: 33vw;
-    max-height: max(25vw, 300px);
+    max-width: max(33vw, 400px);
     max-height: 25vw;
+    max-height: max(25vw, 300px);
     margin: 4vh 2vw;
     height: auto;
 }
@@ -432,10 +432,10 @@ html::-webkit-scrollbar {
 #content .blog {
     margin: 3vh 2vw;
     padding: 0px 1.5vw;
-    width: max(27vw, 330px);
     width: 27vw;
+    width: max(27vw, 330px);
+    height: 55vh;
     height: max(55vh, 550px);
-    width: 55vh;
     display: inline-block;
     border: 10px solid rgba(30, 30, 30, 0.75);
     border-radius: 7.5%;
@@ -447,13 +447,13 @@ html::-webkit-scrollbar {
 }
 
 #content .blog .blogTitle {
+font-size: 3vh;
     font-size: max(3vh, 30px);
-    font-size: 3vh;
 }
 
 #content .blogImg {
-    width: max(23vw, 275px);
     width: 23vw;
+    width: max(23vw, 275px);
     height: auto;
 }
 
