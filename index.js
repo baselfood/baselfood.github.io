@@ -85,7 +85,6 @@ function toggleDarkmode() {
 
 function collapseSidebar() {
     const sideBar = document.getElementById("sidebar");
-    const content = document.getElementById("content");
     const footer = document.getElementById("footer");
     const elemsToSwitch = [sideBar, content, footer];
     if (sideBar.classList.contains("active")) {
