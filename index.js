@@ -191,6 +191,9 @@ function makeSidebar() {
         blog.onclick = function() {
             location.href = `${baseURL}/aboutus/index.html`
         }
+        if (`${baseURL}/aboutus/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
+            blog.id = "currentBlog";
+        }
         sideBar.appendChild(blog);
     }
     for (let pastBlog of pastBlogs) {

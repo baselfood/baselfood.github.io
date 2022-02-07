@@ -236,6 +236,10 @@ html::-webkit-scrollbar {
     min-height: 76vh;
 }
 
+#content table {
+    border-collapse: collapse;
+}
+
 #content.inactive {
     animation-name: wideCon;
     animation-duration: 0.3s;
@@ -265,10 +269,6 @@ html::-webkit-scrollbar {
     font-size: xx-large;
 }
 
-#content #ratingTable {
-    border-collapse: collapse;
-}
-
 #content #ratingTable td, #content #ratingTable th {
     border: 1px solid;
     border-color: black;
@@ -281,7 +281,6 @@ html::-webkit-scrollbar {
 }
 
 #content #infoBox {
-    border-collapse: collapse;
     font-size: 2vh;
 }
 
@@ -302,7 +301,6 @@ html::-webkit-scrollbar {
 }
 
 #content #openingTimesTable {
-    border-collapse: collapse;
     font-size: 2vh;
     margin: 0px auto;
     font-size: large;
@@ -355,21 +353,17 @@ html::-webkit-scrollbar {
 }
 
 #footer {
-    position: relative;
     height: 100px;
-    padding: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin: 0px 0px 0px 0vw;
     bottom: 0px;
     background-color: navy;
     color: white;
     font-family: "Raleway", sans-serif;
     text-align: center;
-}
-
-#footer:not(.active):not(.inactive) {
-    margin-left: 0vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #footer.inactive {
@@ -384,10 +378,8 @@ html::-webkit-scrollbar {
     animation-duration: 0.3s;
 }
 
-#footer p, #footer a {
-    top: 1vh;
-    position: relative;
-    color: white !important;
+#footer * {
+    color: white;
 }
 
 /*------------------------------Landing page stuff - ignore------------------------------------*/
@@ -407,11 +399,8 @@ html::-webkit-scrollbar {
     height: max(55vh, 550px);
     display: inline-block;
     border: 10px solid rgba(30, 30, 30, 0.75);
-    border-radius: 7.5%;
-    position:static;
-}
-
-#content .blog:hover {
+    border-radius: 5%;
+    position: static;
     cursor: pointer;
 }
 
@@ -433,7 +422,6 @@ html::-webkit-scrollbar {
         max-height: none;
         width: 80vw;
         margin: 4vh 2vw;
-        height: auto !important;
     }
     
     /*-----------------------------------------------------------------------------------------*/
@@ -455,19 +443,7 @@ html::-webkit-scrollbar {
     }
     
     #sidebar {
-        top: 10vh;
-        position: fixed;
-        height: 100vh;
         width: 66vw;
-        padding: 0px 2vw;
-        background-color: navy;
-        /*Start of the fuck*/
-        max-height: 90%;
-        overflow: scroll;
-        /*What the fuck*/
-    }
-    
-    #sidebar:not(.active):not(.inactive) {
         left: -71vw; 
     }
     
@@ -483,36 +459,21 @@ html::-webkit-scrollbar {
         animation-duration: 0.3s;
     }
     
-    #sidebar p {
-        margin-block-start: 1vh;
-        margin-block-end: 1vh;
-        margin-left: 2vw !important;
-    }
-    
     /*-----------------------------------------------------------------------------------------*/
     
-    #content:not(.active):not(.inactive) {
-        margin-left: 5vw;
-    }
-    
-    #content.inactive {
+    #content {
         margin-left: 5vw !important;
-        animation-name: none !important;
-        animation-duration: 0s;
-    }
-    
-    #content.active {
-        margin-left: 5vw !important;
-        animation-name: none !important;
-        animation-duration: 0s;
+        animation: none;
     }
     
     #content #ratingTable .star {
         min-height: 0px !important;
         width: 6vw;
+        height: auto;
     }
     
     #content #ratingTable {
+        font-size: 22px;
         font-size: min(22px, 2.2vh);
     }
 }
@@ -523,6 +484,7 @@ html::-webkit-scrollbar {
         animation-duration: 0.25s;
         background-color: transparent !important;
     }
+
     #header #darkModeToggle:hover {
         animation-name: fade;
         animation-duration: 0.25s;
