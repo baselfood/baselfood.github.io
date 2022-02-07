@@ -1,4 +1,4 @@
-const baseURL = "file:///Users/gian/Desktop/Foodblog";
+const baseURL = "";
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
 const pastBlogs = [
