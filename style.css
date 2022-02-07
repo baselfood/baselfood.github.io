@@ -123,7 +123,6 @@ html::-webkit-scrollbar {
     height: 90vh;
     width: var(--sidebar-width);
     background-color: navy;
-    max-height: 90%;
     overflow: scroll;
     left: calc(0px - var(--sidebar-width));
     display: flex;
@@ -132,7 +131,7 @@ html::-webkit-scrollbar {
 }
 
 #sidebar.inactive {
-    left: calc(0px - var(--sidebar-width)) !important; 
+    left: calc(0px - var(--sidebar-width)); 
     animation-name: sideBarInactive;
     animation-duration: 0.3s;
 }
@@ -144,7 +143,7 @@ html::-webkit-scrollbar {
 }
 
 #sidebar .sideBarBlog {
-    color: white !important;
+    color: white;
     font-family: 'Raleway', sans-serif;
     padding: 1.5vh 1vw;
     margin-bottom: -1px;
@@ -162,18 +161,6 @@ html::-webkit-scrollbar {
 #sidebar .sideBarBlog#currentBlog {
     background-color: rgb(0, 0, 75);
 }
-
-#sidebar #aboutUs { /*Only for mobile*/
-    color: white !important;
-    font-family: 'Raleway', sans-serif;
-    padding: 2vh 1vw;
-    margin-bottom: -1px;
-    border-top: 1px solid rgb(118, 158, 158);
-    border-bottom: 1px solid rgb(118, 158, 158);
-    text-align: center;
-    cursor: pointer;
-}
-
 
 /*---------------------------------------------------------------------------------------------*/
 
@@ -242,15 +229,11 @@ html::-webkit-scrollbar {
 }
 
 #content {
-    margin-top: 12vh;
-    margin-top: max(12vh, 100px);
-    margin-right: 5vw;
+    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
+    margin: max(12vh, 100px) 5vw 0px 5vw;
+    margin: 12vh 5vw 0px 5vw;
     font-size: 3vh;
     min-height: 76vh;
-}
-
-#content:not(.active):not(.inactive) {
-    margin-left: 5vw;
 }
 
 #content.inactive {
@@ -266,13 +249,11 @@ html::-webkit-scrollbar {
 }
 
 #content > * {
-    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     margin: 5vh auto;
     text-align: center;
 }
 
 #content p {
-    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     font-size: large;
     font-weight: normal;
     margin: 3.5vh auto;
@@ -281,7 +262,6 @@ html::-webkit-scrollbar {
 #content #title {
     margin: 3vh auto 10vh;
     font-weight: bolder;
-    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     font-size: xx-large;
 }
 
@@ -436,7 +416,7 @@ html::-webkit-scrollbar {
 }
 
 #content .blog .blogTitle {
-font-size: 3vh;
+    font-size: 3vh;
     font-size: max(3vh, 30px);
 }
 
@@ -531,7 +511,7 @@ font-size: 3vh;
         min-height: 0px !important;
         width: 6vw;
     }
-
+    
     #content #ratingTable {
         font-size: min(22px, 2.2vh);
     }

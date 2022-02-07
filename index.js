@@ -185,7 +185,7 @@ function makeSidebar() {
     if (isMobile) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
-        const aboutUs = document.createElement("span");
+        const aboutUs = document.createElement("p");
         aboutUs.innerText = "Über uns";
         blog.appendChild(aboutUs);
         blog.onclick = function() {
