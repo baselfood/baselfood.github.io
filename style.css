@@ -7,7 +7,6 @@
     --dark-mode-color: rgb(42, 42, 42);
     --sidebar-width: max(15vw, 200px);
     --content-width: calc(90vw - var(--sidebar-width));
-    --sidebar-pos: calc(0px - var(--sidebar-width));
 }
 
 body {
@@ -102,23 +101,22 @@ html::-webkit-scrollbar {
 
 @keyframes sideBarInactive {
     from {
-        --sidebar-pos: 0px;
+        left: 0vw;
     } to {
-        --sidebar-pos: calc(0px - var(--sidebar-width));
+        left: calc(0px - var(--sidebar-width));
     }
 }
 
 @keyframes sideBarActive {
     from {
-        --sidebar-pos: calc(0px - var(--sidebar-width));
+        left: calc(0px - var(--sidebar-width));
     } to {
-        --sidebar-pos: 0px;
+        left: 0vw; 
     }
 }
 
 #sidebar {
     z-index: 10;
-    left: var(--sidebar-pos);
     top: 10vh;
     top: max(10vh, 80px);
     position: fixed;
@@ -127,18 +125,20 @@ html::-webkit-scrollbar {
     background-color: navy;
     max-height: 90%;
     overflow: scroll;
+    left: calc(0px - var(--sidebar-width));
     display: flex;
     flex-direction: column-reverse;
-    justify-content: start;
+    justify-content: flex-end;
 }
 
-
 #sidebar.inactive {
+    left: calc(0px - var(--sidebar-width)) !important; 
     animation-name: sideBarInactive;
     animation-duration: 0.3s;
 }
 
 #sidebar.active {
+    left: 0vw; 
     animation-name: sideBarActive;
     animation-duration: 0.3s;
 }
@@ -225,13 +225,44 @@ html::-webkit-scrollbar {
 
 /*---------------------------------------------------------------------------------------------*/
 
+@keyframes wideCon {
+    from {
+        margin-left: calc(5vw + var(--sidebar-width));
+    } to {
+        margin-left: 5vw;
+    }
+}
+
+@keyframes smallCon {
+    from {
+        margin-left: 5vw;
+    } to {
+        margin-left: calc(5vw + var(--sidebar-width));
+    }
+}
+
 #content {
     margin-top: 12vh;
     margin-top: max(12vh, 100px);
     margin-right: 5vw;
     font-size: 3vh;
     min-height: 76vh;
-    margin-left: calc(var(--content-width) - var(--sidebar-pos))
+}
+
+#content:not(.active):not(.inactive) {
+    margin-left: 5vw;
+}
+
+#content.inactive {
+    animation-name: wideCon;
+    animation-duration: 0.3s;
+    margin-left: 5vw;
+}
+
+#content.active {
+    margin-left: calc(5vw + var(--sidebar-width));
+    animation-name: smallCon;
+    animation-duration: 0.3s;
 }
 
 #content > * {
