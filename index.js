@@ -2,12 +2,12 @@ const baseURL = (isURL(location.href)) ? "" : ((location.href.slice(0, 7) == "fi
 
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
-const pastBlogs = [
+const pastBlogs = [ // Make blog class and make coverImg optional
     {
         name: "Alchemist",
         urlName: "Alchemist",
         postDate: new Date("2/5/2022"),
-        coverImg: "titleImgs/alchemist.png",
+        coverImg: "unreachable",
         writer: "Noée",
         shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Speisen wie z.B. Dips, Suppen, Pommes, Brot."
     },
@@ -31,10 +31,19 @@ const pastBlogs = [
         name: "Café Bar Elisabethen",
         urlName: "Elisabethen",
         postDate: new Date("2/5/2022"),
-        coverImg: "titleImgs/elisabethen.png",
+        coverImg: "unreachable",
         writer: "Noée",
         shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop."
     },
+    {
+        name: "1777 Café Restaurant Bar",
+        urlName: "1777",
+        postDate: new Date("2/5/2022"),
+        coverImg: "unreachable",
+        writer: "Noée",
+        shortDescription: "Das 1777 hat es sich zum Konzept genommen, die Konsument*innen genaustens entscheiden zu lassen, was ins Essen kommt."
+    },
+
 ]
 
 if (typeof structuredClone === "undefined") {
@@ -146,7 +155,8 @@ function makeHeader() {
 }
 
 function makeFavicons() {
-    let favicons = `<link rel="apple-touch-icon-precomposed" sizes="57x57" href="${baseURL}/images/favicomatic/apple-touch-icon-57x57.png" />
+    let favicons = `
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="${baseURL}/images/favicomatic/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${baseURL}/images/favicomatic/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${baseURL}/images/favicomatic/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${baseURL}/images/favicomatic/apple-touch-icon-144x144.png" />
@@ -187,7 +197,7 @@ function makeSidebar() {
     for (let pastBlog of pastBlogs) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
-        if (`${baseURL}/${pastBlog.urlName}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
+        if (`${baseURL}/${pastBlog.urlName}/index.html`.toLowerCase() == location.href.toLowerCase()) {
             blog.id = "currentBlog";
         }
         blog.onclick = function() {
@@ -209,7 +219,7 @@ function makeSidebar() {
         blog.onclick = function() {
             location.href = `${baseURL}/aboutus/index.html`
         }
-        if (`${baseURL}/aboutus/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
+        if (`${baseURL}/aboutus/index.html`.toLowerCase() == location.href.toLowerCase()) {
             blog.id = "currentBlog";
         }
         sideBar.appendChild(blog);
@@ -223,7 +233,7 @@ function makeSidebar() {
     blog.onclick = function() {
         location.href = `${baseURL}/index.html`
     }
-    if (`${baseURL}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
+    if (`${baseURL}/index.html`.toLowerCase() == location.href.toLowerCase()) {
         blog.id = "currentBlog";
     }
     sideBar.appendChild(blog);
@@ -252,7 +262,8 @@ function makeRatingTable(dict) {
         currentVal = currentVal.clamp(0, 5)
         let tableRow = document.createElement("tr");
         let criteriaName = document.createElement("td");
-        criteriaName.innerText = criteria.replaceAll("_", " ");
+        criteria = criteria.replaceAll("_", " ").replaceAll("ç", "-");
+        criteriaName.innerText = criteria;
         let criteriaValue = document.createElement("td");
         for (var i = 1; i <= currentVal; i++) {
             let newImg = new Image();
@@ -291,7 +302,8 @@ function makeInfoBox(dict) {
         let tableRow = document.createElement("tr");
         let infoName = document.createElement("td");
         infoName.classList.add("infoName")
-        infoName.innerText = info.replaceAll("_", " ");
+        info = info.replaceAll("_", " ").replaceAll("ç", "-")
+        infoName.innerText = info;
         let infoValue = document.createElement("td");
         infoValue.classList.add("infoValue");
         if (info == "Website") {
@@ -334,8 +346,8 @@ function makeOpeningTimes(openingTimes) {
     for (let openingTimeElem in openingTimes) {
         let tableRow = document.createElement("tr");
         let openingDays = document.createElement("td");
-        openingDays.classList.add("openingDays")
-        openingDays.innerText = openingTimeElem.replaceAll("_", " ");
+        openingDays.classList.add("openingDays");
+        openingDays.innerText = openingTimeElem.replaceAll("_", " ").replaceAll("ç", "-");
         let openingTime = document.createElement("td");
         openingTime.classList.add("openingTime");
         openingTime.innerText = openingTimes[openingTimeElem];
@@ -373,7 +385,7 @@ function makeLandingPage() {
         if (isURL(pastBlog.coverImg)) {
             blogImg.src = pastBlog.coverImg;
         } else {
-            blogImg.src = `${baseURL}/images/${pastBlog.coverImg}`;
+            blogImg.src = `${baseURL}/images/titleImgs/${pastBlog.urlName.toLowerCase()}.png`;
         }
         blogImg.classList.add("blogImg");
         
