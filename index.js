@@ -1,4 +1,5 @@
-const baseURL = "";
+const baseURL = (isURL(location.href)) ? "" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
+
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
 const pastBlogs = [
@@ -16,7 +17,7 @@ const pastBlogs = [
         postDate: new Date("2/5/2022"),
         coverImg: "https://hummel.cafe-streuli.ch/fileadmin/_processed_/d/0/csm_Feingebaeck_8e4f068eef.jpg",
         writer: "Arik",
-        shortDescription: "Das Café Streuli liegt etwas versteckt auf dem Bruderholz, in dem man Café, Gebäck, Konfekt und ein Snackangebot verzehren kann."
+        shortDescription: "Das Café Streuli liegt etwas versteckt auf dem Bruderholz. Dort kann man Café, Gebäck, Konfekt und ein Snackangebot verzehren."
     },
     {
         name: "Wiesengarten Musetti",
@@ -132,7 +133,7 @@ function makeHeader() {
     }
     headerElem.appendChild(collapseSidebarElem);
     headerElem.appendChild(logo);
-
+    
     if (!isMobile) {
         const aboutUs = document.createElement("a");
         aboutUs.innerText = "Über uns";
@@ -182,20 +183,7 @@ function makeFooter() {
 function makeSidebar() {
     const sideBar = document.createElement("div");
     sideBar.id = "sidebar";
-    if (isMobile) {
-        let blog = document.createElement("div");
-        blog.classList.add("sideBarBlog");
-        const aboutUs = document.createElement("p");
-        aboutUs.innerText = "Über uns";
-        blog.appendChild(aboutUs);
-        blog.onclick = function() {
-            location.href = `${baseURL}/aboutus/index.html`
-        }
-        if (`${baseURL}/aboutus/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
-            blog.id = "currentBlog";
-        }
-        sideBar.appendChild(blog);
-    }
+    
     for (let pastBlog of pastBlogs) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
@@ -211,6 +199,35 @@ function makeSidebar() {
         blog.appendChild(pElem);
         sideBar.appendChild(blog);
     }
+    
+    if (isMobile) {
+        let blog = document.createElement("div");
+        blog.classList.add("sideBarBlog");
+        const aboutUs = document.createElement("p");
+        aboutUs.innerText = "Über uns";
+        blog.appendChild(aboutUs);
+        blog.onclick = function() {
+            location.href = `${baseURL}/aboutus/index.html`
+        }
+        if (`${baseURL}/aboutus/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
+            blog.id = "currentBlog";
+        }
+        sideBar.appendChild(blog);
+    }
+    
+    let blog = document.createElement("div");
+    blog.classList.add("sideBarBlog");
+    const aboutUs = document.createElement("p");
+    aboutUs.innerText = "Startseite";
+    blog.appendChild(aboutUs);
+    blog.onclick = function() {
+        location.href = `${baseURL}/index.html`
+    }
+    if (`${baseURL}/index.html`.toLocaleLowerCase() == location.href.toLocaleLowerCase()) {
+        blog.id = "currentBlog";
+    }
+    sideBar.appendChild(blog);
+    
     return sideBar
 }
 
@@ -382,19 +399,24 @@ function makeLandingPage() {
 }
 
 function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
+    
     const pageTitle = document.createElement("title");
     pageTitle.innerText = title;
     document.head.appendChild(pageTitle);
+    
     const content = document.createElement("article");
+    
     let titleElem = document.createElement("h1");
     titleElem.id = "title";
     titleElem.innerText = title;
     content.appendChild(titleElem);
-    if (infoBox) {
-        let infoBoxTable = makeInfoBox(infoBox);
-        infoBoxTable.id = "infoBox";
-        content.appendChild(infoBoxTable);
-    }
+    
+    let thisBlog = pastBlogs.find(x => x.name == title);
+    const shortDescription = document.createElement("p");
+    shortDescription.id = "shortDescription";
+    shortDescription.innerText = thisBlog.shortDescription;
+    content.appendChild(shortDescription);
+    
     if (imgs) {
         const images = document.createElement("div")
         if (imgs.constructor == Array) {
@@ -443,6 +465,11 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
         let ratingTable = makeRatingTable(ratings)	
         ratingTable.id = "ratingTable"
         content.appendChild(ratingTable)
+    }
+    if (infoBox) {
+        let infoBoxTable = makeInfoBox(infoBox);
+        infoBoxTable.id = "infoBox";
+        content.appendChild(infoBoxTable);
     }
     return content
 }

@@ -386,7 +386,8 @@ html::-webkit-scrollbar {
 
 #content #blogs {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row-reverse;
+    flex-wrap: wrap-reverse;
     justify-content: center;
 }
 
