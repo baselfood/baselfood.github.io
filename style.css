@@ -476,6 +476,13 @@ html::-webkit-scrollbar {
         font-size: 22px;
         font-size: min(22px, 2.2vh);
     }
+
+    /*-------------------------------------------------------------------------------------------*/
+
+    #footer {
+        margin-left: 0vw !important;
+        animation: none;
+    }
 }
 
 @media (hover:none), (hover:on-demand) {  /*hover rules*/
