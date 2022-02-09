@@ -66,6 +66,16 @@ if (typeof String.prototype.replaceAll == "undefined") {
     }
 }
 
+if (typeof Array.prototype.at == "undefined") {
+    Array.prototype.at = function(index) {
+        if (index < 0) {
+            return this[this.length + index]
+        } else {
+            return this[index];
+        }
+    }
+}
+
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
 }
