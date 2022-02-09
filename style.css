@@ -396,8 +396,8 @@ html::-webkit-scrollbar {
     padding: 0px 1.5vw;
     width: 27vw;
     width: max(27vw, 330px);
-    height: 55vh;
-    height: max(55vh, 550px);
+    height: 70vh;
+    height: max(70vh, 550px);
     display: inline-block;
     border: 10px solid rgba(30, 30, 30, 0.75);
     border-radius: 5%;

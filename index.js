@@ -1,4 +1,4 @@
-const baseURL = (isURL(location.href)) ? "" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
+const baseURL = (isURL(location.href)) ? "baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
 
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
