@@ -23,7 +23,7 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         name: "Wiesengarten Musetti",
         urlName: "Musetti",
         postDate: new Date("2/5/2022"),
-        coverImg: "http://www.wiesengartenmusetti.ch/images/show/imp_14.jpg",
+        coverImg: "https://www.wiesengartenmusetti.ch/images/show/imp_14.jpg",
         writer: "Arik",
         shortDescription: "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage."
     },
