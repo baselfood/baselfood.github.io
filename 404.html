@@ -14,7 +14,8 @@
         document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header);
-        let content = makeMainContent("404!", "Das Dokument, welches angefordert wurde, existiert nicht. Schau einmal, ob du einen Schreibfehler gemacht hast.");
+        let content = makeMainContent("404!", `Das Dokument, welches angefordert wurde, existiert nicht. Schau einmal, ob du einen Schreibfehler gemacht hast.
+        Wenn nicht, dann kontaktier uns doch bitte und melde den Fehler.`);
         document.body.appendChild(content)
         let sideBar = makeSidebar();
         document.body.appendChild(sideBar);
