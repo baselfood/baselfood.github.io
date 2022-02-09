@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <title>Über uns</title>
 </head>
 <body>
     <script src="../index.js"></script>
     <script type="text/javascript">
+        let favicons = makeFavicons();
+        document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
         let content = makeMainContent("Über uns", `Wir sind Arik, Noée und Gian. Wir haben uns als Abschlussprojekt der Sekundarschule für einen Foodblog entschieden, der (hoffentlich) wöchentlich mit neuen Bewertungen von Restaurants und Cafés der Region Basel erscheint.

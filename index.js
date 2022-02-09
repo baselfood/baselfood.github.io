@@ -123,12 +123,14 @@ function makeHeader() {
     const headerElem = document.createElement("div");
     headerElem.id = "header";
     const logo = new Image();
-    logo.src = `${baseURL}/images/Logo.png`;
     logo.id = "logo";
+    logo.src = `${baseURL}/images/Logo.png`;
+    logo.alt = "Return to Homepage";
     logo.onclick = function() {
         location.href = `${baseURL}/index.html`
     }
     const collapseSidebarElem = new Image();
+    collapseSidebarElem.alt = "collapse sidebar button";
     collapseSidebarElem.id = "collapseSidebar";
     collapseSidebarElem.src = `${baseURL}/images/menucollapse.png`;
     collapseSidebarElem.onclick = function () {
@@ -136,6 +138,7 @@ function makeHeader() {
     };
     const darkModeToggle = new Image();
     darkModeToggle.id = "darkModeToggle";
+    darkModeToggle.alt = "Toggle Dark Mode"
     darkModeToggle.src = `${baseURL}/images/mode-toggle.png`
     darkModeToggle.onclick = function() {
         toggleDarkmode();
@@ -176,6 +179,7 @@ function makeFavicons() {
     <meta name="msapplication-square150x150logo" content="${baseURL}/images/favicomatic/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="${baseURL}/images/favicomatic/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="${baseURL}/images/favicomatic/mstile-310x310.png" />`;
+    
     return favicons;
 }
 
@@ -269,18 +273,21 @@ function makeRatingTable(dict) {
             let newImg = new Image();
             newImg.src = `${baseURL}/images/full-star.png`;
             newImg.classList.add("star");
+            newImg.alt = "star";
             criteriaValue.appendChild(newImg)
         }
         if (!Number.isInteger(currentVal)) {
             let newImg = new Image();
             newImg.src = `${baseURL}/images/half-star.png`;
             newImg.classList.add("star");
+            newImg.alt = "star";
             criteriaValue.appendChild(newImg);
         }
         for (var i = currentVal; i <= 4; i++) {
             let newImg = new Image();
             newImg.src = `${baseURL}/images/empty-star.png`;
             newImg.classList.add("star");
+            newImg.alt = "star";
             criteriaValue.appendChild(newImg);
         }
         tableRow.appendChild(criteriaName);
@@ -382,6 +389,7 @@ function makeLandingPage() {
         blogTitle.classList.add("blogTitle");
         
         let blogImg = new Image();
+        blogImg.alt = pastBlog.name;
         if (isURL(pastBlog.coverImg)) {
             blogImg.src = pastBlog.coverImg;
         } else {
@@ -424,10 +432,12 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
     content.appendChild(titleElem);
     
     let thisBlog = pastBlogs.find(x => x.name == title);
-    const shortDescription = document.createElement("p");
+    if (typeof thisBlog != "undefined") {
+        const shortDescription = document.createElement("p");
     shortDescription.id = "shortDescription";
     shortDescription.innerText = thisBlog.shortDescription;
     content.appendChild(shortDescription);
+    }
     
     if (imgs) {
         const images = document.createElement("div")
@@ -439,20 +449,24 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
                 } else if (isURL(img)) {
                     let newImg = new Image();
                     newImg.src = img;
+                    newImg.alt = img.split(".").join("/").split("/").at(-2);
                     images.appendChild(newImg);
                 } else {
                     let newImg = new Image();
                     newImg.src = `${baseURL}/images/${img}`;
+                    newImg.alt = img.split(".").join("/").split("/").at(-2);
                     images.appendChild(newImg)
                 }
             }
         } else if (imgs.constructor == String && isURL(imgs)) {
             let newImg = new Image();
-            newImg.src = img;
+            newImg.src = imgs;
+            newImg.alt = imgs.split(".").join("/").split("/").at(-2);
             images.appendChild(newImg);
         } else if (imgs.constructor == String) {
             let newImg = new Image();
-            newImg.src = `${baseURL}/images/${img}`;
+            newImg.src = `${baseURL}/images/${imgs}`;
+            newImg.alt = img.split(".").join("/").split("/").at(-2)
             images.appendChild(newImg)
         } else {
             console.error('Bilder mönn entweder e "String" oder e [Array] si.');
