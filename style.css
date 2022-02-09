@@ -230,8 +230,8 @@ html::-webkit-scrollbar {
 
 #content {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
-    margin: max(12vh, 100px) 5vw 0px 5vw;
     margin: 12vh 5vw 0px 5vw;
+    margin: max(12vh, 100px) 5vw 0px 5vw;
     font-size: 3vh;
     min-height: 76vh;
 }
@@ -418,6 +418,7 @@ html::-webkit-scrollbar {
 /*---------------------------------------------------------------------------------------------*/
 
 @media (pointer:coarse), only screen and (max-width: 768px) { /*generic mobile*/
+
     #content #images img {
         max-width: none;
         max-height: none;
