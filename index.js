@@ -1,5 +1,21 @@
 const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
 
+class blog {
+    constructor(name, text, imgs, ratings, infoBox, openingTimes, urlName, postDate, writer, shortDescription) {
+        this.name = name;
+        this.urlName = urlName;
+        this.text = text;
+        this.imgs = imgs;
+        this.ratings = ratings;
+        this.infoBox = infoBox;
+        this.openingTimes = openingTimes;
+        this.postDate = postDate;
+        this.writer = writer;
+        this.shortDescription = shortDescription
+    }
+}
+
+
 var currentMode = "bright";
 const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
 const pastBlogs = [ // Make blog class and make coverImg optional
