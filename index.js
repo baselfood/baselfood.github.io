@@ -22,7 +22,7 @@ const pastBlogs = [ // Make blog class and make coverImg optional
     {
         name: "Alchemist",
         urlName: "Alchemist",
-        postDate: new Date("2/5/2022"),
+        postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Noée",
         shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Speisen wie z.B. Dips, Suppen, Pommes, Brot."
@@ -30,7 +30,7 @@ const pastBlogs = [ // Make blog class and make coverImg optional
     {
         name: "Café Streuli",
         urlName: "Streuli",
-        postDate: new Date("2/5/2022"),
+        postDate: new Date("2/9/2022"),
         coverImg: "https://hummel.cafe-streuli.ch/fileadmin/_processed_/d/0/csm_Feingebaeck_8e4f068eef.jpg",
         writer: "Arik",
         shortDescription: "Das Café Streuli liegt etwas versteckt auf dem Bruderholz. Dort kann man Café, Gebäck, Konfekt und ein Snackangebot verzehren."
@@ -38,7 +38,7 @@ const pastBlogs = [ // Make blog class and make coverImg optional
     {
         name: "Wiesengarten Musetti",
         urlName: "Musetti",
-        postDate: new Date("2/5/2022"),
+        postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Arik",
         shortDescription: "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage."
@@ -46,7 +46,7 @@ const pastBlogs = [ // Make blog class and make coverImg optional
     {
         name: "Café Bar Elisabethen",
         urlName: "Elisabethen",
-        postDate: new Date("2/5/2022"),
+        postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Noée",
         shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop."
@@ -54,7 +54,7 @@ const pastBlogs = [ // Make blog class and make coverImg optional
     {
         name: "1777 Café Restaurant Bar",
         urlName: "1777",
-        postDate: new Date("2/5/2022"),
+        postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Noée",
         shortDescription: "Das 1777 hat es sich zum Konzept genommen, die Konsument*innen genaustens entscheiden zu lassen, was ins Essen kommt."
