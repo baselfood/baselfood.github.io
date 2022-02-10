@@ -212,10 +212,17 @@ function makeFavicons() {
 function makeFooter() {
     const footer = document.createElement("footer");
     footer.id = "footer";
+
     const contact = document.createElement("a");
     contact.innerText = "Kontaktier uns!"
     contact.target = "_blank"
     contact.href = "mailto:baselfoodblog@gmail.com"
+    
+    const instagram = document.createElement("a");
+    instagram.innerText = "Unser Instagram";
+    instagram.target = "_blank";
+    instagram.href = "https://instagram.com/baselfood_blog";
+    footer.appendChild(instagram);
     footer.appendChild(contact);
     return footer
 }
