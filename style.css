@@ -411,7 +411,7 @@ html {
 
 /*---------------------------------------------------------------------------------------------*/
 
-@media (pointer:coarse), only screen and (max-width: 768px) { /*generic mobile*/
+@media only screen and (max-width: 768px) { /*generic mobile*/
 
     #content #images img {
         max-width: none;

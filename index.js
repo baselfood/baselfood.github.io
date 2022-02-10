@@ -17,7 +17,7 @@ class blog {
 
 
 var currentMode = "bright";
-const isMobile = window.matchMedia("(pointer:coarse), only screen and (max-width: 768px)").matches;
+const isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 const pastBlogs = [ // Make blog class and make coverImg optional
     {
         name: "Alchemist",
