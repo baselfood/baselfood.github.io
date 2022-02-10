@@ -153,7 +153,7 @@ function makeHeader() {
     logo.src = `${baseURL}/images/Logo.png`;
     logo.alt = "Return to Homepage";
     logo.onclick = function() {
-        location.href = `${baseURL}/index.html`
+        location.href = baseURL
     }
     const collapseSidebarElem = new Image();
     collapseSidebarElem.alt = "collapse sidebar button";
@@ -176,7 +176,7 @@ function makeHeader() {
         const aboutUs = document.createElement("a");
         aboutUs.innerText = "Über uns";
         aboutUs.id = "aboutUs";
-        aboutUs.href = `${baseURL}/aboutus/index.html`;
+        aboutUs.href = `${baseURL}/aboutus/`;
         headerElem.appendChild(aboutUs);
     }
     headerElem.appendChild(darkModeToggle);
@@ -227,11 +227,11 @@ function makeSidebar() {
     for (let pastBlog of pastBlogs) {
         let blog = document.createElement("div");
         blog.classList.add("sideBarBlog");
-        if (`${baseURL}/${pastBlog.urlName}/index.html`.toLowerCase() == location.href.toLowerCase()) {
+        if (`${baseURL}/${pastBlog.urlName}/`.toLowerCase() == location.href.toLowerCase()) {
             blog.id = "currentBlog";
         }
         blog.onclick = function() {
-            location.href = `${baseURL}/${pastBlog.urlName}/index.html`
+            location.href = `${baseURL}/${pastBlog.urlName}/`
         }
         let pElem = document.createElement("p");
         let theDate = `${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}`;
@@ -247,9 +247,9 @@ function makeSidebar() {
         aboutUs.innerText = "Über uns";
         blog.appendChild(aboutUs);
         blog.onclick = function() {
-            location.href = `${baseURL}/aboutus/index.html`
+            location.href = `${baseURL}/aboutus/`
         }
-        if (`${baseURL}/aboutus/index.html`.toLowerCase() == location.href.toLowerCase()) {
+        if (`${baseURL}/aboutus/`.toLowerCase() == location.href.toLowerCase()) {
             blog.id = "currentBlog";
         }
         sideBar.appendChild(blog);
@@ -261,9 +261,9 @@ function makeSidebar() {
     aboutUs.innerText = "Startseite";
     blog.appendChild(aboutUs);
     blog.onclick = function() {
-        location.href = `${baseURL}/index.html`
+        location.href = baseURL
     }
-    if (`${baseURL}/index.html`.toLowerCase() == location.href.toLowerCase()) {
+    if (baseURL.toLowerCase() == location.href.toLowerCase()) {
         blog.id = "currentBlog";
     }
     sideBar.appendChild(blog);
@@ -432,7 +432,7 @@ function makeLandingPage() {
         blogDate.classList.add("blogDate");
         
         containingDiv.classList.add("blog");
-        containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/index.html`;
+        containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/`;
         
         containingDiv.appendChild(blogTitle);
         containingDiv.appendChild(blogImg);
