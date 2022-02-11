@@ -221,7 +221,11 @@ function makeFooter() {
     const instagram = document.createElement("a");
     instagram.innerText = "Unser Instagram";
     instagram.target = "_blank";
-    instagram.href = "https://www.instagram.com/_u/baselfood_blog/";
+    if (isMobile) {
+        instagram.href = "instagram://user?username=baselfood_blog";
+    } else {
+        instagram.href = "https://www.instagram.com/_u/baselfood_blog/";
+    }
     footer.appendChild(contact);
     footer.appendChild(instagram);
     return footer
