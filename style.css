@@ -348,7 +348,7 @@ html {
 
 #footer {
     height: 100px;
-    margin: 0px 0px 0px 0vw;
+    margin: 0px;
     bottom: 0px;
     background-color: navy;
     color: white;
@@ -356,8 +356,8 @@ html {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-evenly;
+    flex-direction: row;
 }
 
 #footer.inactive {
@@ -374,6 +374,7 @@ html {
 
 #footer * {
     color: white;
+    margin: auto 0px;
 }
 
 /*------------------------------Landing page stuff - ignore------------------------------------*/

@@ -222,8 +222,8 @@ function makeFooter() {
     instagram.innerText = "Unser Instagram";
     instagram.target = "_blank";
     instagram.href = "https://instagram.com/baselfood_blog";
-    footer.appendChild(instagram);
     footer.appendChild(contact);
+    footer.appendChild(instagram);
     return footer
 }
 
