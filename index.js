@@ -25,7 +25,8 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Noée",
-        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Speisen wie z.B. Dips, Suppen, Pommes, Brot."
+        shortDescription: "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Speisen wie z.B. Dips, Suppen, Pommes, Brot.",
+        pos: new google.maps.LatLng(47.5595824, 7.5882457)
     },
     {
         name: "Café Streuli",
@@ -33,7 +34,8 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         postDate: new Date("2/9/2022"),
         coverImg: "https://hummel.cafe-streuli.ch/fileadmin/_processed_/d/0/csm_Feingebaeck_8e4f068eef.jpg",
         writer: "Arik",
-        shortDescription: "Das Café Streuli liegt etwas versteckt auf dem Bruderholz. Dort kann man Café, Gebäck, Konfekt und ein Snackangebot verzehren."
+        shortDescription: "Das Café Streuli liegt etwas versteckt auf dem Bruderholz. Dort kann man Café, Gebäck, Konfekt und ein Snackangebot verzehren.",
+        pos: new google.maps.LatLng(47.5320943, 7.5932226)
     },
     {
         name: "Wiesengarten Musetti",
@@ -41,7 +43,8 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Arik",
-        shortDescription: "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage."
+        shortDescription: "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage.",
+        pos: new google.maps.LatLng(47.5914631, 7.6473783)
     },
     {
         name: "Café Bar Elisabethen",
@@ -49,7 +52,8 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Noée",
-        shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop."
+        shortDescription: "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop.",
+        pos: new google.maps.LatLng(47.5527293, 7.5911635)
     },
     {
         name: "1777 Café Restaurant Bar",
@@ -57,7 +61,8 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         postDate: new Date("2/9/2022"),
         coverImg: "unreachable",
         writer: "Noée",
-        shortDescription: "Das 1777 hat es sich zum Konzept genommen, die Konsument*innen genaustens entscheiden zu lassen, was ins Essen kommt."
+        shortDescription: "Das 1777 hat es sich zum Konzept genommen, die Konsument*innen genaustens entscheiden zu lassen, was ins Essen kommt.",
+        pos: new google.maps.LatLng(47.5570095, 7.5877449)
     },
 
 ]
