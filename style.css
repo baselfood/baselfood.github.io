@@ -19,6 +19,16 @@ html {
 
 /*---------------------------------------------------------------------------------------------*/
 
+#map {
+    border: 10px solid rgb(134, 134, 134);
+    border-radius: 20px;
+    height: 70vh;
+    width: 65vw;
+    margin: auto;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
 #header {
     position: fixed;
     box-sizing: border-box;
@@ -413,7 +423,7 @@ html {
 /*---------------------------------------------------------------------------------------------*/
 
 @media only screen and (max-width: 768px) { /*generic mobile*/
-
+    
     #content #images img {
         max-width: none;
         max-height: none;
@@ -473,9 +483,9 @@ html {
         font-size: 22px;
         font-size: min(22px, 2.2vh);
     }
-
+    
     /*-------------------------------------------------------------------------------------------*/
-
+    
     #footer {
         margin-left: 0vw !important;
         animation: none;
@@ -488,7 +498,7 @@ html {
         animation-duration: 0.25s;
         background-color: transparent !important;
     }
-
+    
     #header #darkModeToggle:hover {
         animation-name: fade;
         animation-duration: 0.25s;
