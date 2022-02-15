@@ -544,13 +544,9 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
     return content
 }
 
-function dummy() {
-    return true;
-}
-
-function checkMap() {
-    if (typeof document.getElementById("map") != "undefined") {
-        setTimeout(_ => true, 1000);
+async function checkMap() {
+    while (typeof document.getElementById("map") != "undefined") {
+        setTimeout(_ => console.log("Loading map again..."), 1000);
         if (document.getElementById("map").childElementCount == 0) {
             initMap();
         }

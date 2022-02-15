@@ -6,7 +6,7 @@
 :root {
     --dark-mode-color: rgb(42, 42, 42);
     --sidebar-width: max(15vw, 200px);
-    --content-width: calc(90vw - var(--sidebar-width));
+    --content-width: calc(90vw);
 }
 
 body {
@@ -424,6 +424,14 @@ html {
 
 @media only screen and (max-width: 768px) { /*generic mobile*/
     
+    #map {
+        height: 30vh !important;
+        border-width: 0px;
+        width: calc(var(--content-width) - 5vw);
+    }
+
+    /*-----------------------------------------------------------------------------------------*/
+
     #content #images img {
         max-width: none;
         max-height: none;
