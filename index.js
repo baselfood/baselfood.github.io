@@ -228,17 +228,19 @@ function makeFooter() {
     const instagram = document.createElement("a");
     instagram.innerText = "Unser Instagram";
     instagram.target = "_blank";
+    instagram.id = "instagram";
 
     const twitter = document.createElement("a");
     twitter.innerText = "Unser Twitter";
     twitter.target = "_blank"
+    twitter.id = "twitter";
 
     if (isMobile) {
         instagram.href = "instagram://user?username=baselfood_blog";
-        instagram.onclick = _ => instagram.href = "https://www.instagram.com/_u/baselfood_blog/"
+        instagram.onclick = _ => document.getElementById("instagram").href = "https://www.instagram.com/_u/baselfood_blog/"
 
         twitter.href = "twitter://user?screen_name=baselfood";
-        twitter.onlick = _ => twitter.href = "https://twitter.com/baselfood";
+        twitter.onclick = _ => document.getElementById("twitter").href = "https://twitter.com/baselfood";
     } else {
         instagram.href = "https://www.instagram.com/_u/baselfood_blog/";
         twitter.href = "https://twitter.com/baselfood";
