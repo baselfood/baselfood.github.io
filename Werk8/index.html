@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"></script>
+</head>
+<body>
+    <script src="../index.js"></script>
+    <script>
+        window.initMap = function() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {lat: 47.5451464, lng: 7.5869987},
+                zoom: 12,
+            });
+            const marker = new google.maps.Marker(
+                {
+                    map: map,
+                    position: new google.maps.LatLng(47.5416492, 7.5934488),
+                    title: "WERK 8"
+                }
+            )
+        }
+    </script>
+    <script type="text/javascript">
+        let favicons = makeFavicons();
+        document.head.innerHTML += favicons;
+        let Header = makeHeader()
+        document.body.appendChild(Header)
+        let content = makeMainContent("WERK 8", `Das WERK 8 ist ein tolles Restaurant in einer alten Fabrikhalle im Gundeldingerfeld. Das Ambiente, wie schon vorher erwähnt mit der Fabrikhalle schafft eine coole und spannende Atmosphäre. 
+        Der Klassiker zum Essen ist auf jeden Fall das Clubsandwich, aber es gibt auch viele andere köstliche Speisen. Das WERK 8 ist auch für seine grosse und tolle Bar bekannt, also nicht nur zum Essen, sondern auch zum Trinken empfiehlt sich das WERK 8. Etwas was aber auffällt ist die Lautstärke. Durch den grossen Raum hallt es und wenn die Musik läuft, ist es ein wenig laut. 
+        Ansonsten ist das WERK 8 aber ein super Restaurant, das sich gut eignet, wenn man mit Freunden essen gehen will. Durch die grosse Fabrikhalle hat es sehr viel Platz und somit auch Ausstattung. Im Sommer bietet sich auch ein Aussenbereich an der Sonne an.`, 
+        [
+            "Werk8/eingang.png",
+            "Werk8/kerze.png",
+            "Werk8/bar.png",
+            "Werk8/sandwich.png",
+            "Werk8/karte.png"
+        ], 
+        {
+            Ambiente: 4, 
+            PreisçLeistungsçVerhältnis: 4, 
+            Qualität_der_Speisen: 5,
+            Quantität_der_Auswahl: 4, 
+            Lage: 5,
+            Hygiene: 4, 
+            Service: 4, 
+            Ausstattung: 5
+        }, 
+        {
+            Adresse: "Dornacherstrasse 192 4053 Basel", 
+            Telefonnummer: "061 551 08 80",
+            Email: "reservation@werkacht.ch",
+            Website: "https://werkacht.ch/"
+        },
+        {
+            Sonntag_bis_Mittwoch: "Geschlossen",
+            Donnerstag: "17.00 bis 23.00",
+            Freitag: "17.00 bis 24.00",
+            Samstag: "18.00 bis 24.00"
+        }
+        )
+        document.body.appendChild(content)
+        let sideBar = makeSidebar();
+        document.body.appendChild(sideBar);
+        let footer = makeFooter()
+        document.body.appendChild(footer);
+        checkMap();
+    </script>
+</body>
+</html>

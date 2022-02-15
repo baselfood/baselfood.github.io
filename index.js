@@ -59,7 +59,14 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         writer: "Noée",
         shortDescription: "Das 1777 hat es sich zum Konzept genommen, die Konsument*innen genaustens entscheiden zu lassen, was ins Essen kommt.",
     },
-    
+    {
+        name: "WERK 8",
+        urlName: "Werk8",
+        postDate: new Date("2/15/2022"),
+        coverImg: "unreachable",
+        writer: "Noée",
+        shortDescription: "Das WERK 8 ist ein tolles Restaurant in einer alten Fabrikhalle mit einer grossen, tollen Bar und guten Clubsandwiches.",
+    },
 ]
 
 if (typeof structuredClone === "undefined") {
