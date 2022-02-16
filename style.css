@@ -327,8 +327,8 @@ html {
 }
 
 #content #images img {
-    min-width: 10vw;
-    min-width: max(10vw, 250px);
+    min-width: 8vw;
+    min-width: max(8vw, 200px);
     min-height: 8vw;
     min-height: max(8vw, 200px);
     max-width: 33vw;
