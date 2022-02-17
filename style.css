@@ -32,7 +32,7 @@ html {
 #header {
     position: fixed;
     box-sizing: border-box;
-    width: 100%; /*Fallback value for all browsers which don't support max(). You may see this multiple times.*/
+    width: 100%; 
     width: max(100%, 100vw);
     height: 10vh;
     height: max(10vh, 80px);
