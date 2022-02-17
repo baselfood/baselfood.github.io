@@ -67,6 +67,14 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         writer: "Noée",
         shortDescription: "Das WERK 8 ist ein tolles Restaurant in einer alten Fabrikhalle mit einer grossen, tollen Bar und guten Clubsandwiches.",
     },
+    {
+        name: "Lily's",
+        urlName: "Lilys",
+        postDate: new Date("2/17/2022"),
+        coverImg: "unreachable",
+        writer: "Noée",
+        shortDescription: "Das Lily's ist ein Restaurant mit einer asiatischen Küche und einem schönen Aussenbereich."
+    }
 ]
 
 if (typeof structuredClone === "undefined") {

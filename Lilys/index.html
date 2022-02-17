@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"></script>
+</head>
+<body>
+    <script src="../index.js"></script>
+    <script>
+        window.initMap = function() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {lat: 47.5451464, lng: 7.5869987},
+                zoom: 12,
+            });
+            const marker = new google.maps.Marker(
+                {
+                    map: map,
+                    position: new google.maps.LatLng(47.5612102, 7.5940240),
+                    title: "Wiesengarten Musetti"
+                }
+            )
+        }
+    </script>
+    <script type="text/javascript">
+        let favicons = makeFavicons();
+        document.head.innerHTML += favicons;
+        let Header = makeHeader()
+        document.body.appendChild(Header)
+        let content = makeMainContent("Lily's", `Das Lily's ist ein Restaurant in der Rebgasse, also in der Nähe des Claraplatzes. Das Lily's hat eine asiatische Küche mit vielen Spezialitäten. Im Sommer hat es einen schönen Aussenbereich mit Lichtern, sodass man an Sommerabenden den Abend draussen geniessen. 
+        Auf der Speisekarte ist mit Symbolen jeweils angegeben wie scharf das jeweilige Gericht ist und ob es vegetarisch oder vegan ist. Man kann das Lily's auch via Velokurier nach Hause bestellen.`, 
+        [
+            "lilys/salad.png",
+            "lilys/asia.png",
+            "lilys/karte-aussen.png",
+            "lilys/karte-innen.png",
+            "lilys/klösse.png"
+        ], 
+        {
+            Ambiente: 3, 
+            PreisçLeistungsçVerhältnis: 3.5, 
+            Qualität_der_Speisen: 5,
+            Quantität_der_Auswahl: 4, 
+            Lage: 4, 
+            Hygiene: 4, 
+            Service: 4, 
+            Ausstattung: 4
+        }, 
+        {
+            Adresse: "Rebgasse 1 4058 Basel", 
+            Telefonnummer: "061 683 11 11",
+            Website: "https://lilys.ch/"
+        },
+        {
+            Montag_bis_Sonntag: "11.00 bis 21.00" 
+        }
+        )
+        document.body.appendChild(content)
+        let sideBar = makeSidebar();
+        document.body.appendChild(sideBar);
+        let footer = makeFooter()
+        document.body.appendChild(footer);
+        checkMap();
+    </script>
+</body>
+</html>
