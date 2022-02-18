@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baselfood</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"></script>
 </head>
 <body>
     <script src="./index.js"></script>
@@ -19,8 +18,9 @@
         document.body.appendChild(content)
         let sideBar = makeSidebar();
         document.body.appendChild(sideBar);
-        let footer = makeFooter()
-        document.body.appendChild(footer)
+        let footer = makeFooter();
+        document.body.appendChild(footer);
+        toggleDarkmode(true);
     </script>
 </body>
 </html>

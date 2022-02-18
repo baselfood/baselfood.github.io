@@ -15,8 +15,6 @@ class blog {
     }
 }
 
-
-var currentMode = "bright";
 const isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 const pastBlogs = [ // Make blog class and make coverImg optional
     {
@@ -111,25 +109,31 @@ Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
 }
 
-function toggleDarkmode() {
+function toggleDarkmode(initial) {
     const body = document.body;
     const Tables = document.querySelectorAll("#content table *");
     const textElems = document.querySelectorAll("#content > p, #content > td, #content > th");
     const elemsToSwitch = [...Tables, ...textElems, body];
-    if (!elemsToSwitch[0].classList.contains("animate")){
+    if (!elemsToSwitch[0].classList.contains("animate") && !initial){
         elemsToSwitch.forEach(x => x.classList.add("animate"))
     }
-    if (currentMode == "dark") {
-        currentMode = "bright"
+    if ((localStorage.getItem("mode") == "dark" && !initial) || (localStorage.getItem("mode") == "bright" && initial)) {
+        localStorage.setItem("mode", "bright")
         elemsToSwitch.forEach(x => {
             x.classList.remove("dark")
             x.classList.add("bright")
         });
-    } else if (currentMode == "bright") {
-        currentMode = "dark"
+    } else if ((localStorage.getItem("mode") == "bright" && !initial) || (localStorage.getItem("mode") == "dark" && initial)) {
+        localStorage.setItem("mode", "dark");
         elemsToSwitch.forEach(x => {
             x.classList.remove("bright")
             x.classList.add("dark")
+        });
+    } else {
+        localStorage.setItem("mode", "bright")
+        elemsToSwitch.forEach(x => {
+            x.classList.remove("dark")
+            x.classList.add("bright")
         });
     }
 }
@@ -182,7 +186,7 @@ function makeHeader() {
     darkModeToggle.alt = "Toggle Dark Mode"
     darkModeToggle.src = `${baseURL}/images/mode-toggle.png`
     darkModeToggle.onclick = function() {
-        toggleDarkmode();
+        toggleDarkmode(false);
     }
     headerElem.appendChild(collapseSidebarElem);
     headerElem.appendChild(logo);
