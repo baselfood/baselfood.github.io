@@ -73,7 +73,7 @@
         let footer = makeFooter();
         document.body.appendChild(footer);
         checkMap();
-        document.addEventListener("DOMContentLoaded", _ => {
+        window.addEventListener("load", _ => {
             toggleDarkmode(true);
             console.log(document.readyState)
         });
