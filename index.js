@@ -1,4 +1,4 @@
-const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
+const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///home/gian.zellweger/Desktop/baselfood.github.io" : alert("unreachable"))
 
 class blog {
     constructor(name, text, imgs, ratings, infoBox, openingTimes, urlName, postDate, writer, shortDescription) {

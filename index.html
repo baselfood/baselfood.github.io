@@ -20,7 +20,10 @@
         document.body.appendChild(sideBar);
         let footer = makeFooter();
         document.body.appendChild(footer);
-        toggleDarkmode(true);
+        document.addEventListener("DOMContentLoaded", _ => {
+            toggleDarkmode(true);
+            console.log(document.readyState)
+        });
     </script>
 </body>
 </html>
