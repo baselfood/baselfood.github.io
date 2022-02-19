@@ -11,6 +11,7 @@
     <script src="../index.js"></script>
     <script>
         window.initMap = function() {
+toggleDarkmode(true);
             map = new google.maps.Map(document.getElementById("map"), {
                 center: {lat: 47.5451464, lng: 7.5869987},
                 zoom: 12,
@@ -69,11 +70,7 @@
         let footer = makeFooter();
         document.body.appendChild(footer);
         checkMap();
-        window.addEventListener("load", _ => {
-            alert("test");
-            toggleDarkmode(true);
-            console.log(document.readyState)
-        });
+        
     </script>
 </body>
 </html>

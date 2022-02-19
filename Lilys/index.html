@@ -11,16 +11,17 @@
     <script src="../index.js"></script>
     <script>
         window.initMap = function() {
+            toggleDarkmode(true);
             const map = new google.maps.Map(document.getElementById("map"), {
                 center: {lat: 47.5451464, lng: 7.5869987},
                 zoom: 12,
             });
             const marker = new google.maps.Marker(
-                {
-                    map: map,
-                    position: new google.maps.LatLng(47.5612102, 7.5940240),
-                    title: "Wiesengarten Musetti"
-                }
+            {
+                map: map,
+                position: new google.maps.LatLng(47.5612102, 7.5940240),
+                title: "Wiesengarten Musetti"
+            }
             )
         }
     </script>
@@ -32,11 +33,11 @@
         let content = makeMainContent("Lily's", `Das Lily's ist ein Restaurant in der Rebgasse, also in der Nähe des Claraplatzes. Das Lily's hat eine asiatische Küche mit vielen Spezialitäten. Im Sommer hat es einen schönen Aussenbereich mit Lichtern, sodass man an Sommerabenden den Abend draussen geniessen. 
         Auf der Speisekarte ist mit Symbolen jeweils angegeben wie scharf das jeweilige Gericht ist und ob es vegetarisch oder vegan ist. Man kann das Lily's auch via Velokurier nach Hause bestellen.`, 
         [
-            "lilys/salad.png",
-            "lilys/asia.png",
-            "lilys/karte-aussen.png",
-            "lilys/karte-innen.png",
-            "lilys/klösse.png"
+        "lilys/salad.png",
+        "lilys/asia.png",
+        "lilys/karte-aussen.png",
+        "lilys/karte-innen.png",
+        "lilys/klösse.png"
         ], 
         {
             Ambiente: 3, 
@@ -63,11 +64,6 @@
         let footer = makeFooter()
         document.body.appendChild(footer);
         checkMap();
-        window.addEventListener("load", _ => {
-            alert("test");
-            toggleDarkmode(true);
-            console.log(document.readyState)
-        });
     </script>
 </body>
 </html>
