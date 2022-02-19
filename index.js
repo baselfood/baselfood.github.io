@@ -1,4 +1,4 @@
-const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///home/gian.zellweger/Desktop/baselfood.github.io" : alert("unreachable"))
+const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
 
 class blog {
     constructor(name, text, imgs, ratings, infoBox, openingTimes, urlName, postDate, writer, shortDescription) {
@@ -72,6 +72,13 @@ const pastBlogs = [ // Make blog class and make coverImg optional
         coverImg: "unreachable",
         writer: "Noée",
         shortDescription: "Das Lily's ist ein Restaurant mit einer asiatischen Küche und einem schönen Aussenbereich."
+    },
+    {
+        name: "Nomad Design & Lifestyle Hotel",
+        urlName: "Nomad",
+        postDate: new Date("2/19/2022"),
+        coverImg: "unreachable",
+        shortDescription: "Das Nomad ist ein gemütliches Hotel mit einer Bar und einem Restaurant, bei dem es sich lohnt, einen Halt zu machen."
     }
 ]
 
@@ -500,7 +507,7 @@ function makeMainContent(title, text, imgs, ratings, infoBox, openingTimes) {
     titleElem.innerText = title;
     content.appendChild(titleElem);
     
-    let thisBlog = pastBlogs.find(x => x.name == title);
+    let thisBlog = pastBlogs.find(x => x.name.toLowerCase() == title.toLowerCase());
 
     if (typeof thisBlog != "undefined") {
         const shortDescription = document.createElement("p");

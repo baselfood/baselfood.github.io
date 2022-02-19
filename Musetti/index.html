@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +11,17 @@
     <script src="../index.js"></script>
     <script>
         window.initMap = function() {
-toggleDarkmode(true);
+            toggleDarkmode(true);
             map = new google.maps.Map(document.getElementById("map"), {
                 center: {lat: 47.5451464, lng: 7.5869987},
                 zoom: 12,
             });
             const marker = new google.maps.Marker(
-                {
-                    map: map,
-                    position: new google.maps.LatLng(47.5914631, 7.6473783),
-                    title: "Wiesengarten Musetti"
-                }
+            {
+                map: map,
+                position: new google.maps.LatLng(47.5914631, 7.6473783),
+                title: "Wiesengarten Musetti"
+            }
             )
         }
     </script>
@@ -31,16 +31,16 @@ toggleDarkmode(true);
         let Header = makeHeader()
         document.body.appendChild(Header)
         let content = makeMainContent("Wiesengarten Musetti", `Das Restaurant Wiesengarten ist ein kleines Restaurant in Riehen, nahe an der deutschen Grenze. Das Restaurant ist eher edel, gedacht für Geburtstage, Hochzeiten oder andere Anlässe. Beim Eintreten wird man freundlich begrüsst und zu seinem Tisch geführt. Man fühlt sich sehr schnell wohl und gut aufgenommen. 
-		Das Restaurant ist ein Familienbetrieb und man merkt, dass die Betreiber*innen mit sehr viel Leidenschaft dabei sind. Auch die Speisen, wie z.B. die Pasta sind komplett hausgemacht. Im Zentrum des Restaurants steht auch der Wein. Es gibt es eine grosse Weinkarte, aus verschiedenen Regionen Italiens. Die verwendeten Produkte sind saisonal und marktfrisch. 
-		Das Restaurant wird mehrheitlich von Erwachsenen besucht, und ist nicht unbedingt die beste Wahl für Kinder, da die Speisekarte keine Kindermenüs enthält. Die Preise sind etwas gehoben, was aber bei der hervorragenden Qualität und der hausgemachten Zubereitung gerechtfertigt ist. Die Räumlichkeiten sind relativ klein, aber sehr gemütlich eingerichtet.`, 
+        Das Restaurant ist ein Familienbetrieb und man merkt, dass die Betreiber*innen mit sehr viel Leidenschaft dabei sind. Auch die Speisen, wie z.B. die Pasta sind komplett hausgemacht. Im Zentrum des Restaurants steht auch der Wein. Es gibt es eine grosse Weinkarte, aus verschiedenen Regionen Italiens. Die verwendeten Produkte sind saisonal und marktfrisch. 
+        Das Restaurant wird mehrheitlich von Erwachsenen besucht, und ist nicht unbedingt die beste Wahl für Kinder, da die Speisekarte keine Kindermenüs enthält. Die Preise sind etwas gehoben, was aber bei der hervorragenden Qualität und der hausgemachten Zubereitung gerechtfertigt ist. Die Räumlichkeiten sind relativ klein, aber sehr gemütlich eingerichtet.`, 
         [
-            "musetti/fleisch.png",
-            "musetti/sauce.png",
-            "musetti/glace.png",
-            "musetti/wine.png",
-            "musetti/aussen.png",
-            "musetti/innen.png",
-            "musetti/nacht.png",
+        "musetti/fleisch.png",
+        "musetti/sauce.png",
+        "musetti/glace.png",
+        "musetti/wine.png",
+        "musetti/aussen.png",
+        "musetti/innen.png",
+        "musetti/nacht.png",
         ], 
         {
             Ambiente: 4, 
@@ -69,7 +69,6 @@ toggleDarkmode(true);
         let footer = makeFooter()
         document.body.appendChild(footer);
         checkMap();
-        
     </script>
 </body>
 </html>
