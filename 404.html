@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baselfood</title>
     <link rel="stylesheet" type="text/css" href="https://baselfood.github.io/style.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"></script>
 </head>
 <body>
     <script src="https://baselfood.github.io/index.js"></script>
@@ -15,8 +14,8 @@
         document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header);
-        let content = makeMainContent("404!", `Das Dokument, welches angefordert wurde, existiert nicht. Schau einmal, ob du einen Schreibfehler gemacht hast.
-        Wenn nicht, dann kontaktier uns doch bitte und melde den Fehler.`);
+        let content = new blog("404!", "404", `Das Dokument, welches angefordert wurde, existiert nicht. Schau einmal, ob du einen Schreibfehler gemacht hast.
+        Wenn nicht, dann kontaktier uns doch bitte und melde den Fehler.`).makeBlog();
         document.body.appendChild(content)
         let sideBar = makeSidebar();
         document.body.appendChild(sideBar);

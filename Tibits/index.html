@@ -5,80 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"></script>
 </head>
 <body>
     <script src="../index.js"></script>
-    <script>
-        window.initMap = function() {
-            toggleDarkmode(true);
-            const map = new google.maps.Map(document.getElementById("map"), {
-                center: {lat: 47.5451464, lng: 7.5869987},
-                zoom: 12,
-            });
-            const marker = new google.maps.Marker(
-            {
-                map: map,
-                position: new google.maps.LatLng(47.5460533, 7.5874119),
-                title: "Tibits"
-            }
-            )
-        }
-    </script>
     <script type="text/javascript">
         let favicons = makeFavicons();
         document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
-        let content = makeMainContent("Februar Special: Tibits", `Das Tibits ist ein vegetarisches Restaurant in Basel. In Basel hat es zwei Filialen, eine in der Steinenvorstadt und die andere im Gundeli bzw. direkt neben dem Bahnhofeingang Gundeldingen. Die Filiale am Bahnhof eignet sich gut, da man vor oder nach einer Reise etwas gutes essen kann. Das tolle am Tibits ist es, dass das Restaurant nur vegetarische oder vegane Sachen anbietet und man so sehr viel köstliche neue Gerichte ausprobieren kann. Das Tibits hat ein Buffet an dem man sich selber bedienen kann. Das hat zum Vorteil, dass man sich nur so viel schöpft wie man selber essen mag, also man kann seine Portion selber machen, was Foodwaste vermeidet. Und zum anderen Vorteil man kann sich das auf den Teller schöpfen was man gern hat oder was man gerne neu ausprobiert.
-        Die Speisen haben eine sehr gute Qualität und schmecken ausgezeichnet. Das Personal ist sehr nett und aufmerksam. Die Ausstattung im Innenraum ist auf jeden Fall gut. Jedoch kann es sein das es im Winter sehr schnell keine Plätze mehr hat. Im Sommer hat es einen schönen Aussenbereich, mit dem man viel Platz hat. 
-        
-
-        Juli: Ich habe noch Lust auf ein Dessert, was meinst du?
-        Noée: Ja auf jeden Fall. 
-        Juli: Hier am Dessertbuffet gibt es ein Tiramisù das sehr lecker aussieht. Wollen wir eine Portion teilen?
-        Noée: Ja gute Idee. Ich gehe zur Kasse bezahlen kommst du mit?
-        Juli und Noée bezahlen.
-        Juli: Das Personal ist immer so nett hier. Ich bin richtig zufrieden.
-        Noée: Ja das stimmt. Sie sind sehr aufmerksam und haben uns direkt zwei Löffel mitgegeben um das Tiramisù zu teilen.
-        Juli: Ja genau.
-        Juli und Noée gehen zu ihrem Platz und essen das Tiramisù.
-        Juli: Das schmeckt so guuuut.
-        Noée: Da stimme ich dir voll und ganz zu. Einfach köstlich. Ich fand auch unsere Portion gerade perfekt.
-        Juli: Ja finde ich auch. Das ist eben auch ein Vorteil von einem Buffet. Man kann sich so viel nehmen wie man will.
-        Noée: Genau!`, 
-        [
-        "Tibits/buffet-nr-1.png",
-        "Tibits/buffet-nr-2.png",
-        "Tibits/buffet-nr-3.png",
-        "Tibits/buffet-nr-4.png",
-        "Tibits/buffet-nr-5.png",
-        "Tibits/gnotschi-nr-1.png",
-        "Tibits/gnotschi-nr-2.png",
-        "Tibits/rote-wand-nr-1.png",
-        "Tibits/rote-wand-nr-2.png",
-        "Tibits/tiramisu.png"
-        ], 
-        {
-            Ambiente: 5, 
-            PreisçLeistungsçVerhältnis: 5, 
-            Qualität_der_Speisen: 5,
-            Quantität_der_Auswahl: 4, 
-            Lage: 4, 
-            Hygiene: 5, 
-            Service: 5, 
-            Ausstattung: 4
-        }, 
-        {
-            Adresse: "Meret Oppenheim-Strasse 1 4053 Basel", 
-            Telefonnummer: "061 531 40 40",
-            Website: "http://www.tibits.ch/"
-        },
-        {
-            Montag_bis_Samstag: "8.00 bis 22.00",
-            Sonntag: "9:00 bis 22:00" 
-        }
-        )
+        let content = pastBlogs.findBlog("Tibits").makeBlog();
         document.body.appendChild(content)
         let sideBar = makeSidebar();
         document.body.appendChild(sideBar);

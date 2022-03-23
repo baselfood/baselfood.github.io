@@ -5,76 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"></script>
 </head>
 <body>
     <script src="../index.js"></script>
-    <script>
-        window.initMap = function() {
-toggleDarkmode(true);
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: {lat: 47.5451464, lng: 7.5869987},
-                zoom: 12,
-            });
-            const marker = new google.maps.Marker(
-                {
-                    map: map,
-                    position: new google.maps.LatLng(47.5595824, 7.5882457),
-                    title: "Alchemist"
-                }
-            )
-        }
-    </script>
     <script type="text/javascript">
         let favicons = makeFavicons();
         document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
-        let content = makeMainContent("Alchemist", `Das Alchemist ist ein cooles Restaurant an der Schifflände. Das Konzept des Restaurants ist es eine coole, angenehme, freundschaftliche Atmosphäre zu schaffen. Zudem ist es das Ziel so viel wie möglich in der Küche und an der Bar selber zu machen. Als Beispiel verkaufen sie keine Softdrinks wie Cola, Fanta, etc., sondern stellen ein Getränk mit Cola-Kraut Sirup und Wasser zur Verfügung.
-        Die Speisekarte besteht aus vielen kleinen Speisen wie Dips, Suppen, Pommes, Brot usw. und es gibt eine grosse Auswahl. Die kleinen Portionen sind zum Teilen gedacht. Also man bestellt viele kleine Speisen und stellt sie in die Mitte des Tisches und teilt. Dieses Restaurant bringt auf jeden Fall ein Erlebnis, weil man unter anderem seine Getränke selber mixen kann und die Präsentation der Getränke und Speisen sehr schön und anregend ist. Das Ambiente ist sehr toll, locker, geheimnisvoll und man fühlt sich schnell wohl. 
-        Der Service ist auch sehr nett und beantwortet gerne Fragen, wenn man zum ersten Mal dort ist und noch alles neu ist. Auf der Website kann man noch viel mehr erfahren z.B wie es zum Namen Alchemist kam, wieso genau es an diesem Ort ist, wieso sie dieses Menü und Essen für ihr Restaurant-Konzept gewählt haben und noch vieles mehr.`, 
-        [
-        "alchemist/door.png",
-        "alchemist/tube-system.png",
-        "alchemist/tube.png",
-        "alchemist/wax.png",
-        "alchemist/glace.png",
-        "break",
-        "alchemist/bottles.png",
-        "alchemist/food.png",
-        "alchemist/steamy-kitchen.png",
-        "alchemist/card.png",
-        "alchemist/chairs.png",
-        ], 
-        {
-            Ambiente: 4, 
-            PreisçLeistungsçVerhältnis: 3, 
-            Qualität_der_Speisen: 5, 
-            Quantität_der_Auswahl: 4, 
-            Lage: 4, 
-            Hygiene: 5, 
-            Service: 4.5, 
-            Ausstattung: 4
-        }, 
-        {
-            Adresse: "Schifflände 1 4051 Basel", 
-            Telefonnummer: "061 561 88 68",
-            Email: "info@alchemistbasel.ch",
-            Website: "https://www.alchemistbasel.ch/"
-        },
-        {
-            Montag_bis_Donnerstag: "11.30 bis 14.30 / 17.00 bis 23.00",
-            Freitag: "11.30 bis 14.30 / 17.00 bis 24.00",
-            Samstag: "12.00 bis 24.00" 
-        }
-        );
+        let content = pastBlogs.findBlog("Alchemist").makeBlog();
         document.body.appendChild(content);
         let sideBar = makeSidebar();
         document.body.appendChild(sideBar);
         let footer = makeFooter();
         document.body.appendChild(footer);
         checkMap();
-        
     </script>
 </body>
 </html>

@@ -5,62 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"></script>
 </head>
 <body>
     <script src="../index.js"></script>
-    <script>
-        window.initMap = function() {
-            toggleDarkmode(true);
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: {lat: 47.5451464, lng: 7.5869987},
-                zoom: 12,
-            });
-            const marker = new google.maps.Marker(
-                {
-                    map: map,
-                    position: new google.maps.LatLng(47.552709, 7.5942989),
-                    title: "Nomad Design & Lifestyle Hotel"
-                }
-            )
-        }
-    </script>
     <script type="text/javascript">
         let favicons = makeFavicons();
         document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
-        let content = makeMainContent("Nomad Design & Lifestyle Hotel", `Im Nomad ist das Konzept, dass die Küche sehr international ist, also es gibt Gerichte von der ganzen Welt. Das Nomad hat auch einen Brunch jeden Sonntag mit gemütlicher Stimmung. Die Karte wechselt gelegentlich, denn es kommen immer wieder neue Gerichte auf die Karte. Der Klassiker vom Nomad ist aber der Burger „The Big Nomad“.
-        Das Lokal hat eine sehr schöne Einrichtung mit viel Pflanzen und der Farbe Türkis. Die Atmosphäre ist sehr angenehm und man fühlt sich auf jeden Fall wohl. Das Nomad besitzt auch eine grosse schöne Bar mit vielen Drinks. Es empfiehlt sich auf jeden Fall, dort ein Stopp einzulegen und etwas zu essen oder zu trinken.`, 
-        [
-            "Nomad/Burgir.png",
-            "Nomad/Kitchen.png",
-            "Nomad/Nomol-Burgir.png",
-            "Nomad/Salat.png",
-            "Nomad/Karte.png",
-            "Nomad/Glas.png",
-        ], 
-        {
-            Ambiente: 4, 
-            PreisçLeistungsçVerhältnis: 3, 
-            Qualität_der_Speisen: 4, 
-            Quantität_der_Auswahl: 3.5, 
-            Lage: 5, 
-            Hygiene: 5, 
-            Service: 5, 
-            Ausstattung: 4
-        }, 
-        {
-            Adresse: "Brunngässlein 8 4052 Basel", 
-            Telefonnummer: "061 690 91 60",
-            Email: "info@nomad.ch",
-            Website: "https://www.nomad.ch/"
-        },
-        {
-            Sonntag_bis_Mittwoch: "7.00 bis 23.00",
-            Donnerstag_bis_Samstag: "7.00 bis 24.00"
-        }
-        )
+        let content = pastBlogs.findBlog("Nomad").makeBlog();
         document.body.appendChild(content)
         let sideBar = makeSidebar();
         document.body.appendChild(sideBar);
