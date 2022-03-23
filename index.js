@@ -58,7 +58,7 @@ class blog {
             if (this.imgs.constructor == Array) {
                 for (let img of this.imgs) {
                     if (img == "break") {
-                        breakElem = document.createElement("br")
+                        let breakElem = document.createElement("br")
                         images.appendChild(breakElem)
                     } else if (isURL(img)) {
                         let newImg = new Image();
