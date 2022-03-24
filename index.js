@@ -536,7 +536,41 @@ const pastBlogs = new blogList(
         "Noée",
         "Ein kleiner Dialog über das coole, vegetarische Restaurant am Bahnhof mit einem Specialguest.",
         [47.5460533, 7.5874119]
-    )
+    ),
+    new blog(
+        "Union Diner",
+        "Union",
+        `Das Union Diner hat verschiedene Standorte. Unser Besuch erfolgte bei der Filiale nahe dem Bahnhof SBB. Es ist ein wenig versteckt neben dem Tibits. Wer also lieber fleischhaltiges statt vegetarisches Essen will, braucht nur etwa 20 Meter weitergehen. 
+        Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellt werden. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. `,
+        [
+            "Union/bar1.png",
+            "Union/bar2.png",
+            "Union/aussen.png",
+            "Union/burger.png",
+            "Union/burgerkarte.png",
+            "Union/drinkkarte.png"
+        ], {
+            Ambiente: 4,
+            PreisçLeistungsçVerhältnis: 4,
+            Qualität_der_Speisen: 5,
+            Quantität_der_Auswahl: 3,
+            Lage: 3,
+            Hygiene: 4,
+            Service: 3,
+            Ausstattung: 3.5
+        }, {
+            Adresse: "Meret Oppenheim-Strasse 1 4053 Basel",
+            Telefonnummer: "061 271 02 66",
+            Website: "https://uniondiner.ch/",
+            Email: "moh@uniondiner.ch"
+        }, {
+            Montag_bis_Sonntag: "11:00 bis 23:00"
+        },
+        new Date("3/24/2022"),
+        "Arik",
+        "Das Union Diner ist ein Burgerladen, der hinter dem Bahnhof liegt und eine lockere Atmosphäre hat.",
+        [47.5460160, 7.5865915]
+    ),
 )
 
 if (typeof structuredClone === "undefined") {
