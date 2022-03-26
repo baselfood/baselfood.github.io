@@ -96,7 +96,26 @@ class blog {
             map.id = "map";
             content.appendChild(map);
             const mapsCreateScript = document.createElement("script");
-            mapsCreateScript.innerHTML = `window.initMap = function() { toggleDarkmode(true); map = new google.maps.Map(map, {center: {lat: 47.5451464, lng: 7.5869987}, zoom: 12}); const marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(${this.pos.join(", ")}), title: "${this.name}"})}`;
+            mapsCreateScript.innerHTML = `
+            window.initMap = function() { 
+                toggleDarkmode(true); 
+                map = new google.maps.Map(
+                    map, {
+                        center: {
+                            lat: 47.5451464, 
+                            lng: 7.5869987
+                        }, 
+                        zoom: 12
+                    }
+                ); 
+                const marker = new google.maps.Marker(
+                    {
+                        map: map, 
+                        position: new google.maps.LatLng(${this.pos.join(", ")}),
+                        title: "${this.name}"
+                    }
+                )
+            }`;
             document.body.appendChild(mapsCreateScript);
             document.head.appendChild(googleMapsScript);
         }
@@ -141,6 +160,44 @@ class blogList {
         titleElem.innerText = "Baselfood - Der Foodblog für die Region Basel";
         titleElem.id = "title";
         content.appendChild(titleElem);
+
+        const googleMapsScript = document.createElement('script');
+        googleMapsScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"
+        googleMapsScript.async = true;
+        const map = document.createElement("div");
+        map.id = "map";
+        content.appendChild(map);
+        const mapsCreateScript = document.createElement("script");
+        var mapsCreateScriptText = `
+        window.initMap = function() { 
+            toggleDarkmode(true); 
+            map = new google.maps.Map(
+                map, {
+                    center: {
+                        lat: 47.5451464, 
+                        lng: 7.5869987
+                    }, 
+                    zoom: 12
+                }
+            );
+        `
+        for (let pastBlog of this.blogs) {
+            mapsCreateScriptText += `
+            const marker${pastBlog.urlName} = new google.maps.Marker(
+                {
+                    map: map, 
+                    position: new google.maps.LatLng(${pastBlog.pos.join(", ")}), 
+                    title: "${pastBlog.name}"
+                }
+            );
+            google.maps.event.addDomListener(marker${pastBlog.urlName}, 'click', function() {
+                location.href = "${baseURL}/${pastBlog.urlName}/"
+            });`
+        }
+        mapsCreateScriptText += "}";
+        mapsCreateScript.innerHTML = mapsCreateScriptText
+        document.body.appendChild(mapsCreateScript);
+        document.head.appendChild(googleMapsScript);
 
         const blogs = document.createElement("div");
         blogs.id = "blogs";
