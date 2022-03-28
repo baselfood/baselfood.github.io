@@ -59,7 +59,7 @@ class blog {
 
             let Thead = document.createElement("thead");
             let tableOfContentsHead = document.createElement("th");
-            tableOfContentsHead.innerHTML = `<a href=${baseURL}/${this.urlName}/index.html#tableOfContents>Inhaltsverzeichnis</a>`
+            tableOfContentsHead.innerHTML = `<a href=${baseURL}/${this.urlName}/#tableOfContents>Inhaltsverzeichnis</a>`
             Thead.appendChild(tableOfContentsHead);
             tableOfContents.appendChild(Thead);
 
@@ -524,7 +524,7 @@ const pastBlogs = new blogList(
         "Lily's",
         "Lilys",
         `Das Lily's ist ein Restaurant in der Rebgasse, also in der Nähe des Claraplatzes. Das Lily's hat eine asiatische Küche mit vielen Spezialitäten. Im Sommer hat es einen schönen Aussenbereich mit Lichtern, sodass man an Sommerabenden den Abend draussen geniessen. 
-        Auf der Speisekarte ist mit Symbolen jeweils angegeben wie scharf das jeweilige Gericht ist und ob es vegetarisch oder vegan ist. Man kann das Lily's auch via Velokurier nach Hause bestellen.`,
+        Auf der Speisekarte ist mit Symbolen jeweils angegeben wie scharf das jeweilige Gericht ist und ob es vegetarisch oder vegan ist. Man kann das Essen aus dem Lily's auch via Velokurier nach Hause bestellen.`,
         [
             "lilys/salad.png",
             "lilys/asia.png",
@@ -591,22 +591,22 @@ const pastBlogs = new blogList(
         "Februar Special: Tibits",
         "Tibits",
         `Das Tibits ist ein vegetarisches Restaurant in Basel. In Basel hat es zwei Filialen, eine in der Steinenvorstadt und die andere im Gundeli bzw. direkt neben dem Bahnhofeingang Gundeldingen. Die Filiale am Bahnhof eignet sich gut, da man vor oder nach einer Reise etwas gutes essen kann. Das tolle am Tibits ist es, dass das Restaurant nur vegetarische oder vegane Sachen anbietet und man so sehr viel köstliche neue Gerichte ausprobieren kann. Das Tibits hat ein Buffet an dem man sich selber bedienen kann. Das hat zum Vorteil, dass man sich nur so viel schöpft wie man selber essen mag, also man kann seine Portion selber machen, was Foodwaste vermeidet. Und zum anderen Vorteil man kann sich das auf den Teller schöpfen was man gern hat oder was man gerne neu ausprobiert.
-                                                            Die Speisen haben eine sehr gute Qualität und schmecken ausgezeichnet. Das Personal ist sehr nett und aufmerksam. Die Ausstattung im Innenraum ist auf jeden Fall gut. Jedoch kann es sein das es im Winter sehr schnell keine Plätze mehr hat. Im Sommer hat es einen schönen Aussenbereich, mit dem man viel Platz hat. 
-                                                            
-                                                            
-                                                            Juli: Ich habe noch Lust auf ein Dessert, was meinst du?
-                                                            Noée: Ja auf jeden Fall. 
-                                                            Juli: Hier am Dessertbuffet gibt es ein Tiramisù das sehr lecker aussieht. Wollen wir eine Portion teilen?
-                                                            Noée: Ja gute Idee. Ich gehe zur Kasse bezahlen kommst du mit?
-                                                            Juli und Noée bezahlen.
-                                                            Juli: Das Personal ist immer so nett hier. Ich bin richtig zufrieden.
-                                                            Noée: Ja das stimmt. Sie sind sehr aufmerksam und haben uns direkt zwei Löffel mitgegeben um das Tiramisù zu teilen.
-                                                            Juli: Ja genau.
-                                                            Juli und Noée gehen zu ihrem Platz und essen das Tiramisù.
-                                                            Juli: Das schmeckt so guuuut.
-                                                            Noée: Da stimme ich dir voll und ganz zu. Einfach köstlich. Ich fand auch unsere Portion gerade perfekt.
-                                                            Juli: Ja finde ich auch. Das ist eben auch ein Vorteil von einem Buffet. Man kann sich so viel nehmen wie man will.
-                                                            Noée: Genau!`,
+        Die Speisen haben eine sehr gute Qualität und schmecken ausgezeichnet. Das Personal ist sehr nett und aufmerksam. Die Ausstattung im Innenraum ist auf jeden Fall gut. Jedoch kann es sein das es im Winter sehr schnell keine Plätze mehr hat. Im Sommer hat es einen schönen Aussenbereich, mit dem man viel Platz hat. 
+
+
+        Juli: Ich habe noch Lust auf ein Dessert, was meinst du?
+        Noée: Ja auf jeden Fall. 
+        Juli: Hier am Dessertbuffet gibt es ein Tiramisù das sehr lecker aussieht. Wollen wir eine Portion teilen?
+        Noée: Ja gute Idee. Ich gehe zur Kasse bezahlen kommst du mit?
+        Juli und Noée bezahlen.
+        Juli: Das Personal ist immer so nett hier. Ich bin richtig zufrieden.
+        Noée: Ja das stimmt. Sie sind sehr aufmerksam und haben uns direkt zwei Löffel mitgegeben um das Tiramisù zu teilen.
+        Juli: Ja genau.
+        Juli und Noée gehen zu ihrem Platz und essen das Tiramisù.
+        Juli: Das schmeckt so guuuut.
+        Noée: Da stimme ich dir voll und ganz zu. Einfach köstlich. Ich fand auch unsere Portion gerade perfekt.
+        Juli: Ja finde ich auch. Das ist eben auch ein Vorteil von einem Buffet. Man kann sich so viel nehmen wie man will.
+        Noée: Genau!`,
         [
             "Tibits/buffet-nr-1.png",
             "Tibits/buffet-nr-2.png",
@@ -644,7 +644,7 @@ const pastBlogs = new blogList(
         "Union Diner",
         "Union",
         `Das Union Diner hat verschiedene Standorte. Unser Besuch erfolgte bei der Filiale nahe dem Bahnhof SBB. Es ist ein wenig versteckt neben dem Tibits. Wer also lieber fleischhaltiges statt vegetarisches Essen will, braucht nur etwa 20 Meter weitergehen. 
-                                                                Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellt werden. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. `,
+        Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellt werden. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. `,
         [
             "Union/bar1.png",
             "Union/bar2.png",
@@ -674,6 +674,46 @@ const pastBlogs = new blogList(
         "Das Union Diner ist ein Burgerladen, der hinter dem Bahnhof liegt und eine lockere Atmosphäre hat.",
         [47.5460160, 7.5865915]
     ),
+    new blog(
+        "Noohn Sushi Bar",
+        "Noohn",
+        `Die Sushi Bar im Noohn ist auf jeden Fall ein Erlebnis. In der Mitte der Bar ist ein Sushi Koch, der frisch Sushis zubereitet und sie auf das drehende Fliessband stellt. Bei den Sushi Tellern gibt es Unterschiede. Nämlich bestimmen die Farben der Teller die Preise, je nach Aufwendigkeit und Grösse. 
+        Grün = 5.00 
+        Blau = 7.00 
+        Schwarz = 8.00 
+        Rot = 9.00 
+        Gelb = 12.00 
+        
+        Die Sushis haben eine sehr gute Qualität und schmecken sehr gut. Durch das Fliessband kommen immer wieder neue Kreationen von Sushis und man kann selber auswählen welche Sushis und wie viele Sushi-kreationen man konsumieren möchte. Das Noohn besitzt auch noch einen normalen Restaurantbereich mit anderen Spezialitäten. Man kann bei der Sushi-Bar nicht reservieren und selbst wenn die Sushi-Bar voll ist, gibt es keine langen Wartezeiten. Die Atmosphäre ist sehr toll und das Personal freundlich.`,
+        [
+            "Noohn/sushi.png",
+            "Noohn/teller.png",
+            "break",
+            "Noohn/display.png",
+        ], {
+            Ambiente: 5,
+            PreisçLeistungsçVerhältnis: 4,
+            Qualität_der_Speisen: 5,
+            Quantität_der_Auswahl: 4,
+            Lage: 3.5,
+            Hygiene: 5,
+            Service: 4,
+            Ausstattung: 4
+        }, {
+            Adresse: "Henric Petri-Strasse 12 4051 Basel",
+            Telefonnummer: "061 281 14 14",
+            Website: "http://www.noohn.ch/",
+            Email: "events@noohn.ch"
+        }, {
+            Montag_bis_Freitag: "11:30 bis 14:00 / 18:00 - 22:00",
+            Samstag: "18:00 - 22:00",
+            Sonntag: "Geschlossen"
+        },
+        new Date("3/28/2022"),
+        "Noée",
+        "Das Noohn ist eine Sushi-bar mit einer grossen Auswahl an Sushi-kreationen",
+        [47.5521166, 7.5922055]
+    )
 )
 
 if (typeof structuredClone === "undefined") {
@@ -713,7 +753,7 @@ Number.prototype.clamp = function(min, max) {
 function makeTableOfContentsRow(text, id, name) {
     let tableRow = document.createElement("tr");
     let tableData = document.createElement("td");
-    tableData.innerHTML = `<a href=${baseURL}/${name}/index.html#${id}>${text}</a>`;
+    tableData.innerHTML = `<a href=${baseURL}/${name}/#${id}>${text}</a>`;
     tableRow.appendChild(tableData);
     return tableRow;
 }
@@ -813,26 +853,26 @@ function makeHeader() {
 
 function makeFavicons() {
     let favicons = `
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="${baseURL}/images/favicomatic/apple-touch-icon-57x57.png" />
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${baseURL}/images/favicomatic/apple-touch-icon-114x114.png" />
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${baseURL}/images/favicomatic/apple-touch-icon-72x72.png" />
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${baseURL}/images/favicomatic/apple-touch-icon-144x144.png" />
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="${baseURL}/images/favicomatic/apple-touch-icon-60x60.png" />
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${baseURL}/images/favicomatic/apple-touch-icon-120x120.png" />
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="${baseURL}/images/favicomatic/apple-touch-icon-76x76.png" />
-                                                                    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="${baseURL}/images/favicomatic/apple-touch-icon-152x152.png" />
-                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-196x196.png" sizes="196x196" />
-                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-96x96.png" sizes="96x96" />
-                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-32x32.png" sizes="32x32" />
-                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-16x16.png" sizes="16x16" />
-                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-128.png" sizes="128x128" />
-                                                                    <meta name="application-name" content="&nbsp;"/>
-                                                                    <meta name="msapplication-TileColor" content="#FFFFFF" />
-                                                                    <meta name="msapplication-TileImage" content="${baseURL}/images/favicomatic/mstile-144x144.png" />
-                                                                    <meta name="msapplication-square70x70logo" content="${baseURL}/images/favicomatic/mstile-70x70.png" />
-                                                                    <meta name="msapplication-square150x150logo" content="${baseURL}/images/favicomatic/mstile-150x150.png" />
-                                                                    <meta name="msapplication-wide310x150logo" content="${baseURL}/images/favicomatic/mstile-310x150.png" />
-                                                                    <meta name="msapplication-square310x310logo" content="${baseURL}/images/favicomatic/mstile-310x310.png" />`;
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="${baseURL}/images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${baseURL}/images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${baseURL}/images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${baseURL}/images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="${baseURL}/images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${baseURL}/images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="${baseURL}/images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="${baseURL}/images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="${baseURL}/images/favicomatic/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="${baseURL}/images/favicomatic/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="${baseURL}/images/favicomatic/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="${baseURL}/images/favicomatic/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="${baseURL}/images/favicomatic/mstile-310x310.png" />`;
 
     return favicons;
 }
