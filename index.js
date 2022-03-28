@@ -686,10 +686,12 @@ const pastBlogs = new blogList(
         
         Die Sushis haben eine sehr gute Qualität und schmecken sehr gut. Durch das Fliessband kommen immer wieder neue Kreationen von Sushis und man kann selber auswählen welche Sushis und wie viele Sushi-kreationen man konsumieren möchte. Das Noohn besitzt auch noch einen normalen Restaurantbereich mit anderen Spezialitäten. Man kann bei der Sushi-Bar nicht reservieren und selbst wenn die Sushi-Bar voll ist, gibt es keine langen Wartezeiten. Die Atmosphäre ist sehr toll und das Personal freundlich.`,
         [
+            "Noohn/sushibar.jpg",
+            "Noohn/sitze.jpg",
+            "Noohn/display.png",
+            "break",
             "Noohn/sushi.png",
             "Noohn/teller.png",
-            "break",
-            "Noohn/display.png",
         ], {
             Ambiente: 5,
             PreisçLeistungsçVerhältnis: 4,
