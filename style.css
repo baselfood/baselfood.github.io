@@ -273,6 +273,24 @@ html {
     font-size: xx-large;
 }
 
+#content #tableOfContents {
+    width: 50%;
+}
+
+#content #tableOfContents tr, #content #tableOfContents th {
+    border: 1px solid;
+    border-color: black;
+    padding: 1vh 0.5vw;
+}
+
+#content #tableOfContents td {
+    padding: 1vh;
+}
+
+#content #tableOfContents th {
+    font-size: larger;
+}
+
 #content #ratingTable td, #content #ratingTable th {
     border: 1px solid;
     border-color: black;

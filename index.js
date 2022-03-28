@@ -53,6 +53,46 @@ class blog {
             content.appendChild(shortDescription);
         }
 
+        if (this.text && this.imgs) {
+            const tableOfContents = document.createElement("table");
+            let Tbody = document.createElement("tbody");
+
+            let Thead = document.createElement("thead");
+            let tableOfContentsHead = document.createElement("th");
+            tableOfContentsHead.innerHTML = `<a href=${baseURL}/${this.urlName}/index.html#tableOfContents>Inhaltsverzeichnis</a>`
+            Thead.appendChild(tableOfContentsHead);
+            tableOfContents.appendChild(Thead);
+
+            if (this.imgs) {
+                let imgRow = makeTableOfContentsRow("Bilder", "images", this.urlName);
+                Tbody.appendChild(imgRow);
+            }
+            if (this.pos) {
+                let mapRow = makeTableOfContentsRow("Karte", "map", this.urlName);
+                Tbody.appendChild(mapRow);
+            }
+            if (this.openingTimes) {
+                let openingRow = makeTableOfContentsRow("Öffnungszeiten", "openingTimesTitle", this.urlName);
+                Tbody.appendChild(openingRow);
+            }
+            if (this.text) {
+                let textRow = makeTableOfContentsRow("Text", "text", this.urlName);
+                Tbody.appendChild(textRow);
+            }
+            if (this.ratings) {
+                let ratingRow = makeTableOfContentsRow("Bewertung", "ratingTable", this.urlName);
+                Tbody.appendChild(ratingRow);
+            }
+            if (this.infoBox) {
+                let infoRow = makeTableOfContentsRow("Info", "infoBox", this.urlName);
+                Tbody.appendChild(infoRow);
+            }
+
+            tableOfContents.id = "tableOfContents";
+            tableOfContents.appendChild(Tbody);
+            content.appendChild(tableOfContents);
+        }
+
         if (this.imgs) {
             const images = document.createElement("div")
             if (this.imgs.constructor == Array) {
@@ -107,15 +147,15 @@ class blog {
                         }, 
                         zoom: 12
                     }
-                ); 
-                const marker = new google.maps.Marker(
-                    {
-                        map: map, 
-                        position: new google.maps.LatLng(${this.pos.join(", ")}),
-                        title: "${this.name}"
-                    }
-                )
-            }`;
+                    ); 
+                    const marker = new google.maps.Marker(
+                        {
+                            map: map, 
+                            position: new google.maps.LatLng(${this.pos.join(", ")}),
+                            title: "${this.name}"
+                        }
+                        )
+                    }`;
             document.body.appendChild(mapsCreateScript);
             document.head.appendChild(googleMapsScript);
         }
@@ -125,24 +165,30 @@ class blog {
             openingTimesTable.id = "openingTimes";
             content.appendChild(openingTimesTable);
         }
-        content.id = "content";
-        this.text = this.text.split("\n")
+
+        const textDiv = document.createElement("div");
+        textDiv.id = "text";
+        this.text = this.text.split("\n");
         for (let paragraph of this.text) {
-            let pElem = document.createElement("p")
+            let pElem = document.createElement("p");
             pElem.classList.add("paragraph");
             pElem.innerText = paragraph;
-            content.appendChild(pElem)
+            textDiv.appendChild(pElem);
         }
+        content.appendChild(textDiv);
+
         if (this.ratings) {
-            let ratingTable = makeRatingTable(this.ratings)
-            ratingTable.id = "ratingTable"
-            content.appendChild(ratingTable)
+            let ratingTable = makeRatingTable(this.ratings);
+            ratingTable.id = "ratingTable";
+            content.appendChild(ratingTable);
         }
         if (this.infoBox) {
             let infoBoxTable = makeInfoBox(this.infoBox);
             infoBoxTable.id = "infoBox";
             content.appendChild(infoBoxTable);
         }
+
+        content.id = "content";
         return content;
     }
 }
@@ -169,30 +215,30 @@ class blogList {
         content.appendChild(map);
         const mapsCreateScript = document.createElement("script");
         var mapsCreateScriptText = `
-        window.initMap = function() { 
-            toggleDarkmode(true); 
-            map = new google.maps.Map(
-                map, {
-                    center: {
-                        lat: 47.5451464, 
-                        lng: 7.5869987
-                    }, 
-                    zoom: 12
-                }
-            );
-        `
+                window.initMap = function() { 
+                    toggleDarkmode(true); 
+                    map = new google.maps.Map(
+                        map, {
+                            center: {
+                                lat: 47.5451464, 
+                                lng: 7.5869987
+                            }, 
+                            zoom: 12
+                        }
+                        );
+                        `
         for (let pastBlog of this.blogs) {
             mapsCreateScriptText += `
-            const marker${pastBlog.urlName} = new google.maps.Marker(
-                {
-                    map: map, 
-                    position: new google.maps.LatLng(${pastBlog.pos.join(", ")}), 
-                    title: "${pastBlog.name}"
-                }
-            );
-            google.maps.event.addDomListener(marker${pastBlog.urlName}, 'click', function() {
-                location.href = "${baseURL}/${pastBlog.urlName}/"
-            });`
+                            const marker${pastBlog.urlName} = new google.maps.Marker(
+                                {
+                                    map: map, 
+                                    position: new google.maps.LatLng(${pastBlog.pos.join(", ")}), 
+                                    title: "${pastBlog.name}"
+                                }
+                                );
+                                google.maps.event.addDomListener(marker${pastBlog.urlName}, 'click', function() {
+                                    location.href = "${baseURL}/${pastBlog.urlName}/"
+                                });`
         }
         mapsCreateScriptText += "}";
         mapsCreateScript.innerHTML = mapsCreateScriptText
@@ -250,8 +296,8 @@ const pastBlogs = new blogList(
         "Alchemist",
         "Alchemist",
         `Das Alchemist ist ein cooles Restaurant an der Schifflände. Das Konzept des Restaurants ist es eine coole, angenehme, freundschaftliche Atmosphäre zu schaffen. Zudem ist es das Ziel so viel wie möglich in der Küche und an der Bar selber zu machen. Als Beispiel verkaufen sie keine Softdrinks wie Cola, Fanta, etc., sondern stellen ein Getränk mit Cola-Kraut Sirup und Wasser zur Verfügung.
-                Die Speisekarte besteht aus vielen kleinen Speisen wie Dips, Suppen, Pommes, Brot usw. und es gibt eine grosse Auswahl. Die kleinen Portionen sind zum Teilen gedacht. Also man bestellt viele kleine Speisen und stellt sie in die Mitte des Tisches und teilt. Dieses Restaurant bringt auf jeden Fall ein Erlebnis, weil man unter anderem seine Getränke selber mixen kann und die Präsentation der Getränke und Speisen sehr schön und anregend ist. Das Ambiente ist sehr toll, locker, geheimnisvoll und man fühlt sich schnell wohl. 
-                Der Service ist auch sehr nett und beantwortet gerne Fragen, wenn man zum ersten Mal dort ist und noch alles neu ist. Auf der Website kann man noch viel mehr erfahren z.B wie es zum Namen Alchemist kam, wieso genau es an diesem Ort ist, wieso sie dieses Menü und Essen für ihr Restaurant-Konzept gewählt haben und noch vieles mehr.`,
+        Die Speisekarte besteht aus vielen kleinen Speisen wie Dips, Suppen, Pommes, Brot usw. und es gibt eine grosse Auswahl. Die kleinen Portionen sind zum Teilen gedacht. Also man bestellt viele kleine Speisen und stellt sie in die Mitte des Tisches und teilt. Dieses Restaurant bringt auf jeden Fall ein Erlebnis, weil man unter anderem seine Getränke selber mixen kann und die Präsentation der Getränke und Speisen sehr schön und anregend ist. Das Ambiente ist sehr toll, locker, geheimnisvoll und man fühlt sich schnell wohl. 
+        Der Service ist auch sehr nett und beantwortet gerne Fragen, wenn man zum ersten Mal dort ist und noch alles neu ist. Auf der Website kann man noch viel mehr erfahren z.B wie es zum Namen Alchemist kam, wieso genau es an diesem Ort ist, wieso sie dieses Menü und Essen für ihr Restaurant-Konzept gewählt haben und noch vieles mehr.`,
         [
             "alchemist/door.png",
             "alchemist/tube-system.png",
@@ -292,7 +338,7 @@ const pastBlogs = new blogList(
         "Café Streuli",
         "Streuli",
         `Das Café Streuli liegt etwas versteckt auf dem Bruderholz und ist ein eher kleines Café. Man wird freundlich begrüsst und der Service ist sehr gut. Das Angebot besteht aus Café, Gebäck, Konfekt und ein Snackangebot z.B. Sandwiches, belegte Brote usw. 
-            Die Preise sind etwa im Mittelbereich, und im Vergleich zu den Produkten angemessen. Das Café ist auch gut für eine kurze Wegzehrung oder einen Take-Away Kaffee. Das Café bietet zusätzlich einen Packetdienst an, bei dem Pakete gegen eine Gebühr abgegeben werden können.`,
+        Die Preise sind etwa im Mittelbereich, und im Vergleich zu den Produkten angemessen. Das Café ist auch gut für eine kurze Wegzehrung oder einen Take-Away Kaffee. Das Café bietet zusätzlich einen Packetdienst an, bei dem Pakete gegen eine Gebühr abgegeben werden können.`,
         [
             "https://media-cdn.tripadvisor.com/media/photo-s/12/00/a2/6d/sidewalk-seating-and.jpg",
             "https://media-cdn.tripadvisor.com/media/photo-s/12/00/a9/cb/interior-view.jpg",
@@ -328,8 +374,8 @@ const pastBlogs = new blogList(
         "Wiesengarten Musetti",
         "Musetti",
         `Das Restaurant Wiesengarten ist ein kleines Restaurant in Riehen, nahe an der deutschen Grenze. Das Restaurant ist eher edel, gedacht für Geburtstage, Hochzeiten oder andere Anlässe. Beim Eintreten wird man freundlich begrüsst und zu seinem Tisch geführt. Man fühlt sich sehr schnell wohl und gut aufgenommen. 
-            Das Restaurant ist ein Familienbetrieb und man merkt, dass die Betreiber*innen mit sehr viel Leidenschaft dabei sind. Auch die Speisen, wie z.B. die Pasta sind komplett hausgemacht. Im Zentrum des Restaurants steht auch der Wein. Es gibt es eine grosse Weinkarte, aus verschiedenen Regionen Italiens. Die verwendeten Produkte sind saisonal und marktfrisch. 
-            Das Musetti wird mehrheitlich von Erwachsenen besucht, und ist nicht unbedingt die beste Wahl für Kinder, da die Speisekarte keine Kindermenüs enthält. Die Preise sind etwas gehoben, was aber bei der hervorragenden Qualität und der hausgemachten Zubereitung gerechtfertigt ist. Die Räumlichkeiten sind relativ klein, aber sehr gemütlich eingerichtet.`,
+        Das Restaurant ist ein Familienbetrieb und man merkt, dass die Betreiber*innen mit sehr viel Leidenschaft dabei sind. Auch die Speisen, wie z.B. die Pasta sind komplett hausgemacht. Im Zentrum des Restaurants steht auch der Wein. Es gibt es eine grosse Weinkarte, aus verschiedenen Regionen Italiens. Die verwendeten Produkte sind saisonal und marktfrisch. 
+        Das Musetti wird mehrheitlich von Erwachsenen besucht, und ist nicht unbedingt die beste Wahl für Kinder, da die Speisekarte keine Kindermenüs enthält. Die Preise sind etwas gehoben, was aber bei der hervorragenden Qualität und der hausgemachten Zubereitung gerechtfertigt ist. Die Räumlichkeiten sind relativ klein, aber sehr gemütlich eingerichtet.`,
         [
             "musetti/fleisch.png",
             "musetti/sauce.png",
@@ -365,8 +411,8 @@ const pastBlogs = new blogList(
         "Café Bar Elisabethen",
         "Elisabethen",
         `Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche. Im Sommer bietet sich ein wunderschöner Aussenbereich an, um einen Cappuccino zu trinken oder eine kleine Mahlzeit zu essen. Ausserdem hat es einen sehr herzigen kleinen Innenbereich, in dem man an kalten Wintertagen sein kann. 
-            In dem Onlineshop, sowie auch vor Ort in der Café Bar kann man Weine, wie auch Bio-Reis und andere Produkte kaufen. Als kleine Speisen bietet das Café Suppen oder Salate an. Das Highlight von der Café Bar Elisabethen ist jedoch der Kaffee, der fast genauso wie in Italien schmeckt. 
-            Das Personal ist sehr freundlich und man fühlt sich schnell wohl. Für einen kurzen Stop zum Aufwärmen eignet sich das Café sehr und ist daher empfehlenswert.`,
+        In dem Onlineshop, sowie auch vor Ort in der Café Bar kann man Weine, wie auch Bio-Reis und andere Produkte kaufen. Als kleine Speisen bietet das Café Suppen oder Salate an. Das Highlight von der Café Bar Elisabethen ist jedoch der Kaffee, der fast genauso wie in Italien schmeckt. 
+        Das Personal ist sehr freundlich und man fühlt sich schnell wohl. Für einen kurzen Stop zum Aufwärmen eignet sich das Café sehr und ist daher empfehlenswert.`,
         [
             "elisabethen/cake.png",
             "elisabethen/bottles.png",
@@ -403,7 +449,7 @@ const pastBlogs = new blogList(
         "1777 Café Restaurant Bar",
         "1777",
         `Das 1777 ist ein Restaurant im Schmiedenhof. Es hat einen schönen Aussenbereich im Innenhof. Das Personal ist sehr nett und aufmerksam. Das Besondere im 1777 sind die Werkstätte. Das heisst man kann sich eigene Salate und Baguettes zusammenstellen mit seinen Lieblingszutaten. 
-            Ansonsten macht das 1777 auch sehr köstliche Burger. Das Ambiente ist locker und freundlich. Ausserdem besitzt das 1777 eine coole Bar mit Drinks etc. Von Montag bis Freitag von 11.30 bis 15.00 stellt das Restaurant ein Tagesangebot mit Tagesteller, Suppen, vegetarischen alternativen und weitere Kleinigkeiten bereit. `,
+        Ansonsten macht das 1777 auch sehr köstliche Burger. Das Ambiente ist locker und freundlich. Ausserdem besitzt das 1777 eine coole Bar mit Drinks etc. Von Montag bis Freitag von 11.30 bis 15.00 stellt das Restaurant ein Tagesangebot mit Tagesteller, Suppen, vegetarischen alternativen und weitere Kleinigkeiten bereit. `,
         [
             "1777/glowy.png",
             "1777/bar.png",
@@ -441,8 +487,8 @@ const pastBlogs = new blogList(
         "WERK 8",
         "Werk8",
         `Das WERK 8 ist ein tolles Restaurant in einer alten Fabrikhalle im Gundeldingerfeld. Das Ambiente, wie schon vorher erwähnt mit der Fabrikhalle schafft eine coole und spannende Atmosphäre. 
-            Der Klassiker zum Essen ist auf jeden Fall das Clubsandwich, aber es gibt auch viele andere köstliche Speisen. Das WERK 8 ist auch für seine grosse und tolle Bar bekannt, also nicht nur zum Essen, sondern auch zum Trinken empfiehlt sich das WERK 8. Etwas was aber auffällt ist die Lautstärke. Durch den grossen Raum hallt es und wenn die Musik läuft, ist es ein wenig laut. 
-            Ansonsten ist das WERK 8 aber ein super Restaurant, das sich gut eignet, wenn man mit Freunden essen gehen will. Durch die grosse Fabrikhalle hat es sehr viel Platz und somit auch Ausstattung. Im Sommer bietet sich auch ein Aussenbereich an der Sonne an.`,
+        Der Klassiker zum Essen ist auf jeden Fall das Clubsandwich, aber es gibt auch viele andere köstliche Speisen. Das WERK 8 ist auch für seine grosse und tolle Bar bekannt, also nicht nur zum Essen, sondern auch zum Trinken empfiehlt sich das WERK 8. Etwas was aber auffällt ist die Lautstärke. Durch den grossen Raum hallt es und wenn die Musik läuft, ist es ein wenig laut. 
+        Ansonsten ist das WERK 8 aber ein super Restaurant, das sich gut eignet, wenn man mit Freunden essen gehen will. Durch die grosse Fabrikhalle hat es sehr viel Platz und somit auch Ausstattung. Im Sommer bietet sich auch ein Aussenbereich an der Sonne an.`,
         [
             "Werk8/eingang.png",
             "Werk8/kerze.png",
@@ -478,7 +524,7 @@ const pastBlogs = new blogList(
         "Lily's",
         "Lilys",
         `Das Lily's ist ein Restaurant in der Rebgasse, also in der Nähe des Claraplatzes. Das Lily's hat eine asiatische Küche mit vielen Spezialitäten. Im Sommer hat es einen schönen Aussenbereich mit Lichtern, sodass man an Sommerabenden den Abend draussen geniessen. 
-            Auf der Speisekarte ist mit Symbolen jeweils angegeben wie scharf das jeweilige Gericht ist und ob es vegetarisch oder vegan ist. Man kann das Lily's auch via Velokurier nach Hause bestellen.`,
+        Auf der Speisekarte ist mit Symbolen jeweils angegeben wie scharf das jeweilige Gericht ist und ob es vegetarisch oder vegan ist. Man kann das Lily's auch via Velokurier nach Hause bestellen.`,
         [
             "lilys/salad.png",
             "lilys/asia.png",
@@ -510,7 +556,7 @@ const pastBlogs = new blogList(
         "Nomad Design & Lifestyle Hotel",
         "Nomad",
         `Im Nomad ist das Konzept, dass die Küche sehr international ist, also es gibt Gerichte von der ganzen Welt. Das Nomad hat auch einen Brunch jeden Sonntag mit gemütlicher Stimmung. Die Karte wechselt gelegentlich, denn es kommen immer wieder neue Gerichte auf die Karte. Der Klassiker vom Nomad ist aber der Burger „The Big Nomad“.
-            Das Lokal hat eine sehr schöne Einrichtung mit viel Pflanzen und der Farbe Türkis. Die Atmosphäre ist sehr angenehm und man fühlt sich auf jeden Fall wohl. Das Nomad besitzt auch eine grosse schöne Bar mit vielen Drinks. Es empfiehlt sich auf jeden Fall, dort ein Stopp einzulegen und etwas zu essen oder zu trinken.`,
+        Das Lokal hat eine sehr schöne Einrichtung mit viel Pflanzen und der Farbe Türkis. Die Atmosphäre ist sehr angenehm und man fühlt sich auf jeden Fall wohl. Das Nomad besitzt auch eine grosse schöne Bar mit vielen Drinks. Es empfiehlt sich auf jeden Fall, dort ein Stopp einzulegen und etwas zu essen oder zu trinken.`,
         [
             "Nomad/Burgir.png",
             "Nomad/Kitchen.png",
@@ -545,22 +591,22 @@ const pastBlogs = new blogList(
         "Februar Special: Tibits",
         "Tibits",
         `Das Tibits ist ein vegetarisches Restaurant in Basel. In Basel hat es zwei Filialen, eine in der Steinenvorstadt und die andere im Gundeli bzw. direkt neben dem Bahnhofeingang Gundeldingen. Die Filiale am Bahnhof eignet sich gut, da man vor oder nach einer Reise etwas gutes essen kann. Das tolle am Tibits ist es, dass das Restaurant nur vegetarische oder vegane Sachen anbietet und man so sehr viel köstliche neue Gerichte ausprobieren kann. Das Tibits hat ein Buffet an dem man sich selber bedienen kann. Das hat zum Vorteil, dass man sich nur so viel schöpft wie man selber essen mag, also man kann seine Portion selber machen, was Foodwaste vermeidet. Und zum anderen Vorteil man kann sich das auf den Teller schöpfen was man gern hat oder was man gerne neu ausprobiert.
-            Die Speisen haben eine sehr gute Qualität und schmecken ausgezeichnet. Das Personal ist sehr nett und aufmerksam. Die Ausstattung im Innenraum ist auf jeden Fall gut. Jedoch kann es sein das es im Winter sehr schnell keine Plätze mehr hat. Im Sommer hat es einen schönen Aussenbereich, mit dem man viel Platz hat. 
-
-
-            Juli: Ich habe noch Lust auf ein Dessert, was meinst du?
-            Noée: Ja auf jeden Fall. 
-            Juli: Hier am Dessertbuffet gibt es ein Tiramisù das sehr lecker aussieht. Wollen wir eine Portion teilen?
-            Noée: Ja gute Idee. Ich gehe zur Kasse bezahlen kommst du mit?
-            Juli und Noée bezahlen.
-            Juli: Das Personal ist immer so nett hier. Ich bin richtig zufrieden.
-            Noée: Ja das stimmt. Sie sind sehr aufmerksam und haben uns direkt zwei Löffel mitgegeben um das Tiramisù zu teilen.
-            Juli: Ja genau.
-            Juli und Noée gehen zu ihrem Platz und essen das Tiramisù.
-            Juli: Das schmeckt so guuuut.
-            Noée: Da stimme ich dir voll und ganz zu. Einfach köstlich. Ich fand auch unsere Portion gerade perfekt.
-            Juli: Ja finde ich auch. Das ist eben auch ein Vorteil von einem Buffet. Man kann sich so viel nehmen wie man will.
-            Noée: Genau!`,
+                                                            Die Speisen haben eine sehr gute Qualität und schmecken ausgezeichnet. Das Personal ist sehr nett und aufmerksam. Die Ausstattung im Innenraum ist auf jeden Fall gut. Jedoch kann es sein das es im Winter sehr schnell keine Plätze mehr hat. Im Sommer hat es einen schönen Aussenbereich, mit dem man viel Platz hat. 
+                                                            
+                                                            
+                                                            Juli: Ich habe noch Lust auf ein Dessert, was meinst du?
+                                                            Noée: Ja auf jeden Fall. 
+                                                            Juli: Hier am Dessertbuffet gibt es ein Tiramisù das sehr lecker aussieht. Wollen wir eine Portion teilen?
+                                                            Noée: Ja gute Idee. Ich gehe zur Kasse bezahlen kommst du mit?
+                                                            Juli und Noée bezahlen.
+                                                            Juli: Das Personal ist immer so nett hier. Ich bin richtig zufrieden.
+                                                            Noée: Ja das stimmt. Sie sind sehr aufmerksam und haben uns direkt zwei Löffel mitgegeben um das Tiramisù zu teilen.
+                                                            Juli: Ja genau.
+                                                            Juli und Noée gehen zu ihrem Platz und essen das Tiramisù.
+                                                            Juli: Das schmeckt so guuuut.
+                                                            Noée: Da stimme ich dir voll und ganz zu. Einfach köstlich. Ich fand auch unsere Portion gerade perfekt.
+                                                            Juli: Ja finde ich auch. Das ist eben auch ein Vorteil von einem Buffet. Man kann sich so viel nehmen wie man will.
+                                                            Noée: Genau!`,
         [
             "Tibits/buffet-nr-1.png",
             "Tibits/buffet-nr-2.png",
@@ -598,7 +644,7 @@ const pastBlogs = new blogList(
         "Union Diner",
         "Union",
         `Das Union Diner hat verschiedene Standorte. Unser Besuch erfolgte bei der Filiale nahe dem Bahnhof SBB. Es ist ein wenig versteckt neben dem Tibits. Wer also lieber fleischhaltiges statt vegetarisches Essen will, braucht nur etwa 20 Meter weitergehen. 
-        Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellt werden. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. `,
+                                                                Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellt werden. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. `,
         [
             "Union/bar1.png",
             "Union/bar2.png",
@@ -662,6 +708,14 @@ if (typeof Array.prototype.at == "undefined") {
 
 Number.prototype.clamp = function(min, max) {
     return (this >= max ? max : (this <= min ? min : Number(this)))
+}
+
+function makeTableOfContentsRow(text, id, name) {
+    let tableRow = document.createElement("tr");
+    let tableData = document.createElement("td");
+    tableData.innerHTML = `<a href=${baseURL}/${name}/index.html#${id}>${text}</a>`;
+    tableRow.appendChild(tableData);
+    return tableRow;
 }
 
 function toggleDarkmode(initial) {
@@ -759,26 +813,26 @@ function makeHeader() {
 
 function makeFavicons() {
     let favicons = `
-        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="${baseURL}/images/favicomatic/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${baseURL}/images/favicomatic/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${baseURL}/images/favicomatic/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${baseURL}/images/favicomatic/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="${baseURL}/images/favicomatic/apple-touch-icon-60x60.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${baseURL}/images/favicomatic/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="${baseURL}/images/favicomatic/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="${baseURL}/images/favicomatic/apple-touch-icon-152x152.png" />
-        <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-196x196.png" sizes="196x196" />
-        <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-16x16.png" sizes="16x16" />
-        <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-128.png" sizes="128x128" />
-        <meta name="application-name" content="&nbsp;"/>
-        <meta name="msapplication-TileColor" content="#FFFFFF" />
-        <meta name="msapplication-TileImage" content="${baseURL}/images/favicomatic/mstile-144x144.png" />
-        <meta name="msapplication-square70x70logo" content="${baseURL}/images/favicomatic/mstile-70x70.png" />
-        <meta name="msapplication-square150x150logo" content="${baseURL}/images/favicomatic/mstile-150x150.png" />
-        <meta name="msapplication-wide310x150logo" content="${baseURL}/images/favicomatic/mstile-310x150.png" />
-        <meta name="msapplication-square310x310logo" content="${baseURL}/images/favicomatic/mstile-310x310.png" />`;
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="${baseURL}/images/favicomatic/apple-touch-icon-57x57.png" />
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${baseURL}/images/favicomatic/apple-touch-icon-114x114.png" />
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${baseURL}/images/favicomatic/apple-touch-icon-72x72.png" />
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${baseURL}/images/favicomatic/apple-touch-icon-144x144.png" />
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="${baseURL}/images/favicomatic/apple-touch-icon-60x60.png" />
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${baseURL}/images/favicomatic/apple-touch-icon-120x120.png" />
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="${baseURL}/images/favicomatic/apple-touch-icon-76x76.png" />
+                                                                    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="${baseURL}/images/favicomatic/apple-touch-icon-152x152.png" />
+                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-196x196.png" sizes="196x196" />
+                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-96x96.png" sizes="96x96" />
+                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-32x32.png" sizes="32x32" />
+                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-16x16.png" sizes="16x16" />
+                                                                    <link rel="icon" type="image/png" href="${baseURL}/images/favicomatic/favicon-128.png" sizes="128x128" />
+                                                                    <meta name="application-name" content="&nbsp;"/>
+                                                                    <meta name="msapplication-TileColor" content="#FFFFFF" />
+                                                                    <meta name="msapplication-TileImage" content="${baseURL}/images/favicomatic/mstile-144x144.png" />
+                                                                    <meta name="msapplication-square70x70logo" content="${baseURL}/images/favicomatic/mstile-70x70.png" />
+                                                                    <meta name="msapplication-square150x150logo" content="${baseURL}/images/favicomatic/mstile-150x150.png" />
+                                                                    <meta name="msapplication-wide310x150logo" content="${baseURL}/images/favicomatic/mstile-310x150.png" />
+                                                                    <meta name="msapplication-square310x310logo" content="${baseURL}/images/favicomatic/mstile-310x310.png" />`;
 
     return favicons;
 }
