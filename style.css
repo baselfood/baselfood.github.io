@@ -124,10 +124,11 @@ html {
     top: 10vh;
     top: max(10vh, 80px);
     position: fixed;
-    height: 90vh;
+    height: 90%;
+    max-height: 90%;
     width: var(--sidebar-width);
     background-color: navy;
-    overflow: scroll;
+    overflow-x: scroll;
     left: calc(0px - var(--sidebar-width));
     display: flex;
     flex-direction: column-reverse;

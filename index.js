@@ -643,7 +643,7 @@ const pastBlogs = new blogList(
         "Union Diner",
         "Union",
         `Das Union Diner hat verschiedene Standorte. Unser Besuch erfolgte bei der Filiale nahe dem Bahnhof SBB. Es ist ein wenig versteckt neben dem Tibits. Wer also lieber fleischhaltiges statt vegetarisches Essen will, braucht nur etwa 20 Meter weitergehen. 
-        Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellt werden. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. `,
+        Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellen. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. `,
         [
             "Union/bar1.png",
             "Union/bar2.png",
