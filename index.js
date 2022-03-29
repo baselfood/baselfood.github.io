@@ -33,7 +33,6 @@ class blog {
             this.pos = pos;
         }
     }
-    //setImgs(...imgs) {this.imgs = imgs}
     makeBlog() {
         const pageTitle = document.createElement("title");
         pageTitle.innerText = `${this.name} | Baselfood`;
@@ -715,6 +714,42 @@ const pastBlogs = new blogList(
         "Noée",
         "Das Noohn ist eine Sushi-bar mit einer grossen Auswahl an Sushi-kreationen",
         [47.5521166, 7.5922055]
+    ),
+    new blog(
+        "Bistro Genusswerk & Co",
+        "Genusswerk",
+        `Das Bistro Genusswerk & Co ist ein Café/Restaurant am Freilagerplatz in Münchenstein, in der Nähe des Dreispitzes. Das Bistro bietet jeden Wochentag neu zubereitete frische Menüs an, die man auch alle als Take-Away mitnehmen. Das Bistro bietet zudem auch Events und Apéros an. Das Genusswerk & Co bietet sich super für ein Mittagessen an der Sonne an, denn es hat einen sehr schönen Aussenbereich. Das Essen war sehr frisch, aromatisch und hat sehr gut geschmeckt. 
+        Das Personal ist sehr nett. Das Einzige, was vielleicht ein Nachteil ist, ist, dass es nicht direkt in der Stadt liegt und ein bisschen abseits liegt. Was aber gut ist, dass viele Kund*innen von der FHNW oder der Gestaltungsschule kommen, die in der Nähe sind. Das Ambiente ist sehr toll und angenehm, sodass man sich schnell wohlfühlt.`,
+        [
+            "Genusswerk/panini.png",
+            "Genusswerk/innenraum.png",
+            "Genusswerk/aussenbereich.png",
+            "break",
+            "Genusswerk/törtli.png",
+            "Genusswerk/karte.png",
+        ], {
+            Ambiente: 4,
+            PreisçLeistungsçVerhältnis: 4.5,
+            Qualität_der_Speisen: 5,
+            Quantität_der_Auswahl: 3.5,
+            Lage: 3,
+            Hygiene: 4,
+            Service: 5,
+            Ausstattung: 4
+        }, {
+            Adresse: "Freilager-Platz 9 4142 Münchenstein",
+            Telefonnummer: "061 281 14 14",
+            Website: "http://www.noohn.ch/",
+            Email: "events@noohn.ch"
+        }, {
+            Montag_und_Dienstag: "11:30 - 16:00",
+            Mittwoch_bis_Freitag: "10:30 - 18:00",
+            Samstag_und_Sonntag: "12:30 - 18:00"
+        }, 
+        new Date("3/28/2022"),
+        "Noée",
+        "Das Bistro Genusswerk & Co ist ein Bistro in Münchenstein mit einem gemütlichen Aussenbereich.",
+        [47.5327003, 7.6099120]
     )
 )
 
