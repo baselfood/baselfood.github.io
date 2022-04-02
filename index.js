@@ -921,7 +921,7 @@ function makeFooter() {
     const contact = document.createElement("a");
     contact.innerText = "Kontaktier uns!"
     contact.target = "_blank"
-    contact.href = "mailto:baselfoodblog@gmail.com"
+    contact.href = "mailto:contact@baselfood.email"
 
     const instagram = document.createElement("a");
     instagram.innerText = "Unser Instagram";
