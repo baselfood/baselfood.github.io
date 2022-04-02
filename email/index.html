@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email</title>
     <script>
-        location.href = "mailto:contact@baselfood.email";
+        document.getElementsByTagName("a")[0].click();
     </script>
 </head>
 <body>
-    
+    <style>
+        a {
+            display: none;
+        }
+    </style>
+    <a href="mailto:contact@baselfood.email"></a>
 </body>
 </html>
