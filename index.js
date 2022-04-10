@@ -750,6 +750,45 @@ const pastBlogs = new blogList(
         "Noée",
         "Das Bistro Genusswerk & Co ist ein Bistro in Münchenstein mit einem gemütlichen Aussenbereich.",
         [47.5327003, 7.6099120]
+    ),
+    new blog(
+        "Vito Aeschen",
+        "Vito",
+        `Das Vito liegt nahe dem Aeschenplatz an der Strasse, Aeschengraben. Von aussen sieht es relativ langweilig aus. Drinnen sieht es aber anders aus. Die Inneneinrichtung ist sehr aufwendig und beinhaltet Pflanzen, kleine Tische, Bilder an den Wänden und vieles mehr. Es ist in einem altmodischen Stil eingerichtet und wirkt sehr gemütlich. 
+        Bestellt werden können neben Pizzen, auch Getränke. Wer Pizza also nicht mag, ist in diesem Restaurant eher fehl am Platz. Man kann zwischen einer ganzen personalisierten Pizza auswählen oder einem schon gebackenen Stück. Die Wartezeit beträgt je nach Menge der Besucher*innen etwa 10-20 Minuten. Der Preis für ein kleines Stück Pizza beträgt 10 Franken. 
+        Die Getränke sind da im Vergleich etwas teurer und wir empfehlen davor oder danach etwas zu trinken. Lieferservice gibt es nicht. Man kann entweder draussen vor dem Restaurant essen, oder drinnen, was wir empfehlen, da drinnen weniger Leute sind und man etwas mehr Platz hat.`,
+        [
+            "Vito/pizza-1.png",
+            "Vito/pizza-2.png",
+            "Vito/innenraum-1.png",
+            "Vito/innenraum-2.png",
+            "Vito/lavabo.png",
+            "Vito/säule-1.png",
+            "Vito/säule-2.png",
+        ], {
+            Ambiente: 5,
+            PreisçLeistungsçVerhältnis: 3,
+            Qualität_der_Speisen: 4,
+            Quantität_der_Auswahl: 4,
+            Lage: 2,
+            Hygiene: 4,
+            Service: 2.5,
+            Ausstattung: 5
+        }, {
+            Adresse: "Aeschengraben 14 4051 Basel",
+            Telefonnummer: "076 220 55 68",
+            Website: "https://www.vito.ch/",
+            Email: "info@vito.ch"
+        }, {
+            Montag_bis_Mittwoch: "11:30 - 22:00",
+            Donnerstag: "11:30 - 23:00",
+            Freitag_und_Samstag: "11:30 - 00:00",
+            Samstag_und_Sonntag: "12:00 - 22:00"
+        }, 
+        new Date("4/9/2022"),
+        "Arik",
+        "Das Vito ist ein Pizzaladen im Aeschengraben mit einer coolen Atmosphäre.",
+        [47.5508143, 7.593495]
     )
 )
 
