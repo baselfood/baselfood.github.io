@@ -789,6 +789,43 @@ const pastBlogs = new blogList(
         "Arik",
         "Das Vito ist ein Pizzaladen im Aeschengraben mit einer coolen Atmosphäre.",
         [47.5508143, 7.593495]
+    ),
+    new blog(
+        "BarFüssli",
+        "Barfuessli",
+        `In der BarFüssli, das ist im Orell Füssli im 1. Stock, kann man entspannt einen Kaffee geniessen und es bietet sich sehr gut an dort einen Zwischenstopp einzulegen, um eine Pause vom Shoppen oder anderen Aktivitäten in der Stadt zu machen, denn der Orell Füssli ist in der Freien Strasse, was sehr geeignet ist. Die BarFüssli wird von der Firma Gottlieber geführt, die für ihre Schokolade bekannt ist. 
+        Die Atmosphäre ist sehr angenehm, einladend und ruhig, sodass man die BarFüssli auch gut als ein Ort zum Arbeiten benutzen kann. Ein Nachteil ist aber, dass die Ausstattung relativ begrenzt ist, darum ist es bei vielen Leuten schwierig einen Platz zu bekommen. Der Service ist nett und man wird gut bedient. Als Snacks bietet die BarFüssli süsse und salzige Kleinigkeiten an.`,
+        [
+            "Barfuessli/Most.png",
+            "Barfuessli/Cafe.png",
+            "Barfuessli/Cafe-und-Most.png",
+            "break",
+            "Barfuessli/Shop.png",
+            "Barfuessli/Bar.png",
+            "Barfuessli/Fenster.png"
+        ], {
+            Ambiente: 4,
+            PreisçLeistungsçVerhältnis: 3.5,
+            Qualität_der_Speisen: 4,
+            Quantität_der_Auswahl: 3.5,
+            Lage: 4.5,
+            Hygiene: 4,
+            Service: 3,
+            Ausstattung: 2
+        }, {
+            Adresse: "Freie Strasse 17 4001 Basel",
+            Telefonnummer: "079 157 57 81",
+            Website: "https://www.gottlieber.ch/",
+            Email: "info@gottlieber.ch"
+        }, {
+            Montag_bis_Freitag: "9:00 - 18:30",
+            Samstag: "9:00 - 18:00",
+            Sonntag: "Geschlossen"
+        }, 
+        new Date("4/16/2022"),
+        "Noée",
+        "Die Barfüssli ist ein Cafè in der Innenstadt mit einer guten Lage und einem Snackangebot.",
+        [47.557363, 7.589085]
     )
 )
 
