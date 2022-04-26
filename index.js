@@ -101,11 +101,13 @@ class blog {
                         images.appendChild(breakElem)
                     } else if (isURL(img)) {
                         let newImg = new Image();
+                        newImg.loading = "lazy";
                         newImg.src = img;
                         newImg.alt = img.split(".").join("/").split("/").at(-2);
                         images.appendChild(newImg);
                     } else {
                         let newImg = new Image();
+                        newImg.loading = "lazy";
                         newImg.src = `${baseURL}/images/${img}`;
                         newImg.alt = img.split(".").join("/").split("/").at(-2);
                         images.appendChild(newImg)
@@ -113,11 +115,13 @@ class blog {
                 }
             } else if (this.imgs.constructor == String && isURL(this.imgs)) {
                 let newImg = new Image();
+                newImg.loading = "lazy";
                 newImg.src = this.imgs;
                 newImg.alt = this.imgs.split(".").join("/").split("/").at(-2);
                 images.appendChild(newImg);
             } else if (this.imgs.constructor == String) {
                 let newImg = new Image();
+                newImg.loading = "lazy";
                 newImg.src = `${baseURL}/images/${this.imgs}`;
                 newImg.alt = this.imgs.split(".").join("/").split("/").at(-2)
                 images.appendChild(newImg);
@@ -256,6 +260,7 @@ class blogList {
             blogTitle.classList.add("blogTitle");
 
             let blogImg = new Image();
+            blogImg.loading = "lazy";
             blogImg.alt = pastBlog.name;
             if (pastBlog.coverImg) {
                 blogImg.src = pastBlog.coverImg;
@@ -1102,6 +1107,7 @@ function makeRatingTable(dict) {
         let criteriaValue = document.createElement("td");
         for (var i = 1; i <= currentVal; i++) {
             let newImg = new Image();
+            newImg.loading = "lazy";
             newImg.src = `${baseURL}/images/full-star.png`;
             newImg.classList.add("star");
             newImg.alt = "star";
@@ -1109,6 +1115,7 @@ function makeRatingTable(dict) {
         }
         if (!Number.isInteger(currentVal)) {
             let newImg = new Image();
+            newImg.loading = "lazy";
             newImg.src = `${baseURL}/images/half-star.png`;
             newImg.classList.add("star");
             newImg.alt = "star";
@@ -1116,6 +1123,7 @@ function makeRatingTable(dict) {
         }
         for (var i = currentVal; i <= 4; i++) {
             let newImg = new Image();
+            newImg.loading = "lazy";
             newImg.src = `${baseURL}/images/empty-star.png`;
             newImg.classList.add("star");
             newImg.alt = "star";
