@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baselfood</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <script src="./index.js"></script>
+    <script src="../index.js"></script>
     <script type="text/javascript">
         let favicons = makeFavicons();
         document.head.innerHTML += favicons;
         let Header = makeHeader()
         document.body.appendChild(Header)
-        let content = pastBlogs.makeLandingPage();
-        document.body.appendChild(content)
+        let content = pastBlogs.findBlog("Nooch").makeBlog();
+        document.body.appendChild(content);
         let sideBar = makeSidebar();
         document.body.appendChild(sideBar);
         let footer = makeFooter();

@@ -831,7 +831,44 @@ const pastBlogs = new blogList(
         "Noée",
         "Die Barfüssli ist ein Cafè in der Innenstadt mit einer guten Lage und einem Snackangebot.",
         [47.557363, 7.589085]
+    ),
+    new blog(
+        "Nooch - Asian Kitchen",
+        "Nooch",
+        `Das Nooch befindet sich in der Gerbergassse 73, nahe vom Barfüsserplatz. Es hat eine asiatische Küche und bietet daher asiatische Spezialitäten unter anderem auch Sushis an. Es hat innen eine schöne Einrichtung und sehr viel Platz. Das Ambiente ist sehr cool und schön.
+        Der Aussenbereich ist sehr begrenzt, was schade ist, weil es im Sommer dann schwierig ist, draussen einen Platz zu bekommen. Das Essen vom Nooch kann man sich auch nach Hause liefern lassen. Die Sushis schmecken sehr gut und frisch. Das Personal ist sehr nett und freundlich. 
+        Das Nooch ist auf jeden Fall empfehlenswert für ein Mittagessen oder ein Abendessen in der Stadt.`,
+        [
+            "Nooch/Sushi.png",
+            "Nooch/Schaukel.png",
+            "Nooch/Velo.png",
+            "Nooch/Aussenbereich.png",
+            "Nooch/Bar.png",
+            "Nooch/Gitter.png",
+            "Nooch/Dessert.png"
+        ], {
+            Ambiente: 4,
+            PreisçLeistungsçVerhältnis: 3.5,
+            Qualität_der_Speisen: 4,
+            Quantität_der_Auswahl: 3.5,
+            Lage: 3.5,
+            Hygiene: 3,
+            Service: 4,
+            Ausstattung: 4.5
+        }, {
+            Adresse: "Gerbergasse 73 4001 Basel",
+            Telefonnummer: "061 261 67 80",
+            Website: "https://www.nooch.ch/de/basel-barfi"
+        }, {
+            Montag_bis_Samstag: "11:00 - 23:00",
+            Sonntag: "12:00 - 22:00"
+        }, 
+        new Date("4/28/2022"),
+        "Noée",
+        "Das Nooch ist ein Sushi-Restaurant in der Innenstadt mit einer coolen Atmossphäre.",
+        [47.5553191, 7.5889372]
     )
+
 )
 
 if (typeof structuredClone === "undefined") {
