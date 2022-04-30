@@ -150,6 +150,7 @@ html {
 
 #sidebar .sideBarBlog {
     color: white;
+    text-decoration: none;
     font-family: 'Raleway', sans-serif;
     padding: 1.5vh 1vw;
     margin-bottom: -1px;
@@ -428,6 +429,8 @@ html {
     border-radius: 5%;
     position: static;
     cursor: pointer;
+    color: black;
+    text-decoration: none;
 }
 
 #content .blog .blogTitle {

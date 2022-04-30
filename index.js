@@ -252,7 +252,7 @@ class blogList {
         blogs.id = "blogs";
 
         for (let pastBlog of this.blogs) {
-            let containingDiv = document.createElement("div");
+            let containingDiv = document.createElement("a");
             containingDiv.id = pastBlog.urlName;
 
             let blogTitle = document.createElement("h3");
@@ -278,7 +278,7 @@ class blogList {
             blogDate.classList.add("blogDate");
 
             containingDiv.classList.add("blog");
-            containingDiv.onclick = _ => location.href = `${baseURL}/${pastBlog.urlName}/`;
+            containingDiv.href = `${baseURL}/${pastBlog.urlName}/`;
 
             containingDiv.appendChild(blogTitle);
             containingDiv.appendChild(blogImg);
@@ -1053,10 +1053,10 @@ function makeFooter() {
 
     if (isMobile) {
         instagram.href = "instagram://user?username=baselfood_blog";
-        instagram.onclick = _ => document.getElementById("instagram").href = "https://www.instagram.com/_u/baselfood_blog/"
+        instagram.onclick = _ => instagram.href = "https://www.instagram.com/_u/baselfood_blog/"
 
         twitter.href = "twitter://user?screen_name=baselfood";
-        twitter.onclick = _ => document.getElementById("twitter").href = "https://twitter.com/baselfood";
+        twitter.onclick = _ => twitter.href = "https://twitter.com/baselfood";
     } else {
         instagram.href = "https://www.instagram.com/_u/baselfood_blog/";
         twitter.href = "https://twitter.com/baselfood";
@@ -1074,42 +1074,39 @@ function makeSidebar() {
     let reverseBlogs = pastBlogs.blogs.slice().reverse();
 
     if (isMobile) {
-        let blog = document.createElement("div");
+        let blog = document.createElement("a");
         blog.classList.add("sideBarBlog");
         const aboutUs = document.createElement("p");
         aboutUs.innerText = "Über uns";
         blog.appendChild(aboutUs);
-        blog.onclick = function() {
-            location.href = `${baseURL}/aboutus/`
-        }
+        blog.href = `${baseURL}/aboutus/`;
+
         if (`${baseURL}/aboutus/`.toLowerCase() == location.href.toLowerCase()) {
             blog.id = "currentBlog";
         }
         sideBar.appendChild(blog);
     }
 
-    let blog = document.createElement("div");
+    let blog = document.createElement("a");
     blog.classList.add("sideBarBlog");
     const aboutUs = document.createElement("p");
     aboutUs.innerText = "Startseite";
     blog.appendChild(aboutUs);
-    blog.onclick = function() {
-        location.href = baseURL
-    }
+    blog.href = baseURL;
+
     if (baseURL.toLowerCase() == location.href.toLowerCase()) {
         blog.id = "currentBlog";
     }
     sideBar.appendChild(blog);
 
     for (let pastBlog of reverseBlogs) {
-        let blog = document.createElement("div");
+        let blog = document.createElement("a");
         blog.classList.add("sideBarBlog");
         if (`${baseURL}/${pastBlog.urlName}/`.toLowerCase() == location.href.toLowerCase()) {
             blog.id = "currentBlog";
         }
-        blog.onclick = function() {
-            location.href = `${baseURL}/${pastBlog.urlName}/`
-        }
+        blog.href = `${baseURL}/${pastBlog.urlName}/`;
+
         let pElem = document.createElement("p");
         let theDate = `${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}`;
         pElem.innerText = `${pastBlog.name} - ${theDate}`;
