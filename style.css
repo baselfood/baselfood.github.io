@@ -124,15 +124,16 @@ html {
     top: 10vh;
     top: max(10vh, 80px);
     position: fixed;
-    height: 90%;
-    max-height: 90%;
+    height: 90vh;
+    max-height: 90vh;
+    min-height: 90vh;
     width: var(--sidebar-width);
     background-color: navy;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
     left: calc(0px - var(--sidebar-width));
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
+    flex-direction: column;
 }
 
 #sidebar.inactive {

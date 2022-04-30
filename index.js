@@ -1,4 +1,4 @@
-const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
+const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///home/gian.zellweger/Desktop/baselfood.github.io" : alert("unreachable"))
 
 class blog {
     constructor(name, urlName, text, imgs, ratings, infoBox, openingTimes, postDate, writer, shortDescription, pos, coverImg) {
@@ -1071,21 +1071,7 @@ function makeSidebar() {
     const sideBar = document.createElement("div");
     sideBar.id = "sidebar";
 
-    for (let pastBlog of pastBlogs.blogs) {
-        let blog = document.createElement("div");
-        blog.classList.add("sideBarBlog");
-        if (`${baseURL}/${pastBlog.urlName}/`.toLowerCase() == location.href.toLowerCase()) {
-            blog.id = "currentBlog";
-        }
-        blog.onclick = function() {
-            location.href = `${baseURL}/${pastBlog.urlName}/`
-        }
-        let pElem = document.createElement("p");
-        let theDate = `${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}`;
-        pElem.innerText = `${pastBlog.name} - ${theDate}`;
-        blog.appendChild(pElem);
-        sideBar.appendChild(blog);
-    }
+    let reverseBlogs = pastBlogs.blogs.slice().reverse();
 
     if (isMobile) {
         let blog = document.createElement("div");
@@ -1114,6 +1100,22 @@ function makeSidebar() {
         blog.id = "currentBlog";
     }
     sideBar.appendChild(blog);
+
+    for (let pastBlog of reverseBlogs) {
+        let blog = document.createElement("div");
+        blog.classList.add("sideBarBlog");
+        if (`${baseURL}/${pastBlog.urlName}/`.toLowerCase() == location.href.toLowerCase()) {
+            blog.id = "currentBlog";
+        }
+        blog.onclick = function() {
+            location.href = `${baseURL}/${pastBlog.urlName}/`
+        }
+        let pElem = document.createElement("p");
+        let theDate = `${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}`;
+        pElem.innerText = `${pastBlog.name} - ${theDate}`;
+        blog.appendChild(pElem);
+        sideBar.appendChild(blog);
+    }
 
     return sideBar
 }
