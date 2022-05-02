@@ -177,7 +177,7 @@ html {
         border-color: white;
         background-color: var(--dark-mode-color);
     } to {
-        color: black;
+        color: black !important;
         border-color: black;
         background-color: white;
     }
@@ -189,14 +189,14 @@ html {
         border-color: black;
         background-color: white;
     } to {
-        color: white;
+        color: white !important;
         border-color: white;
         background-color: var(--dark-mode-color);
     }
 }
 
 .dark {
-    color: white;
+    color: white !important;
     border-color: white !important;
     background-color: var(--dark-mode-color);
 }
@@ -207,7 +207,7 @@ html {
 }
 
 .bright {
-    color: black;
+    color: black !important;
     border-color: black !important;
     background-color: white;
 }
@@ -425,12 +425,17 @@ html {
     height: 70vh;
     height: max(70vh, 550px);
     display: inline-block;
-    border: 10px solid rgba(30, 30, 30, 0.75);
+    border-width: 10px;
+    border-style: solid;
     border-radius: 5%;
     position: static;
     cursor: pointer;
     color: black;
     text-decoration: none;
+}
+
+#content .blog:not(.dark):not(.bright) {
+    border-color: black;
 }
 
 #content .blog .blogTitle {

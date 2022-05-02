@@ -1,4 +1,4 @@
-const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///home/gian.zellweger/Desktop/baselfood.github.io" : alert("unreachable"))
+const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
 
 class blog {
     constructor(name, urlName, text, imgs, ratings, infoBox, openingTimes, postDate, writer, shortDescription, pos, coverImg) {
@@ -917,7 +917,8 @@ function toggleDarkmode(initial) {
     const body = document.body;
     const Tables = document.querySelectorAll("#content table *");
     const textElems = document.querySelectorAll("#content > p, #content > td, #content > th");
-    const elemsToSwitch = [...Tables, ...textElems, body];
+    const blogs = document.getElementsByClassName("blog");
+    const elemsToSwitch = [...Tables, ...textElems, ...blogs, body];
     if (!elemsToSwitch[0].classList.contains("animate") && !initial) {
         elemsToSwitch.forEach(x => x.classList.add("animate"))
     }
