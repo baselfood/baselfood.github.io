@@ -317,7 +317,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 3,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 4,
             Lage: 4,
             Hygiene: 5,
@@ -352,7 +352,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 3.5,
             PreisçLeistungsçVerhältnis: 4,
-            Qualität_der_Speisen: 4.5,
+            Qualität_des_Konsumierten: 4.5,
             Quantität_der_Auswahl: 3,
             Lage: 5,
             Hygiene: 4.5,
@@ -391,7 +391,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 4,
-            Qualität_der_Speisen: 4.5,
+            Qualität_des_Konsumierten: 4.5,
             Quantität_der_Auswahl: 3.5,
             Lage: 4.5,
             Hygiene: 4.5,
@@ -429,7 +429,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 5,
             PreisçLeistungsçVerhältnis: 4,
-            Qualität_der_Speisen: 4,
+            Qualität_des_Konsumierten: 4,
             Quantität_der_Auswahl: 2,
             Lage: 4,
             Hygiene: 4,
@@ -467,7 +467,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4.5,
             PreisçLeistungsçVerhältnis: 4,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 3.5,
             Lage: 4,
             Hygiene: 5,
@@ -502,7 +502,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 4,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 4,
             Lage: 5,
             Hygiene: 4,
@@ -538,7 +538,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 3,
             PreisçLeistungsçVerhältnis: 3.5,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 4,
             Lage: 4,
             Hygiene: 4,
@@ -571,7 +571,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 3,
-            Qualität_der_Speisen: 4,
+            Qualität_des_Konsumierten: 4,
             Quantität_der_Auswahl: 3.5,
             Lage: 5,
             Hygiene: 5,
@@ -587,7 +587,7 @@ const pastBlogs = new blogList(
             Donnerstag_bis_Samstag: "7.00 bis 24.00"
         },
         new Date("2/19/2022"),
-        "unreachable",
+        "Noée",
         "Das Nomad ist ein gemütliches Hotel mit einer Bar und einem Restaurant, bei dem es sich lohnt, einen Halt zu machen.",
         [47.552709, 7.5942989]
     ),
@@ -625,7 +625,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 5,
             PreisçLeistungsçVerhältnis: 5,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 4,
             Lage: 4,
             Hygiene: 5,
@@ -659,7 +659,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 4,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 3,
             Lage: 3,
             Hygiene: 4,
@@ -699,7 +699,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 5,
             PreisçLeistungsçVerhältnis: 4,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 4,
             Lage: 3.5,
             Hygiene: 5,
@@ -735,7 +735,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 4.5,
-            Qualität_der_Speisen: 5,
+            Qualität_des_Konsumierten: 5,
             Quantität_der_Auswahl: 3.5,
             Lage: 3,
             Hygiene: 4,
@@ -773,7 +773,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 5,
             PreisçLeistungsçVerhältnis: 3,
-            Qualität_der_Speisen: 4,
+            Qualität_des_Konsumierten: 4,
             Quantität_der_Auswahl: 4,
             Lage: 2,
             Hygiene: 4,
@@ -811,7 +811,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 3.5,
-            Qualität_der_Speisen: 4,
+            Qualität_des_Konsumierten: 4,
             Quantität_der_Auswahl: 3.5,
             Lage: 4.5,
             Hygiene: 4,
@@ -849,7 +849,7 @@ const pastBlogs = new blogList(
         ], {
             Ambiente: 4,
             PreisçLeistungsçVerhältnis: 3.5,
-            Qualität_der_Speisen: 4,
+            Qualität_des_Konsumierten: 4,
             Quantität_der_Auswahl: 3.5,
             Lage: 3.5,
             Hygiene: 3,
@@ -1242,6 +1242,17 @@ function makeOpeningTimes(openingTimes) {
     Table.id = "openingTimesTable";
     containingDiv.appendChild(Table)
     return containingDiv;
+}
+
+function getRatings() {
+    const writers = new Array(...new Set(pastBlogs.blogs.map(x => x.writer)))
+    for (let writer of writers) {
+        let currentArray = pastBlogs.blogs.filter(x => x.writer == writer);
+        let ratingArray = currentArray.map(x => [x.name, x.writer, Object.values(x.ratings).reduce((a, b) => a + b)]);
+        ratingArray.sort((a, b) => b[2] - a[2]);
+        ratingArray.forEach(x => console.log(`${x[0]} (${x[1]}): ${x[2]}`));
+        console.log("\n")
+    }
 }
 
 function checkMap() {
