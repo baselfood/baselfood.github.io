@@ -1,0 +1,622 @@
+[
+  {
+    "name": "Alchemist",
+    "urlName": "Alchemist",
+    "text": "Das Alchemist ist ein cooles Restaurant an der Schifflände. Das Konzept des Restaurants ist es eine coole, angenehme, freundschaftliche Atmosphäre zu schaffen. Zudem ist es das Ziel so viel wie möglich in der Küche und an der Bar selber zu machen. Als Beispiel verkaufen sie keine Softdrinks wie Cola, Fanta, etc., sondern stellen ein Getränk mit Cola-Kraut Sirup und Wasser zur Verfügung.\\n        Die Speisekarte besteht aus vielen kleinen Speisen wie Dips, Suppen, Pommes, Brot usw. und es gibt eine grosse Auswahl. Die kleinen Portionen sind zum Teilen gedacht. Also man bestellt viele kleine Speisen und stellt sie in die Mitte des Tisches und teilt. Dieses Restaurant bringt auf jeden Fall ein Erlebnis, weil man unter anderem seine Getränke selber mixen kann und die Präsentation der Getränke und Speisen sehr schön und anregend ist. Das Ambiente ist sehr toll, locker, geheimnisvoll und man fühlt sich schnell wohl. \\n        Der Service ist auch sehr nett und beantwortet gerne Fragen, wenn man zum ersten Mal dort ist und noch alles neu ist. Auf der Website kann man noch viel mehr erfahren z.B wie es zum Namen Alchemist kam, wieso genau es an diesem Ort ist, wieso sie dieses Menü und Essen für ihr Restaurant-Konzept gewählt haben und noch vieles mehr.",
+    "imgs": [
+      "alchemist/door.png",
+      "alchemist/tube-system.png",
+      "alchemist/tube.png",
+      "alchemist/wax.png",
+      "alchemist/glace.png",
+      "break",
+      "alchemist/bottles.png",
+      "alchemist/food.png",
+      "alchemist/steamy-kitchen.png",
+      "alchemist/card.png",
+      "alchemist/chairs.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 3,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 4,
+      "Lage": 4,
+      "Hygiene": 5,
+      "Service": 4.5,
+      "Ausstattung": 4
+    },
+    "infoBox": {
+      "Adresse": "Schifflände 1 4051 Basel",
+      "Telefonnummer": "061 561 88 68",
+      "Email": "info@alchemistbasel.ch",
+      "Website": "https://www.alchemistbasel.ch/"
+    },
+    "openingTimes": {
+      "Montag_bis_Donnerstag": "11.30 bis 14.30 / 17.00 bis 23.00",
+      "Freitag": "11.30 bis 14.30 / 17.00 bis 24.00",
+      "Samstag": "12.00 bis 24.00"
+    },
+    "postDate": "1/9/2022",
+    "writer": "Noée",
+    "shortDescription": "Das Alchemist ist ein cooles, experimentelles Restaurant an der Schifflände mit vielen verschiedenen Speisen wie z.B. Dips, Suppen, Pommes, Brot.",
+    "pos": [
+      47.5595824,
+      7.5882457
+    ]
+  },
+  {
+    "name": "Café Streuli",
+    "urlName": "Streuli",
+    "text": "Das Café Streuli liegt etwas versteckt auf dem Bruderholz und ist ein eher kleines Café. Man wird freundlich begrüsst und der Service ist sehr gut. Das Angebot besteht aus Café, Gebäck, Konfekt und ein Snackangebot z.B. Sandwiches, belegte Brote usw. \\n        Die Preise sind etwa im Mittelbereich, und im Vergleich zu den Produkten angemessen. Das Café ist auch gut für eine kurze Wegzehrung oder einen Take-Away Kaffee. Das Café bietet zusätzlich einen Packetdienst an, bei dem Pakete gegen eine Gebühr abgegeben werden können.",
+    "imgs": [
+      "https://media-cdn.tripadvisor.com/media/photo-s/12/00/a2/6d/sidewalk-seating-and.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-s/12/00/a9/cb/interior-view.jpg",
+      "https://hummel.cafe-streuli.ch/fileadmin/_processed_/d/0/csm_Feingebaeck_8e4f068eef.jpg",
+      "break",
+      "https://tse1.mm.bing.net/th?id=OIP.b1u2jmFCGFLSmHUOKtes7QHaJQ&pid=Api"
+    ],
+    "ratings": {
+      "Ambiente": 3.5,
+      "PreisçLeistungsçVerhältnis": 4,
+      "Qualität_des_Konsumierten": 4.5,
+      "Quantität_der_Auswahl": 3,
+      "Lage": 5,
+      "Hygiene": 4.5,
+      "Service": 4.5,
+      "Ausstattung": 3.5
+    },
+    "infoBox": {
+      "Adresse": "Auf dem Hummel 2 4059 Bruderholz",
+      "Telefonnummer": "061 362 07 10 (zu Bürozeiten)",
+      "Email": "streuli.hummel@bluewin.com",
+      "Website": "https://hummel.cafe-streuli.ch/"
+    },
+    "openingTimes": {
+      "Montag_bis_Fritag": "07.00 bis 18.00",
+      "Samstag": "08.00 bis 17.00",
+      "Sonntag": "09.00 bis 17.00"
+    },
+    "postDate": "1/9/2022",
+    "writer": "Arik",
+    "shortDescription": "Das Café Streuli liegt etwas versteckt auf dem Bruderholz. Dort kann man Café, Gebäck, Konfekt und ein Snackangebot verzehren.",
+    "coverImg": "https://hummel.cafe-streuli.ch/fileadmin/_processed_/d/0/csm_Feingebaeck_8e4f068eef.jpg",
+    "pos": [
+      47.5320943,
+      7.5932226
+    ]
+  },
+  {
+    "name": "Wiesengarten Musetti",
+    "urlName": "Musetti",
+    "text": "Das Restaurant Wiesengarten ist ein kleines Restaurant in Riehen, nahe an der deutschen Grenze. Das Restaurant ist eher edel, gedacht für Geburtstage, Hochzeiten oder andere Anlässe. Beim Eintreten wird man freundlich begrüsst und zu seinem Tisch geführt. Man fühlt sich sehr schnell wohl und gut aufgenommen. \\n        Das Restaurant ist ein Familienbetrieb und man merkt, dass die Betreiber*innen mit sehr viel Leidenschaft dabei sind. Auch die Speisen, wie z.B. die Pasta sind komplett hausgemacht. Im Zentrum des Restaurants steht auch der Wein. Es gibt es eine grosse Weinkarte, aus verschiedenen Regionen Italiens. Die verwendeten Produkte sind saisonal und marktfrisch. \\n        Das Musetti wird mehrheitlich von Erwachsenen besucht, und ist nicht unbedingt die beste Wahl für Kinder, da die Speisekarte keine Kindermenüs enthält. Die Preise sind etwas gehoben, was aber bei der hervorragenden Qualität und der hausgemachten Zubereitung gerechtfertigt ist. Die Räumlichkeiten sind relativ klein, aber sehr gemütlich eingerichtet.",
+    "imgs": [
+      "musetti/fleisch.png",
+      "musetti/sauce.png",
+      "musetti/glace.png",
+      "musetti/wine.png",
+      "musetti/aussen.png",
+      "musetti/innen.png",
+      "musetti/nacht.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 4,
+      "Qualität_des_Konsumierten": 4.5,
+      "Quantität_der_Auswahl": 3.5,
+      "Lage": 4.5,
+      "Hygiene": 4.5,
+      "Service": 5,
+      "Ausstattung": 5
+    },
+    "infoBox": {
+      "Adresse": "Weilstrasse 51 4125 Basel",
+      "Telefonnummer": "061 641 26 42",
+      "Email": "reservation@wiesengartenmusetti.ch",
+      "Website": "http://www.wiesengartenmusetti.ch/"
+    },
+    "openingTimes": {
+      "Montag_und_Dienstag": "Geschlossen",
+      "Mittwoch_bis_Sonntag": "11.30 bis 14.00 / 18.00 bis 23.00"
+    },
+    "postDate": "1/9/2022",
+    "writer": "Arik",
+    "shortDescription": "Das Restaurant Wiesengarten ist ein edles kleines Restaurant in Riehen, gedacht für Hochzeitsessen und Geburtstage.",
+    "pos": [
+      47.5914631,
+      7.6473783
+    ]
+  },
+  {
+    "name": "Café Bar Elisabethen",
+    "urlName": "Elisabethen",
+    "text": "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche. Im Sommer bietet sich ein wunderschöner Aussenbereich an, um einen Cappuccino zu trinken oder eine kleine Mahlzeit zu essen. Ausserdem hat es einen sehr herzigen kleinen Innenbereich, in dem man an kalten Wintertagen sein kann. \\n        In dem Onlineshop, sowie auch vor Ort in der Café Bar kann man Weine, wie auch Bio-Reis und andere Produkte kaufen. Als kleine Speisen bietet das Café Suppen oder Salate an. Das Highlight von der Café Bar Elisabethen ist jedoch der Kaffee, der fast genauso wie in Italien schmeckt. \\n        Das Personal ist sehr freundlich und man fühlt sich schnell wohl. Für einen kurzen Stop zum Aufwärmen eignet sich das Café sehr und ist daher empfehlenswert.",
+    "imgs": [
+      "elisabethen/cake.png",
+      "elisabethen/bottles.png",
+      "elisabethen/stairs.png",
+      "elisabethen/window.png",
+      "elisabethen/chairs.png",
+      "break",
+      "elisabethen/entrance.png",
+      "elisabethen/people.png"
+    ],
+    "ratings": {
+      "Ambiente": 5,
+      "PreisçLeistungsçVerhältnis": 4,
+      "Qualität_des_Konsumierten": 4,
+      "Quantität_der_Auswahl": 2,
+      "Lage": 4,
+      "Hygiene": 4,
+      "Service": 4,
+      "Ausstattung": 3
+    },
+    "infoBox": {
+      "Adresse": "Elisabethenstrasse 14 4051 Basel",
+      "Telefonnummer": "079 511 72 38",
+      "Email": "joernschaerer@delitalia.ch",
+      "Website": "https://www.cafebarelisabethen.com/"
+    },
+    "openingTimes": {
+      "Dienstag_bis_Freitag": "7.00 bis 19.00",
+      "Samstag_und_Sonntag": "10.00 bis 18.00"
+    },
+    "postDate": "1/9/2022",
+    "writer": "Noée",
+    "shortDescription": "Die Café Bar Elisabethen befindet sich direkt in der Elisabethenkirche und ist optimal für einen kleinen Zwischenstop.",
+    "pos": [
+      47.5527293,
+      7.5911635
+    ]
+  },
+  {
+    "name": "1777 Café Restaurant Bar",
+    "urlName": "1777",
+    "text": "Das 1777 ist ein Restaurant im Schmiedenhof. Es hat einen schönen Aussenbereich im Innenhof. Das Personal ist sehr nett und aufmerksam. Das Besondere im 1777 sind die Werkstätte. Das heisst man kann sich eigene Salate und Baguettes zusammenstellen mit seinen Lieblingszutaten. \\n        Ansonsten macht das 1777 auch sehr köstliche Burger. Das Ambiente ist locker und freundlich. Ausserdem besitzt das 1777 eine coole Bar mit Drinks etc. Von Montag bis Freitag von 11.30 bis 15.00 stellt das Restaurant ein Tagesangebot mit Tagesteller, Suppen, vegetarischen alternativen und weitere Kleinigkeiten bereit. ",
+    "imgs": [
+      "1777/glowy.png",
+      "1777/bar.png",
+      "1777/burger.png",
+      "1777/cabbage.png",
+      "1777/salad.png",
+      "break",
+      "1777/card0.png",
+      "1777/card1.png",
+      "1777/card2.png"
+    ],
+    "ratings": {
+      "Ambiente": 4.5,
+      "PreisçLeistungsçVerhältnis": 4,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 3.5,
+      "Lage": 4,
+      "Hygiene": 5,
+      "Service": 5,
+      "Ausstattung": 4
+    },
+    "infoBox": {
+      "Adresse": "Im Schmiedenhof 10 4001 Basel",
+      "Telefonnummer": "061 261 77 77",
+      "Email": "info@1777.ch",
+      "Website": "www.1777.ch"
+    },
+    "openingTimes": {
+      "Montag_bis_Mittwoch": "10.00 bis 20.00",
+      "Donnerstag_bis_Samstag": "10.00 bis 23.00"
+    },
+    "postDate": "1/9/2022",
+    "writer": "Noée",
+    "shortDescription": "Das 1777 hat es sich zum Konzept genommen, die Konsument*innen genaustens entscheiden zu lassen, was ins Essen kommt.",
+    "pos": [
+      47.5570095,
+      7.5877449
+    ]
+  },
+  {
+    "name": "WERK 8",
+    "urlName": "Werk8",
+    "text": "Das WERK 8 ist ein tolles Restaurant in einer alten Fabrikhalle im Gundeldingerfeld. Das Ambiente, wie schon vorher erwähnt mit der Fabrikhalle schafft eine coole und spannende Atmosphäre. \\n        Der Klassiker zum Essen ist auf jeden Fall das Clubsandwich, aber es gibt auch viele andere köstliche Speisen. Das WERK 8 ist auch für seine grosse und tolle Bar bekannt, also nicht nur zum Essen, sondern auch zum Trinken empfiehlt sich das WERK 8. Etwas was aber auffällt ist die Lautstärke. Durch den grossen Raum hallt es und wenn die Musik läuft, ist es ein wenig laut. \\n        Ansonsten ist das WERK 8 aber ein super Restaurant, das sich gut eignet, wenn man mit Freunden essen gehen will. Durch die grosse Fabrikhalle hat es sehr viel Platz und somit auch Ausstattung. Im Sommer bietet sich auch ein Aussenbereich an der Sonne an.",
+    "imgs": [
+      "Werk8/eingang.png",
+      "Werk8/kerze.png",
+      "Werk8/bar.png",
+      "Werk8/karte.png",
+      "Werk8/sandwich.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 4,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 4,
+      "Lage": 5,
+      "Hygiene": 4,
+      "Service": 4,
+      "Ausstattung": 5
+    },
+    "infoBox": {
+      "Adresse": "Dornacherstrasse 192 4053 Basel",
+      "Telefonnummer": "061 551 08 80",
+      "Email": "reservation@werkacht.ch",
+      "Website": "https://werkacht.ch/"
+    },
+    "openingTimes": {
+      "Sonntag_bis_Mittwoch": "Geschlossen",
+      "Donnerstag": "17.00 bis 23.00",
+      "Freitag": "17.00 bis 24.00",
+      "Samstag": "18.00 bis 24.00"
+    },
+    "postDate": "1/15/2022",
+    "writer": "Noée",
+    "shortDescription": "Das WERK 8 ist ein tolles Restaurant in einer alten Fabrikhalle mit einer grossen, tollen Bar und guten Clubsandwiches.",
+    "pos": [
+      47.5416492,
+      7.5934488
+    ]
+  },
+  {
+    "name": "Lily's",
+    "urlName": "Lilys",
+    "text": "Das Lily's ist ein Restaurant in der Rebgasse, also in der Nähe des Claraplatzes. Das Lily's hat eine asiatische Küche mit vielen Spezialitäten. Im Sommer hat es einen schönen Aussenbereich mit Lichtern, sodass man an Sommerabenden den Abend draussen geniessen. \\n        Auf der Speisekarte ist mit Symbolen jeweils angegeben wie scharf das jeweilige Gericht ist und ob es vegetarisch oder vegan ist. Man kann das Essen aus dem Lily's auch via Velokurier nach Hause bestellen.",
+    "imgs": [
+      "lilys/salad.png",
+      "lilys/asia.png",
+      "lilys/karte-aussen.png",
+      "lilys/karte-innen.png",
+      "lilys/klösse.png"
+    ],
+    "ratings": {
+      "Ambiente": 3,
+      "PreisçLeistungsçVerhältnis": 3.5,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 4,
+      "Lage": 4,
+      "Hygiene": 4,
+      "Service": 4,
+      "Ausstattung": 4
+    },
+    "infoBox": {
+      "Adresse": "Rebgasse 1 4058 Basel",
+      "Telefonnummer": "061 683 11 11",
+      "Website": "https://lilys.ch/"
+    },
+    "openingTimes": {
+      "Montag_bis_Sonntag": "11.00 bis 21.00"
+    },
+    "postDate": "1/17/2022",
+    "writer": "Noée",
+    "shortDescription": "Das Lily's ist ein Restaurant mit einer asiatischen Küche und einem schönen Aussenbereich.",
+    "pos": [
+      47.5612102,
+      7.594024
+    ]
+  },
+  {
+    "name": "Nomad Design & Lifestyle Hotel",
+    "urlName": "Nomad",
+    "text": "Im Nomad ist das Konzept, dass die Küche sehr international ist, also es gibt Gerichte von der ganzen Welt. Das Nomad hat auch einen Brunch jeden Sonntag mit gemütlicher Stimmung. Die Karte wechselt gelegentlich, denn es kommen immer wieder neue Gerichte auf die Karte. Der Klassiker vom Nomad ist aber der Burger „The Big Nomad“.\\n        Das Lokal hat eine sehr schöne Einrichtung mit viel Pflanzen und der Farbe Türkis. Die Atmosphäre ist sehr angenehm und man fühlt sich auf jeden Fall wohl. Das Nomad besitzt auch eine grosse schöne Bar mit vielen Drinks. Es empfiehlt sich auf jeden Fall, dort ein Stopp einzulegen und etwas zu essen oder zu trinken.",
+    "imgs": [
+      "Nomad/Burgir.png",
+      "Nomad/Kitchen.png",
+      "Nomad/Nomol-Burgir.png",
+      "Nomad/Salat.png",
+      "Nomad/Karte.png",
+      "Nomad/Glas.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 3,
+      "Qualität_des_Konsumierten": 4,
+      "Quantität_der_Auswahl": 3.5,
+      "Lage": 5,
+      "Hygiene": 5,
+      "Service": 5,
+      "Ausstattung": 4
+    },
+    "infoBox": {
+      "Adresse": "Brunngässlein 8 4052 Basel",
+      "Telefonnummer": "061 690 91 60",
+      "Email": "info@nomad.ch",
+      "Website": "https://www.nomad.ch/"
+    },
+    "openingTimes": {
+      "Sonntag_bis_Mittwoch": "7.00 bis 23.00",
+      "Donnerstag_bis_Samstag": "7.00 bis 24.00"
+    },
+    "postDate": "1/19/2022",
+    "writer": "Noée",
+    "shortDescription": "Das Nomad ist ein gemütliches Hotel mit einer Bar und einem Restaurant, bei dem es sich lohnt, einen Halt zu machen.",
+    "pos": [
+      47.552709,
+      7.5942989
+    ]
+  },
+  {
+    "name": "Februar Special: Tibits",
+    "urlName": "Tibits",
+    "text": "Das Tibits ist ein vegetarisches Restaurant in Basel. In Basel hat es zwei Filialen, eine in der Steinenvorstadt und die andere im Gundeli bzw. direkt neben dem Bahnhofeingang Gundeldingen. Die Filiale am Bahnhof eignet sich gut, da man vor oder nach einer Reise etwas gutes essen kann. Das tolle am Tibits ist es, dass das Restaurant nur vegetarische oder vegane Sachen anbietet und man so sehr viel köstliche neue Gerichte ausprobieren kann. Das Tibits hat ein Buffet an dem man sich selber bedienen kann. Das hat zum Vorteil, dass man sich nur so viel schöpft wie man selber essen mag, also man kann seine Portion selber machen, was Foodwaste vermeidet. Und zum anderen Vorteil man kann sich das auf den Teller schöpfen was man gern hat oder was man gerne neu ausprobiert.\\n        Die Speisen haben eine sehr gute Qualität und schmecken ausgezeichnet. Das Personal ist sehr nett und aufmerksam. Die Ausstattung im Innenraum ist auf jeden Fall gut. Jedoch kann es sein das es im Winter sehr schnell keine Plätze mehr hat. Im Sommer hat es einen schönen Aussenbereich, mit dem man viel Platz hat. \\n\\n\\n        Juli: Ich habe noch Lust auf ein Dessert, was meinst du?\\n        Noée: Ja auf jeden Fall. \\n        Juli: Hier am Dessertbuffet gibt es ein Tiramisù das sehr lecker aussieht. Wollen wir eine Portion teilen?\\n        Noée: Ja gute Idee. Ich gehe zur Kasse bezahlen kommst du mit?\\n        Juli und Noée bezahlen.\\n        Juli: Das Personal ist immer so nett hier. Ich bin richtig zufrieden.\\n        Noée: Ja das stimmt. Sie sind sehr aufmerksam und haben uns direkt zwei Löffel mitgegeben um das Tiramisù zu teilen.\\n        Juli: Ja genau.\\n        Juli und Noée gehen zu ihrem Platz und essen das Tiramisù.\\n        Juli: Das schmeckt so guuuut.\\n        Noée: Da stimme ich dir voll und ganz zu. Einfach köstlich. Ich fand auch unsere Portion gerade perfekt.\\n        Juli: Ja finde ich auch. Das ist eben auch ein Vorteil von einem Buffet. Man kann sich so viel nehmen wie man will.\\n        Noée: Genau!",
+    "imgs": [
+      "Tibits/buffet-nr-1.png",
+      "Tibits/buffet-nr-2.png",
+      "Tibits/buffet-nr-3.png",
+      "Tibits/buffet-nr-4.png",
+      "Tibits/buffet-nr-5.png",
+      "Tibits/gnotschi-nr-1.png",
+      "Tibits/gnotschi-nr-2.png",
+      "Tibits/rote-wand-nr-1.png",
+      "Tibits/rote-wand-nr-2.png",
+      "Tibits/tiramisu.png"
+    ],
+    "ratings": {
+      "Ambiente": 5,
+      "PreisçLeistungsçVerhältnis": 5,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 4,
+      "Lage": 4,
+      "Hygiene": 5,
+      "Service": 5,
+      "Ausstattung": 4
+    },
+    "infoBox": {
+      "Adresse": "Meret Oppenheim-Strasse 1 4053 Basel",
+      "Telefonnummer": "061 531 40 40",
+      "Website": "http://www.tibits.ch/"
+    },
+    "openingTimes": {
+      "Montag_bis_Samstag": "8.00 bis 22.00",
+      "Sonntag": "9:00 bis 22:00"
+    },
+    "postDate": "1/24/2022",
+    "writer": "Noée",
+    "shortDescription": "Ein kleiner Dialog über das coole, vegetarische Restaurant am Bahnhof mit einem Specialguest.",
+    "pos": [
+      47.5460533,
+      7.5874119
+    ]
+  },
+  {
+    "name": "Union Diner",
+    "urlName": "Union",
+    "text": "Das Union Diner hat verschiedene Standorte. Unser Besuch erfolgte bei der Filiale nahe dem Bahnhof SBB. Es ist ein wenig versteckt neben dem Tibits. Wer also lieber fleischhaltiges statt vegetarisches Essen will, braucht nur etwa 20 Meter weitergehen. \\n        Das Restaurant ist relativ klein und schlicht gehalten. Es besteht aus einem kleinen Aussenbereich, einer grossen Bar und Sitzgelegenheiten. Man kann per QR-Code bestellen. Die Küche ist direkt hinter der Bar, so kann man zuschauen, während das Essen zubereitet wird. ",
+    "imgs": [
+      "Union/bar1.png",
+      "Union/bar2.png",
+      "Union/aussen.png",
+      "Union/burger.png",
+      "Union/burgerkarte.png",
+      "Union/drinkkarte.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 4,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 3,
+      "Lage": 3,
+      "Hygiene": 4,
+      "Service": 3,
+      "Ausstattung": 3.5
+    },
+    "infoBox": {
+      "Adresse": "Meret Oppenheim-Strasse 1 4053 Basel",
+      "Telefonnummer": "061 271 02 66",
+      "Website": "https://uniondiner.ch/",
+      "Email": "moh@uniondiner.ch"
+    },
+    "openingTimes": {
+      "Montag_bis_Sonntag": "11:00 bis 23:00"
+    },
+    "postDate": "2/24/2022",
+    "writer": "Arik",
+    "shortDescription": "Das Union Diner ist ein Burgerladen, der hinter dem Bahnhof liegt und eine lockere Atmosphäre hat.",
+    "pos": [
+      47.546016,
+      7.5865915
+    ]
+  },
+  {
+    "name": "Noohn Sushi Bar",
+    "urlName": "Noohn",
+    "text": "Die Sushi Bar im Noohn ist auf jeden Fall ein Erlebnis. In der Mitte der Bar ist ein Sushi Koch, der frisch Sushis zubereitet und sie auf das drehende Fliessband stellt. Bei den Sushi Tellern gibt es Unterschiede. Nämlich bestimmen die Farben der Teller die Preise, je nach Aufwendigkeit und Grösse. \\n        Grün = 5.00 \\n        Blau = 7.00 \\n        Schwarz = 8.00 \\n        Rot = 9.00 \\n        Gelb = 12.00 \\n        \\n        Die Sushis haben eine sehr gute Qualität und schmecken sehr gut. Durch das Fliessband kommen immer wieder neue Kreationen von Sushis und man kann selber auswählen welche Sushis und wie viele Sushi-kreationen man konsumieren möchte. Das Noohn besitzt auch noch einen normalen Restaurantbereich mit anderen Spezialitäten. Man kann bei der Sushi-Bar nicht reservieren und selbst wenn die Sushi-Bar voll ist, gibt es keine langen Wartezeiten. Die Atmosphäre ist sehr toll und das Personal freundlich.",
+    "imgs": [
+      "Noohn/sushibar.jpg",
+      "Noohn/sitze.jpg",
+      "Noohn/display.png",
+      "break",
+      "Noohn/sushi.png",
+      "Noohn/teller.png"
+    ],
+    "ratings": {
+      "Ambiente": 5,
+      "PreisçLeistungsçVerhältnis": 4,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 4,
+      "Lage": 3.5,
+      "Hygiene": 5,
+      "Service": 4,
+      "Ausstattung": 4
+    },
+    "infoBox": {
+      "Adresse": "Henric Petri-Strasse 12 4051 Basel",
+      "Telefonnummer": "061 281 14 14",
+      "Website": "http://www.noohn.ch/",
+      "Email": "events@noohn.ch"
+    },
+    "openingTimes": {
+      "Montag_bis_Freitag": "11:30 bis 14:00 / 18:00 - 22:00",
+      "Samstag": "18:00 - 22:00",
+      "Sonntag": "Geschlossen"
+    },
+    "postDate": "2/28/2022",
+    "writer": "Noée",
+    "shortDescription": "Das Noohn ist eine Sushi-bar mit einer grossen Auswahl an Sushi-kreationen",
+    "pos": [
+      47.5521166,
+      7.5922055
+    ]
+  },
+  {
+    "name": "Bistro Genusswerk & Co",
+    "urlName": "Genusswerk",
+    "text": "Das Bistro Genusswerk & Co ist ein Café/Restaurant am Freilagerplatz in Münchenstein, in der Nähe des Dreispitzes. Das Bistro bietet jeden Wochentag neu zubereitete frische Menüs an, die man auch alle als Take-Away mitnehmen. Das Bistro bietet zudem auch Events und Apéros an. Das Genusswerk & Co bietet sich super für ein Mittagessen an der Sonne an, denn es hat einen sehr schönen Aussenbereich. Das Essen war sehr frisch, aromatisch und hat sehr gut geschmeckt. \\n        Das Personal ist sehr nett. Das Einzige, was vielleicht ein Nachteil ist, ist, dass es nicht direkt in der Stadt liegt und ein bisschen abseits liegt. Was aber gut ist, dass viele Kund*innen von der FHNW oder der Gestaltungsschule kommen, die in der Nähe sind. Das Ambiente ist sehr toll und angenehm, sodass man sich schnell wohlfühlt.",
+    "imgs": [
+      "Genusswerk/panini.png",
+      "Genusswerk/innenraum.png",
+      "Genusswerk/aussenbereich.png",
+      "break",
+      "Genusswerk/törtli.png",
+      "Genusswerk/karte.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 4.5,
+      "Qualität_des_Konsumierten": 5,
+      "Quantität_der_Auswahl": 3.5,
+      "Lage": 3,
+      "Hygiene": 4,
+      "Service": 5,
+      "Ausstattung": 4
+    },
+    "infoBox": {
+      "Adresse": "Freilager-Platz 9 4142 Münchenstein",
+      "Telefonnummer": "061 281 14 14",
+      "Website": "http://www.noohn.ch/",
+      "Email": "events@noohn.ch"
+    },
+    "openingTimes": {
+      "Montag_und_Dienstag": "11:30 - 16:00",
+      "Mittwoch_bis_Freitag": "10:30 - 18:00",
+      "Samstag_und_Sonntag": "12:30 - 18:00"
+    },
+    "postDate": "2/28/2022",
+    "writer": "Noée",
+    "shortDescription": "Das Bistro Genusswerk & Co ist ein Bistro in Münchenstein mit einem gemütlichen Aussenbereich.",
+    "pos": [
+      47.5327003,
+      7.609912
+    ]
+  },
+  {
+    "name": "Vito Aeschen",
+    "urlName": "Vito",
+    "text": "Das Vito liegt nahe dem Aeschenplatz an der Strasse, Aeschengraben. Von aussen sieht es relativ langweilig aus. Drinnen sieht es aber anders aus. Die Inneneinrichtung ist sehr aufwendig und beinhaltet Pflanzen, kleine Tische, Bilder an den Wänden und vieles mehr. Es ist in einem altmodischen Stil eingerichtet und wirkt sehr gemütlich. \\n        Bestellt werden können neben Pizzen, auch Getränke. Wer Pizza also nicht mag, ist in diesem Restaurant eher fehl am Platz. Man kann zwischen einer ganzen personalisierten Pizza auswählen oder einem schon gebackenen Stück. Die Wartezeit beträgt je nach Menge der Besucher*innen etwa 10-20 Minuten. Der Preis für ein kleines Stück Pizza beträgt 10 Franken. \\n        Die Getränke sind da im Vergleich etwas teurer und wir empfehlen davor oder danach etwas zu trinken. Lieferservice gibt es nicht. Man kann entweder draussen vor dem Restaurant essen, oder drinnen, was wir empfehlen, da drinnen weniger Leute sind und man etwas mehr Platz hat.",
+    "imgs": [
+      "Vito/pizza-1.png",
+      "Vito/pizza-2.png",
+      "Vito/innenraum-1.png",
+      "Vito/innenraum-2.png",
+      "Vito/lavabo.png",
+      "Vito/säule-1.png",
+      "Vito/säule-2.png"
+    ],
+    "ratings": {
+      "Ambiente": 5,
+      "PreisçLeistungsçVerhältnis": 3,
+      "Qualität_des_Konsumierten": 4,
+      "Quantität_der_Auswahl": 4,
+      "Lage": 2,
+      "Hygiene": 4,
+      "Service": 2.5,
+      "Ausstattung": 5
+    },
+    "infoBox": {
+      "Adresse": "Aeschengraben 14 4051 Basel",
+      "Telefonnummer": "076 220 55 68",
+      "Website": "https://www.vito.ch/",
+      "Email": "info@vito.ch"
+    },
+    "openingTimes": {
+      "Montag_bis_Mittwoch": "11:30 - 22:00",
+      "Donnerstag": "11:30 - 23:00",
+      "Freitag_und_Samstag": "11:30 - 00:00",
+      "Samstag_und_Sonntag": "12:00 - 22:00"
+    },
+    "postDate": "3/9/2022",
+    "writer": "Arik",
+    "shortDescription": "Das Vito ist ein Pizzaladen im Aeschengraben mit einer coolen Atmosphäre.",
+    "pos": [
+      47.5508143,
+      7.593495
+    ]
+  },
+  {
+    "name": "BarFüssli",
+    "urlName": "Barfuessli",
+    "text": "In der BarFüssli, das ist im Orell Füssli im 1. Stock, kann man entspannt einen Kaffee geniessen und es bietet sich sehr gut an dort einen Zwischenstopp einzulegen, um eine Pause vom Shoppen oder anderen Aktivitäten in der Stadt zu machen, denn der Orell Füssli ist in der Freien Strasse, was sehr geeignet ist. Die BarFüssli wird von der Firma Gottlieber geführt, die für ihre Schokolade bekannt ist. \\n        Die Atmosphäre ist sehr angenehm, einladend und ruhig, sodass man die BarFüssli auch gut als ein Ort zum Arbeiten benutzen kann. Ein Nachteil ist aber, dass die Ausstattung relativ begrenzt ist, darum ist es bei vielen Leuten schwierig einen Platz zu bekommen. Der Service ist nett und man wird gut bedient. Als Snacks bietet die BarFüssli süsse und salzige Kleinigkeiten an.",
+    "imgs": [
+      "Barfuessli/Most.png",
+      "Barfuessli/Cafe.png",
+      "Barfuessli/Cafe-und-Most.png",
+      "break",
+      "Barfuessli/Shop.png",
+      "Barfuessli/Bar.png",
+      "Barfuessli/Fenster.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 3.5,
+      "Qualität_des_Konsumierten": 4,
+      "Quantität_der_Auswahl": 3.5,
+      "Lage": 4.5,
+      "Hygiene": 4,
+      "Service": 3,
+      "Ausstattung": 2
+    },
+    "infoBox": {
+      "Adresse": "Freie Strasse 17 4001 Basel",
+      "Telefonnummer": "079 157 57 81",
+      "Website": "https://www.gottlieber.ch/",
+      "Email": "info@gottlieber.ch"
+    },
+    "openingTimes": {
+      "Montag_bis_Freitag": "9:00 - 18:30",
+      "Samstag": "9:00 - 18:00",
+      "Sonntag": "Geschlossen"
+    },
+    "postDate": "3/16/2022",
+    "writer": "Noée",
+    "shortDescription": "Die Barfüssli ist ein Cafè in der Innenstadt mit einer guten Lage und einem Snackangebot.",
+    "pos": [
+      47.557363,
+      7.589085
+    ]
+  },
+  {
+    "name": "Nooch - Asian Kitchen",
+    "urlName": "Nooch",
+    "text": "Das Nooch befindet sich in der Gerbergassse 73, nahe vom Barfüsserplatz. Es hat eine asiatische Küche und bietet daher asiatische Spezialitäten unter anderem auch Sushis an. Es hat innen eine schöne Einrichtung und sehr viel Platz. Das Ambiente ist sehr cool und schön.\\n        Der Aussenbereich ist sehr begrenzt, was schade ist, weil es im Sommer dann schwierig ist, draussen einen Platz zu bekommen. Das Essen vom Nooch kann man sich auch nach Hause liefern lassen. Die Sushis schmecken sehr gut und frisch. Das Personal ist sehr nett und freundlich. \\n        Das Nooch ist auf jeden Fall empfehlenswert für ein Mittagessen oder ein Abendessen in der Stadt.",
+    "imgs": [
+      "Nooch/Sushi.png",
+      "Nooch/Schaukel.png",
+      "Nooch/Velo.png",
+      "Nooch/Aussenbereich.png",
+      "Nooch/Bar.png",
+      "Nooch/Gitter.png",
+      "Nooch/Dessert.png"
+    ],
+    "ratings": {
+      "Ambiente": 4,
+      "PreisçLeistungsçVerhältnis": 3.5,
+      "Qualität_des_Konsumierten": 4,
+      "Quantität_der_Auswahl": 3.5,
+      "Lage": 3.5,
+      "Hygiene": 3,
+      "Service": 4,
+      "Ausstattung": 4.5
+    },
+    "infoBox": {
+      "Adresse": "Gerbergasse 73 4001 Basel",
+      "Telefonnummer": "061 261 67 80",
+      "Website": "https://www.nooch.ch/de/basel-barfi"
+    },
+    "openingTimes": {
+      "Montag_bis_Samstag": "11:00 - 23:00",
+      "Sonntag": "12:00 - 22:00"
+    },
+    "postDate": "3/28/2022",
+    "writer": "Noée",
+    "shortDescription": "Das Nooch ist ein Sushi-Restaurant in der Innenstadt mit einer coolen Atmossphäre.",
+    "pos": [
+      47.5553191,
+      7.5889372
+    ]
+  }
+]
