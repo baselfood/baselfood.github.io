@@ -199,7 +199,22 @@ class blog {
 class blogList {
     constructor(...blogs) {
         this.blogs = blogs;
-        this.length = blogs.length;
+    }
+    get length() {
+        return blogs.length;
+    }
+    static async fromJSON(json) {
+        let blogs = [];
+        await fetch(json)
+        .then(Response => Response.json())
+        .then(blogsData => {
+            for (const blogData of blogsData) {
+                blogs.push(
+                    new blog(blogData.name, blogData.urlName, blogData.text, blogData.imgs, blogData.ratings, blogData.infoBox, blogData.openingTimes, new Date(blogData.postDate), blogData.writer, blogData.shortDescription, blogData.pos, blogData?.coverImg)
+                )
+            }
+        });
+        return new blogList(...blogs);
     }
     makeLandingPage() {
         const content = document.createElement("article");
@@ -296,18 +311,7 @@ class blogList {
 
 const isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 
-const pastBlogs = new blogList();
-
-fetch("https://baselfood.github.io/blogs.json")
-    .then(Response => Response.json())
-    .then(blogsData => {
-  		for (const blogData of blogsData) {
-            pastBlogs.blogs.push(
-                new blog(blogData.name, blogData.urlName, blogData.text, blogData.imgs, blogData.ratings, blogData.infoBox, blogData.openingTimes, new Date(blogData.postDate), blogData.writer, blogData.shortDescription, blogData.pos, blogData?.coverImg)
-            )
-            pastBlogs.length++;
-        }
-    });
+const pastBlogs = blogList.fromJSON("https://baselfood.github.io/blogs.json");
 
 if (typeof structuredClone === "undefined") {
     function structuredClone(obj) {
