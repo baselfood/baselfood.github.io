@@ -788,7 +788,7 @@ const pastBlogs = new blogList(
             Montag_bis_Mittwoch: "11:30 - 22:00",
             Donnerstag: "11:30 - 23:00",
             Freitag_und_Samstag: "11:30 - 00:00",
-            Samstag_und_Sonntag: "12:00 - 22:00"
+            Sonntag: "12:00 - 22:00"
         }, 
         new Date("4/9/2022"),
         "Arik",
@@ -867,8 +867,47 @@ const pastBlogs = new blogList(
         "Noée",
         "Das Nooch ist ein Sushi-Restaurant in der Innenstadt mit einer coolen Atmossphäre.",
         [47.5553191, 7.5889372]
-    )
-
+    ),
+    new blog(
+        "Papa Joe's ",
+        "PapaJoes",
+        `Das Papa Joe's befindet sich gut gelegen am Barfüsserplatz. Der Eingangsbereich ist sehr schön dekoriert und führt über eine Treppe nach oben. Die Inneneinrichtung ist sehr aufwendig und detailliert gestaltet. Es gibt viele Bilder von Prominenten an den Wänden. Das Thema des Restaurants ist mexikanisch. 
+        Die Auswahl der Speisekarte ist relativ gross, und besteht z.B. aus Burgern, Salaten und Spareribs. Die Qualität der Speisen ist relativ hoch, rechtfertigt aber unserer Meinung nach nicht die hohen Preise. So kostet ein Burger mit Pommes rund 30 Franken. Das Essen wurde relativ zeitnahe geliefert und das Personal war sehr freundlich. 
+        Die Atmosphäre ist sehr angenehm und die Innenrichtung erzeugt einen sehr entspannten Aufenthalt. Insgesamt ist das Restaurant sicher zu empfehlen.`,
+        [
+            "PapaJoes/Essen.png",
+            "PapaJoes/Nachos.png",
+            "PapaJoes/Burger.png",
+            "PapaJoes/Salat.png",
+            "PapaJoes/Innenraum1.png",
+            "PapaJoes/Innenraum2.png",
+            "PapaJoes/Karte.png",
+            "PapaJoes/Aussicht.png",
+            "PapaJoes/Eingang.png",
+        ], {
+            Ambiente: 4.5,
+            PreisçLeistungsçVerhältnis: 2.5,
+            Qualität_der_Speisen: 4,
+            Quantität_der_Auswahl: 4.5,
+            Lage: 4,
+            Hygiene: 4.5,
+            Service: 4,
+            Ausstattung: 5
+        }, {
+            Adresse: "Steinenberg 14 4051 Basel",
+            Telefonnummer: "061 225 93 94",
+            Website: "https://www.papajoes.ch/"
+        }, {
+            Montag_bis_Donnerstag: "11:30 - 23:00",
+            Freitag: "11:30 - 1:30",
+            Samstag: "12:00 - 1:30",
+            Sonntag: "12:00 - 23:00"
+        }, 
+        new Date("5/8/2022"),
+        "Arik",
+        "Das Papa Joe's ist ein mexikanisches Restaurant mit einer grossen Auswahl und einer tollen Einrichtung.",
+        [47.5543552, 7.5892698]
+    ),
 )
 
 if (typeof structuredClone === "undefined") {
