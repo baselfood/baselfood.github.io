@@ -801,10 +801,10 @@ const pastBlogs = new blogList(
         `In der BarFüssli, das ist im Orell Füssli im 1. Stock, kann man entspannt einen Kaffee geniessen und es bietet sich sehr gut an dort einen Zwischenstopp einzulegen, um eine Pause vom Shoppen oder anderen Aktivitäten in der Stadt zu machen, denn der Orell Füssli ist in der Freien Strasse, was sehr geeignet ist. Die BarFüssli wird von der Firma Gottlieber geführt, die für ihre Schokolade bekannt ist. 
         Die Atmosphäre ist sehr angenehm, einladend und ruhig, sodass man die BarFüssli auch gut als ein Ort zum Arbeiten benutzen kann. Ein Nachteil ist aber, dass die Ausstattung relativ begrenzt ist, darum ist es bei vielen Leuten schwierig einen Platz zu bekommen. Der Service ist nett und man wird gut bedient. Als Snacks bietet die BarFüssli süsse und salzige Kleinigkeiten an.`,
         [
-            "Barfuessli/Most.png",
             "Barfuessli/Cafe.png",
             "Barfuessli/Cafe-und-Most.png",
             "break",
+            "Barfuessli/Wasser.png",
             "Barfuessli/Shop.png",
             "Barfuessli/Bar.png",
             "Barfuessli/Fenster.png"
@@ -1011,13 +1011,15 @@ function isURL(URL) {
 function makeHeader() {
     const headerElem = document.createElement("div");
     headerElem.id = "header";
+
+    let logoWrapper = document.createElement("a");
+    logoWrapper.href = baseURL;
     const logo = new Image();
     logo.id = "logo";
     logo.src = `${baseURL}/images/Logo.png`;
     logo.alt = "Return to Homepage";
-    logo.onclick = function() {
-        location.href = baseURL
-    }
+    logoWrapper.appendChild(logo);
+
     const collapseSidebarElem = new Image();
     collapseSidebarElem.alt = "collapse sidebar button";
     collapseSidebarElem.id = "collapseSidebar";
@@ -1033,7 +1035,7 @@ function makeHeader() {
         toggleDarkmode(false);
     }
     headerElem.appendChild(collapseSidebarElem);
-    headerElem.appendChild(logo);
+    headerElem.appendChild(logoWrapper);
 
     if (!isMobile) {
         const aboutUs = document.createElement("a");
