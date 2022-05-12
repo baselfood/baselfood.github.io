@@ -711,8 +711,8 @@ const pastBlogs = new blogList(
             Website: "http://www.noohn.ch/",
             Email: "events@noohn.ch"
         }, {
-            Montag_bis_Freitag: "11:30 bis 14:00 / 18:00 - 22:00",
-            Samstag: "18:00 - 22:00",
+            Montag_bis_Freitag: "11:30 bis 14:00 / 18:00 bis 22:00",
+            Samstag: "18:00 bis 22:00",
             Sonntag: "Geschlossen"
         },
         new Date("3/28/2022"),
@@ -747,9 +747,9 @@ const pastBlogs = new blogList(
             Website: "http://www.noohn.ch/",
             Email: "events@noohn.ch"
         }, {
-            Montag_und_Dienstag: "11:30 - 16:00",
-            Mittwoch_bis_Freitag: "10:30 - 18:00",
-            Samstag_und_Sonntag: "12:30 - 18:00"
+            Montag_und_Dienstag: "11:30 bis 16:00",
+            Mittwoch_bis_Freitag: "10:30 bis 18:00",
+            Samstag_und_Sonntag: "12:30 bis 18:00"
         }, 
         new Date("3/28/2022"),
         "Noée",
@@ -785,10 +785,10 @@ const pastBlogs = new blogList(
             Website: "https://www.vito.ch/",
             Email: "info@vito.ch"
         }, {
-            Montag_bis_Mittwoch: "11:30 - 22:00",
-            Donnerstag: "11:30 - 23:00",
-            Freitag_und_Samstag: "11:30 - 00:00",
-            Sonntag: "12:00 - 22:00"
+            Montag_bis_Mittwoch: "11:30 bis 22:00",
+            Donnerstag: "11:30 bis 23:00",
+            Freitag_und_Samstag: "11:30 bis 00:00",
+            Sonntag: "12:00 bis 22:00"
         }, 
         new Date("4/9/2022"),
         "Arik",
@@ -823,8 +823,8 @@ const pastBlogs = new blogList(
             Website: "https://www.gottlieber.ch/",
             Email: "info@gottlieber.ch"
         }, {
-            Montag_bis_Freitag: "9:00 - 18:30",
-            Samstag: "9:00 - 18:00",
+            Montag_bis_Freitag: "9:00 bis 18:30",
+            Samstag: "9:00 bis 18:00",
             Sonntag: "Geschlossen"
         }, 
         new Date("4/16/2022"),
@@ -860,8 +860,8 @@ const pastBlogs = new blogList(
             Telefonnummer: "061 261 67 80",
             Website: "https://www.nooch.ch/de/basel-barfi"
         }, {
-            Montag_bis_Samstag: "11:00 - 23:00",
-            Sonntag: "12:00 - 22:00"
+            Montag_bis_Samstag: "11:00 bis 23:00",
+            Sonntag: "12:00 bis 22:00"
         }, 
         new Date("4/28/2022"),
         "Noée",
@@ -869,7 +869,7 @@ const pastBlogs = new blogList(
         [47.5553191, 7.5889372]
     ),
     new blog(
-        "Papa Joe's ",
+        "Papa Joe's",
         "PapaJoes",
         `Das Papa Joe's befindet sich gut gelegen am Barfüsserplatz. Der Eingangsbereich ist sehr schön dekoriert und führt über eine Treppe nach oben. Die Inneneinrichtung ist sehr aufwendig und detailliert gestaltet. Es gibt viele Bilder von Prominenten an den Wänden. Das Thema des Restaurants ist mexikanisch. 
         Die Auswahl der Speisekarte ist relativ gross, und besteht z.B. aus Burgern, Salaten und Spareribs. Die Qualität der Speisen ist relativ hoch, rechtfertigt aber unserer Meinung nach nicht die hohen Preise. So kostet ein Burger mit Pommes rund 30 Franken. Das Essen wurde relativ zeitnahe geliefert und das Personal war sehr freundlich. 
@@ -898,16 +898,53 @@ const pastBlogs = new blogList(
             Telefonnummer: "061 225 93 94",
             Website: "https://www.papajoes.ch/"
         }, {
-            Montag_bis_Donnerstag: "11:30 - 23:00",
-            Freitag: "11:30 - 1:30",
-            Samstag: "12:00 - 1:30",
-            Sonntag: "12:00 - 23:00"
+            Montag_bis_Donnerstag: "11:30 bis 23:00",
+            Freitag: "11:30 bis 1:30",
+            Samstag: "12:00 bis 1:30",
+            Sonntag: "12:00 bis 23:00"
         }, 
         new Date("5/8/2022"),
         "Arik",
         "Das Papa Joe's ist ein mexikanisches Restaurant mit einer grossen Auswahl und einer tollen Einrichtung.",
         [47.5543552, 7.5892698]
     ),
+    new blog(
+        "La Manufacture",
+        "Manufacture",
+        `Das La Manufacture ist ein Restaurant an der Hochstrasse in der Nähe vom Tellplatz. Es ist für seine ausgezeichneten Burger bekannt. Die Inneneinrichtung ist sehr gemütlich mit Holztischen und Pflanzen gestaltet und man fühlt sich sehr schnell wohl. 
+        Das Essen war sehr gut und die Qualität erstklassig. Das Personal war sehr nett und unkompliziert und hat zudem auch erklärt, wie das Essen in der Küche zubereitet wird (mit welchen Methoden und Zutaten), was sehr interessant war. Die Lage ist etwas abgelegen von den anderen Restaurants am Tellplatz, jedoch lohnt es sich auf jeden Fall vorbeizuschauen. 
+        Das La Manufacture hat auch noch einen zweiten Standort in Basel am Klosterberg, in der Nähe von der Elisabethenkirche. Ausserdem bietet das La Manufacture einen Brunch jeden Sonntag an. Die Preis-Leistung ist auf jeden Fall angemessen für das köstliche Essen und das Erlebnis.`,
+        [
+            "Manufacture/Burger.png",
+            "Manufacture/Wasser-Glas.png",
+            "Manufacture/Drinks.png",
+            "Manufacture/Salat.png",
+            "Manufacture/Bar.png",
+            "Manufacture/Innenbereich.png",
+        ], {
+            Ambiente: 4,
+            PreisçLeistungsçVerhältnis: 4,
+            Qualität_der_Speisen: 5,
+            Quantität_der_Auswahl: 3.5,
+            Lage: 3,
+            Hygiene: 5,
+            Service: 5,
+            Ausstattung: 3.5
+        }, {
+            Adresse: "Hochstrasse 56 4053 Basel",
+            Telefonnummer: "061 554 52 50",
+            Website: "https://lamanufacture-restaurant.com/gundeli.html",
+            Email: "reservation@lamanufacture-restaurant.com"
+        }, {
+            Montag_bis_Freitag: "11:30 bis 14:30 / 17:30 bis 22:30",
+            Samstag: "12:00 bis 15:00 / 17:30 bis 22:30",
+            Sonntag: "10:00 bis 14:00 / 17:30 bis 21:30"
+        }, 
+        new Date("5/12/2022"),
+        "Noée",
+        "Das La Manufacture ist ein Restaurant an der Hochstrasse in der Nähe vom Tellplatz bekannt für Burger.",
+        [47.5444444, 7.5949900]
+    )
 )
 
 if (typeof structuredClone === "undefined") {
