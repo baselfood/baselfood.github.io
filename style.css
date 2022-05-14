@@ -6,7 +6,7 @@
 :root {
     --dark-mode-color: rgb(42, 42, 42);
     --sidebar-width: max(15vw, 200px);
-    --content-width: calc(90vw);
+    --content-width: 90vw;
 }
 
 body {
@@ -506,7 +506,7 @@ html {
     
     #content {
         margin-left: 5vw !important;
-        animation: none;
+        animation: none !important;
     }
     
     #content #ratingTable .star {
