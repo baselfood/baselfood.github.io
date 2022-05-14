@@ -524,7 +524,7 @@ html {
     
     #footer {
         margin-left: 0vw !important;
-        animation: none;
+        animation: none !important;
     }
 }
 
