@@ -201,6 +201,14 @@ class blogList {
         this.blogs = blogs;
         this.length = blogs.length;
     }
+    getRatings() {
+        let ratings = [];
+        this.blogs.forEach(blog => {
+            ratings.push({rating: Object.values(blog.ratings).reduce((a, b) => a + b), name: blog.name, writer: blog.writer});
+        });
+        ratings = ratings.sort((a, b) => b.rating - a.rating);
+        ratings.forEach(rating => console.log(`${rating.name} von ${rating.writer} hat ${rating.rating} von 40 Punkten.`));
+    }
     makeLandingPage() {
         const content = document.createElement("article");
         content.id = "content";
@@ -587,7 +595,7 @@ const pastBlogs = new blogList(
             Donnerstag_bis_Samstag: "7.00 bis 24.00"
         },
         new Date("2/19/2022"),
-        "unreachable",
+        "Noée",
         "Das Nomad ist ein gemütliches Hotel mit einer Bar und einem Restaurant, bei dem es sich lohnt, einen Halt zu machen.",
         [47.552709, 7.5942989]
     ),
