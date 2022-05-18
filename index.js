@@ -665,14 +665,14 @@ const pastBlogs = new blogList(
             "Union/burgerkarte.png",
             "Union/drinkkarte.png"
         ], {
-            Ambiente: 4,
+            Ambiente: 4.5,
             PreisçLeistungsçVerhältnis: 4,
             Qualität_der_Speisen: 5,
-            Quantität_der_Auswahl: 3,
-            Lage: 3,
+            Quantität_der_Auswahl: 4,
+            Lage: 4,
             Hygiene: 4,
-            Service: 3,
-            Ausstattung: 3.5
+            Service: 3.5,
+            Ausstattung: 4
         }, {
             Adresse: "Meret Oppenheim-Strasse 1 4053 Basel",
             Telefonnummer: "061 271 02 66",
