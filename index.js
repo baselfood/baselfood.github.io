@@ -944,6 +944,39 @@ const pastBlogs = new blogList(
         "Noée",
         "Das La Manufacture ist ein Restaurant an der Hochstrasse in der Nähe vom Tellplatz bekannt für Burger.",
         [47.5444444, 7.5949900]
+    ),
+    new blog(
+        "Starbucks",
+        "Starbucks",
+        `Die Starbucks Standorte erstrecken sich über ganz Basel. Bei unserem Besuch waren wir in der Freien Strasse, wo sich auf der rechten Seite der Starbucks befindet. Der Eingangsbereich ist relativ überschaubar und besteht aus der "Bar" und ein paar Sitzgelegenheiten. Das Untergeschoss ist dagegen sehr geräumig und schön eingerichtet. Man fühlt sich sehr schnell wohl und hat genügend Platz. 
+        Die Preise sind jedoch im Vergleich mit anderen Cafés sehr hoch. So kostet eine Flasche stilles Wasser 4.50 FR. und auch der Kaffee ist preislich im Bereich 6 Franken oder mehr eingeordnet. Auch Snacks und ähnliches fallen im Vergleich zum Preis sehr klein aus. Unsere Empfehlung ist also, dass Starbucks ausschliesslich für einen Kaffee zu besuchen und den Hunger woanders zu stillen. Die Qualität des Kaffees ist aber top und rechtfertigt in diesem Fall den Preis.`,
+        [
+            "Starbucks/Konsum.png",
+            "Starbucks/Cafe.png",
+            "Starbucks/Kuchen.png",
+            "Starbucks/Zimtrolle.png",
+            "Starbucks/Sitzmöglichkeit.png",
+        ], {
+            Ambiente: 4,
+            PreisçLeistungsçVerhältnis: 3,
+            Qualität_der_Speisen: 4,
+            Quantität_der_Auswahl: 3.5,
+            Lage: 3.5,
+            Hygiene: 4,
+            Service: 4,
+            Ausstattung: 4.5
+        }, {
+            Adresse: "Freie Strasse 89 4051 Basel",
+            Telefonnummer: "061 271 09 20",
+            Website: "http://www.starbucks.ch/",
+        }, {
+            Montag_bis_Samstag: "7:00 bis 20:00",
+            Sonntag: "10:00 bis 19:00"
+        }, 
+        new Date("5/18/2022"),
+        "Arik",
+        "Das Starbucks ist wohl das bekannteste Café in Basel mit einer großen Auswahl an Café und Snacks.",
+        [47.5550555, 7.5912779]
     )
 )
 

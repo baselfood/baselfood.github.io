@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <script src="../index.js"></script>
+    </script>
+    <script type="text/javascript">
+        let favicons = makeFavicons();
+        document.head.innerHTML += favicons;
+        let Header = makeHeader()
+        document.body.appendChild(Header)
+        let content = pastBlogs.findBlog("Starbucks").makeBlog();
+        document.body.appendChild(content)
+        let sideBar = makeSidebar();
+        document.body.appendChild(sideBar);
+        let footer = makeFooter()
+        document.body.appendChild(footer);
+        checkMap();
+    </script>
+</body>
+</html>
