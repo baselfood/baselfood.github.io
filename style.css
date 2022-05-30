@@ -247,6 +247,12 @@ html {
     border-collapse: collapse;
 }
 
+#content #video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+}
+
 #content.inactive {
     animation-name: wideCon;
     animation-duration: 0.3s;
@@ -457,9 +463,9 @@ html {
         border-width: 0px;
         width: calc(var(--content-width) - 5vw);
     }
-
+    
     /*-----------------------------------------------------------------------------------------*/
-
+    
     #content #images img {
         max-width: none;
         max-height: none;

@@ -218,6 +218,7 @@ class blogList {
         titleElem.id = "title";
         content.appendChild(titleElem);
 
+
         const googleMapsScript = document.createElement('script');
         googleMapsScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYtPqZSAXLwFhmwZoq_bgethkZw3gjz4&callback=initMap"
         googleMapsScript.async = true;
@@ -255,6 +256,8 @@ class blogList {
         mapsCreateScript.innerHTML = mapsCreateScriptText
         document.body.appendChild(mapsCreateScript);
         document.head.appendChild(googleMapsScript);
+
+        content.innerHTML += `<iframe id="video" width="950" height="534" src="https://www.youtube.com/embed/j-mQNNqMc9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
         const blogs = document.createElement("div");
         blogs.id = "blogs";
