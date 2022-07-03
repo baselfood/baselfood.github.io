@@ -260,7 +260,7 @@ html {
     }
 }
 
-#content {
+:where(#content) {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     margin: 12vh 5vw 0px 5vw;
     margin: max(12vh, 100px) 5vw 0px 5vw;
@@ -371,6 +371,7 @@ html {
 
 #content #tableOfContents td {
     padding: 1vh;
+    font-size: large;
 }
 
 #content #tableOfContents th {

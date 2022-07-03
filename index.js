@@ -1083,14 +1083,14 @@ const pastBlogs = new blogList(
         }, {
             Adresse: "Freie Strasse 89 4051 Basel",
             Telefonnummer: "061 271 09 20",
-            Website: "http://www.starbucks.ch/",
+            Website: "https://www.starbucks.ch/",
         }, {
             Montag_bis_Samstag: "7:00 bis 20:00",
             Sonntag: "10:00 bis 19:00"
         }, 
         new Date("5/18/2022"),
         "Arik",
-        "Das Starbucks ist wohl das bekannteste Café in Basel mit einer großen Auswahl an Café und Snacks.",
+        "Das Starbucks ist wohl das bekannteste Café in Basel mit einer grossen Auswahl an Café und Snacks.",
         [47.5550555, 7.5912779]
     )
 )
