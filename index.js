@@ -301,7 +301,111 @@ class blogList {
         return content;
     }
     findBlog(text) {
-        return this.blogs.find(Blog => Blog.urlName == text)
+        return this.blogs.find(Blog => Blog.urlName.toLowerCase() == text.toLowerCase());
+    }
+    makeSearch(query) {
+        if (query === null) {
+            let content = document.createElement("div");
+            content.id = "content";
+
+            const title = document.createElement("h1");
+            title.innerText = `Suche`
+            title.id = "title";
+            content.appendChild(title);
+
+            const searchBar = document.createElement("input");
+            searchBar.type = "text";
+            searchBar.placeholder = "Suche...";
+            searchBar.id = "bigSearchBar";
+            searchBar.onchange = function() {
+                if (searchBar.value !== "") {
+                    location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                }
+            }
+            content.appendChild(searchBar);
+
+            return content;
+        }
+        if (this.findBlog(query)) {
+            location.href = `${baseURL}/${query}`;
+        }
+
+        let originalQuery = query;
+        query = query.toString().toLowerCase();
+        let foundBlogs = new Set();
+        for (let blog of this.blogs.slice().reverse()) {
+            for (let key in blog) {
+                let value = blog[key];
+                if (value.constructor == Object) {
+                    for (let key1 in value) {
+                        let value1 = value[key1];
+                        if (value1.toString().toLowerCase().includes(query)) {
+                            foundBlogs.add(blog);
+                        }
+                    }
+                } else if (value.constructor == Array) {
+                    for (let item of value) {
+                        if (item.toString().toLowerCase().includes(query)) {
+                            foundBlogs.add(blog);
+                        }
+                    }
+                } else {
+                    if (value.toString().toLowerCase().includes(query)) {
+                        foundBlogs.add(blog);
+                    }
+                }
+            }
+        }
+
+        foundBlogs = [...foundBlogs];
+
+        let content = document.createElement("div");
+        content.id = "content";
+
+        const title = document.createElement("h1");
+        title.innerText = `Suche nach '${originalQuery}' ergab ${foundBlogs.length} Treffer`
+        title.id = "title";
+        content.appendChild(title);
+
+        const searchDiv = document.createElement("div");
+        searchDiv.id = "bigSearchForm";
+
+        const searchBar = document.createElement("input");
+        searchBar.type = "text";
+        searchBar.placeholder = "Suche...";
+        searchBar.id = "bigSearchBar";
+        searchBar.value = originalQuery;
+        searchBar.onchange = function() {
+            if (searchBar.value !== "") {
+                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+            }
+        }
+
+        const searchButton = new Image();
+        searchButton.alt = "Lupe";
+        searchButton.src = `${baseURL}/images/Suche.png`
+        searchButton.id = "bigSearchButton";
+        searchButton.onclick = function() {
+            if (searchBar.value !== "") {
+                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+            }
+        }
+
+        searchDiv.appendChild(searchBar);
+        searchDiv.appendChild(searchButton);
+
+        content.appendChild(searchDiv);
+        for (let foundBlog of foundBlogs) {
+            let blogBox = document.createElement("a");
+            blogBox.classList.add("foundBlog");
+            blogBox.innerText = foundBlog.name;
+            blogBox.href = `${baseURL}/${foundBlog.urlName}/`
+            
+
+            content.appendChild(blogBox);
+        }
+
+        return content;
     }
 }
 
@@ -1036,7 +1140,7 @@ function makeTableOfContentsRow(text, id, name) {
 function toggleDarkmode(initial) {
     const body = document.body;
     const Tables = document.querySelectorAll("#content table *");
-    const textElems = document.querySelectorAll("#content > p, #content > td, #content > th");
+    const textElems = document.querySelectorAll("#content > p, #content > td, #content > th, #content > a");
     const blogs = document.getElementsByClassName("blog");
     const elemsToSwitch = [...Tables, ...textElems, ...blogs, body];
     if (!elemsToSwitch[0].classList.contains("animate") && !initial) {
@@ -1090,24 +1194,51 @@ function isURL(URL) {
 }
 
 function makeHeader() {
-    const headerElem = document.createElement("div");
+    const headerElem = document.createElement("nav");
     headerElem.id = "header";
 
-    let logoWrapper = document.createElement("a");
+    const logoWrapper = document.createElement("a");
     logoWrapper.href = baseURL;
     const logo = new Image();
     logo.id = "logo";
     logo.src = `${baseURL}/images/Logo.png`;
     logo.alt = "Return to Homepage";
     logoWrapper.appendChild(logo);
-
     const collapseSidebarElem = new Image();
     collapseSidebarElem.alt = "collapse sidebar button";
     collapseSidebarElem.id = "collapseSidebar";
     collapseSidebarElem.src = `${baseURL}/images/menucollapse.png`;
     collapseSidebarElem.onclick = function() {
-        collapseSidebar()
-    };
+        collapseSidebar();
+    }
+    const searchDiv = document.createElement("div");
+    if (!isMobile) {
+        searchDiv.id = "searchForm";
+
+        const searchBar = document.createElement("input");
+        searchBar.type = "text";
+        searchBar.placeholder = "Suche...";
+        searchBar.id = "searchBar";
+        searchBar.onchange = function() {
+            if (searchBar.value !== "") {
+                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+            }
+        }
+
+        const searchButton = new Image();
+        searchButton.alt = "Lupe";
+        searchButton.src = `${baseURL}/images/Suche.png`
+        searchButton.id = "searchButton";
+        searchButton.onclick = function() {
+            if (searchBar.value !== "") {
+                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+            }
+        }
+
+        searchDiv.appendChild(searchBar);
+        searchDiv.appendChild(searchButton);
+    }
+
     const darkModeToggle = new Image();
     darkModeToggle.id = "darkModeToggle";
     darkModeToggle.alt = "Toggle Dark Mode"
@@ -1115,16 +1246,14 @@ function makeHeader() {
     darkModeToggle.onclick = function() {
         toggleDarkmode(false);
     }
+
     headerElem.appendChild(collapseSidebarElem);
     headerElem.appendChild(logoWrapper);
 
     if (!isMobile) {
-        const aboutUs = document.createElement("a");
-        aboutUs.innerText = "Über uns";
-        aboutUs.id = "aboutUs";
-        aboutUs.href = `${baseURL}/aboutus/`;
-        headerElem.appendChild(aboutUs);
+        headerElem.appendChild(searchDiv);
     }
+
     headerElem.appendChild(darkModeToggle);
     return headerElem;
 }
@@ -1196,28 +1325,54 @@ function makeSidebar() {
 
     let reverseBlogs = pastBlogs.blogs.slice().reverse();
 
+    const searchDiv = document.createElement("div");
     if (isMobile) {
-        let blog = document.createElement("a");
-        blog.classList.add("sideBarBlog");
-        const aboutUs = document.createElement("p");
-        aboutUs.innerText = "Über uns";
-        blog.appendChild(aboutUs);
-        blog.href = `${baseURL}/aboutus/`;
+        searchDiv.id = "searchForm";
 
-        if (`${baseURL}/aboutus/`.toLowerCase() == location.href.toLowerCase()) {
-            blog.id = "currentBlog";
+        const searchBar = document.createElement("input");
+        searchBar.type = "text";
+        searchBar.placeholder = "Suche...";
+        searchBar.id = "searchBar";
+        searchBar.onchange = function() {
+            if (searchBar.value !== "") {
+                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+            }
         }
-        sideBar.appendChild(blog);
-    }
 
+        const searchButton = new Image();
+        searchButton.alt = "Lupe";
+        searchButton.src = `${baseURL}/images/Suche.png`
+        searchButton.id = "searchButton";
+        searchButton.onclick = function() {
+            if (searchBar.value !== "") {
+                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+            }
+        }
+        searchDiv.classList.add("sideBarBlog");
+        searchDiv.appendChild(searchBar);
+        searchDiv.appendChild(searchButton);
+        sideBar.appendChild(searchDiv);
+    }
     let blog = document.createElement("a");
     blog.classList.add("sideBarBlog");
-    const aboutUs = document.createElement("p");
-    aboutUs.innerText = "Startseite";
-    blog.appendChild(aboutUs);
+    const homePage = document.createElement("p");
+    homePage.innerText = "Startseite";
+    blog.appendChild(homePage);
     blog.href = baseURL;
 
     if (baseURL.toLowerCase() == location.href.toLowerCase()) {
+        blog.id = "currentBlog";
+    }
+    sideBar.appendChild(blog);
+
+    blog = document.createElement("a");
+    blog.classList.add("sideBarBlog");
+    const aboutUs = document.createElement("p");
+    aboutUs.innerText = "Über uns";
+    blog.appendChild(aboutUs);
+    blog.href = `${baseURL}/aboutus/`;
+
+    if (`${baseURL}/aboutus/`.toLowerCase() == location.href.toLowerCase()) {
         blog.id = "currentBlog";
     }
     sideBar.appendChild(blog);

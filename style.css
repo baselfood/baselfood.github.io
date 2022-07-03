@@ -75,12 +75,7 @@ html {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-#header #aboutUs {
-    color: white;
-}
-
 #header #darkModeToggle {
-    margin: 1vh;
     height: 8vh;
     height: max(8vh, 62.5px);
     cursor: pointer;
@@ -99,6 +94,36 @@ html {
     animation-name: fade;
     animation-duration: 0.25s;
     background-color: rgba(255, 255, 255, 0.75);
+}
+
+#header #searchForm, #sidebar #searchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header #searchBar, #sidebar #searchBar {
+    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif; 
+    border-radius: 20px 0 0 20px;
+    padding: 10px;
+}
+
+#header #searchButton, #sidebar #searchButton {
+    border-radius: 0 20px 20px 0;
+    padding: 10px;
+    height: 2vh;
+    width: 2vh;
+    cursor: pointer;
+    background-color: rgb(187, 187, 187);
+    transition: background-color 0.25s ease;
+}
+
+#header #searchButton:hover {
+    background-color: #696969;
+}
+
+#header #searchButton:active {
+    background-color: rgb(69, 69, 69);
 }
 
 /*---------------------------------------------------------------------------------------------*/
@@ -241,6 +266,58 @@ html {
     margin: max(12vh, 100px) 5vw 0px 5vw;
     font-size: 3vh;
     min-height: 76vh;
+}
+
+#content .foundBlog {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    border: 1px solid black;
+    width: 75%;
+    margin: 15px auto;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 0;
+    transform: translate(0, 0);
+}
+
+#content .foundBlog:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px;
+}
+
+#content #bigSearchForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content #bigSearchBar {
+    font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
+    width: 100%;
+    height: 4vh;
+    border-radius: 40px 0 0 40px;
+    padding: 10px;
+    font-size: large;
+}
+
+#content #bigSearchButton {
+    border-radius: 0 40px 40px 0;
+    padding: 10px;
+    height: 4vh;
+    width: 4vh;
+    cursor: pointer;
+    background-color: rgb(187, 187, 187);
+    transition: background-color 0.25s ease;
+}
+
+#content #bigSearchButton:hover {
+    background-color: #696969;
+}
+
+#content #bigSearchButton:active {
+    background-color: rgb(69, 69, 69);
 }
 
 #content table {
@@ -471,6 +548,10 @@ html {
         max-height: none;
         width: 80vw;
         margin: 4vh 2vw;
+    }
+
+    #content .foundBlog {
+        width: 90% !important;
     }
     
     /*-----------------------------------------------------------------------------------------*/
