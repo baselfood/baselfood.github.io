@@ -627,4 +627,9 @@ html {
         animation-duration: 0.25s;
         background-color: transparent !important;
     }
+
+    #content .foundBlog:hover {
+        transform: none;
+        box-shadow: none;
+    }
 }
