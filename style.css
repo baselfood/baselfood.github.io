@@ -187,7 +187,7 @@ html {
 }
 
 #sidebar .sideBarBlog p {
-    font-size: 1.8vh;
+    font-size: medium;
 }
 
 #sidebar .sideBarBlog#currentBlog {
@@ -264,7 +264,7 @@ html {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     margin: 12vh 5vw 0px 5vw;
     margin: max(12vh, 100px) 5vw 0px 5vw;
-    font-size: normal;
+    font-size: medium;
     min-height: 76vh;
 }
 
@@ -389,7 +389,7 @@ html {
 }
 
 #content #infoBox {
-    font-size: 2vh;
+    font-size: small;
 }
 
 #content #infoBox tr {
@@ -409,7 +409,7 @@ html {
 }
 
 #content #openingTimesTable {
-    font-size: 2vh;
+    font-size: small;
     margin: 0px auto;
     font-size: large;
 }
@@ -522,7 +522,7 @@ html {
 }
 
 #content .blog .blogTitle {
-    font-size: 3vh;
+    font-size: medium;
     font-size: max(3vh, 30px);
 }
 
@@ -600,11 +600,6 @@ html {
         min-height: 0px !important;
         width: 6vw;
         height: auto;
-    }
-    
-    #content #ratingTable {
-        font-size: 22px;
-        font-size: min(22px, 2.2vh);
     }
     
     /*-------------------------------------------------------------------------------------------*/
