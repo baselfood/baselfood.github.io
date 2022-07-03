@@ -264,7 +264,7 @@ html {
     font-family: 'Luxurious Roman', 'Times New Roman', Times, serif;
     margin: 12vh 5vw 0px 5vw;
     margin: max(12vh, 100px) 5vw 0px 5vw;
-    font-size: 3vh;
+    font-size: normal;
     min-height: 76vh;
 }
 
