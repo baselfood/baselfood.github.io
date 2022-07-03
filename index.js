@@ -319,7 +319,7 @@ class blogList {
             searchBar.id = "bigSearchBar";
             searchBar.onchange = function() {
                 if (searchBar.value !== "") {
-                    location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                    location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
                 }
             }
             content.appendChild(searchBar);
@@ -377,7 +377,7 @@ class blogList {
         searchBar.value = originalQuery;
         searchBar.onchange = function() {
             if (searchBar.value !== "") {
-                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
             }
         }
 
@@ -387,7 +387,7 @@ class blogList {
         searchButton.id = "bigSearchButton";
         searchButton.onclick = function() {
             if (searchBar.value !== "") {
-                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
             }
         }
 
@@ -1208,9 +1208,7 @@ function makeHeader() {
     collapseSidebarElem.alt = "collapse sidebar button";
     collapseSidebarElem.id = "collapseSidebar";
     collapseSidebarElem.src = `${baseURL}/images/menucollapse.png`;
-    collapseSidebarElem.onclick = function() {
-        collapseSidebar();
-    }
+    collapseSidebarElem.onclick = collapseSidebar;
     const searchDiv = document.createElement("div");
     if (!isMobile) {
         searchDiv.id = "searchForm";
@@ -1221,7 +1219,7 @@ function makeHeader() {
         searchBar.id = "searchBar";
         searchBar.onchange = function() {
             if (searchBar.value !== "") {
-                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
             }
         }
 
@@ -1231,7 +1229,7 @@ function makeHeader() {
         searchButton.id = "searchButton";
         searchButton.onclick = function() {
             if (searchBar.value !== "") {
-                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
             }
         }
 
@@ -1335,7 +1333,7 @@ function makeSidebar() {
         searchBar.id = "searchBar";
         searchBar.onchange = function() {
             if (searchBar.value !== "") {
-                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
             }
         }
 
@@ -1345,7 +1343,7 @@ function makeSidebar() {
         searchButton.id = "searchButton";
         searchButton.onclick = function() {
             if (searchBar.value !== "") {
-                location.href = `${baseURL}/Suche/index.html?query=${searchBar.value}`;
+                location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
             }
         }
         searchDiv.classList.add("sideBarBlog");
