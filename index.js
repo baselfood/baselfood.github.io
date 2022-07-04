@@ -356,6 +356,7 @@ class blogList {
         query = query.toString().toLowerCase();
 
         let rickroll = false;
+        let schimmel = false;
 
         if (query == "pride") {
             setTimeout(_ => [...document.querySelectorAll("#header, #footer, #sidebar")].forEach(x => {
@@ -363,6 +364,8 @@ class blogList {
             }), 100);
         } else if (query == "rick astley" || query == "never gonna give you up" || query == "rickroll") {
             rickroll = true;
+        } else if (query == "dini muetter" || query == "dini mom" || query.includes("schimmel")) {
+            schimmel = true;
         }
 
         let foundBlogs = new Set();
@@ -392,7 +395,7 @@ class blogList {
 
         foundBlogs = [...foundBlogs];
 
-        if (rickroll) {
+        if (rickroll || schimmel) {
             foundBlogs = this.blogs;
         }
 
@@ -438,6 +441,8 @@ class blogList {
             blogBox.innerText = foundBlog.name;
             if (rickroll) {
                 blogBox.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
+            } else if (schimmel) {
+                blogBox.href = "https://www.youtube.com/watch?v=Ji1eWl4-SwA";
             } else {
                 blogBox.href = `${baseURL}/${foundBlog.urlName}/`;
             }
