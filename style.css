@@ -629,3 +629,9 @@ html {
         box-shadow: none;
     }
 }
+
+/*Easter Eggs*/
+
+.pride {
+    background: linear-gradient(132deg, rgb(221, 2, 3) 0.00%, rgb(251, 137, 2) 20.00%, rgb(248, 235, 5) 40.00%, rgb(0, 127, 38) 60.00%, rgb(5, 75, 249) 80.00%, rgb(114, 6, 130) 100.00%) !important;
+}

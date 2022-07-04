@@ -204,7 +204,11 @@ class blogList {
     getRatings() {
         let ratings = [];
         this.blogs.forEach(blog => {
-            ratings.push({rating: Object.values(blog.ratings).reduce((a, b) => a + b), name: blog.name, writer: blog.writer});
+            ratings.push({
+                rating: Object.values(blog.ratings).reduce((a, b) => a + b),
+                name: blog.name,
+                writer: blog.writer
+            });
         });
         ratings = ratings.sort((a, b) => b.rating - a.rating);
         ratings.forEach(rating => console.log(`${rating.name} von ${rating.writer} hat ${rating.rating} von 40 Punkten.`));
@@ -313,16 +317,34 @@ class blogList {
             title.id = "title";
             content.appendChild(title);
 
+            const searchDiv = document.createElement("div");
+            searchDiv.id = "bigSearchForm";
+
             const searchBar = document.createElement("input");
             searchBar.type = "text";
             searchBar.placeholder = "Suche...";
             searchBar.id = "bigSearchBar";
+            searchBar.value = query;
             searchBar.onchange = function() {
                 if (searchBar.value !== "") {
                     location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
                 }
             }
-            content.appendChild(searchBar);
+
+            const searchButton = new Image();
+            searchButton.alt = "Lupe";
+            searchButton.src = `${baseURL}/images/Suche.png`
+            searchButton.id = "bigSearchButton";
+            searchButton.onclick = function() {
+                if (searchBar.value !== "") {
+                    location.href = `${baseURL}/Suche/?query=${searchBar.value}`;
+                }
+            }
+
+            searchDiv.appendChild(searchBar);
+            searchDiv.appendChild(searchButton);
+
+            content.appendChild(searchDiv);
 
             return content;
         }
@@ -332,6 +354,17 @@ class blogList {
 
         let originalQuery = query;
         query = query.toString().toLowerCase();
+
+        let rickroll = false;
+
+        if (query == "pride") {
+            setTimeout(_ => [...document.querySelectorAll("#header, #footer, #sidebar")].forEach(x => {
+                x.classList.add("pride");
+            }), 100);
+        } else if (query == "rick astley" || query == "never gonna give you up" || query == "rickroll") {
+            rickroll = true;
+        }
+
         let foundBlogs = new Set();
         for (let blog of this.blogs.slice().reverse()) {
             for (let key in blog) {
@@ -358,6 +391,10 @@ class blogList {
         }
 
         foundBlogs = [...foundBlogs];
+
+        if (rickroll) {
+            foundBlogs = this.blogs;
+        }
 
         let content = document.createElement("div");
         content.id = "content";
@@ -399,8 +436,11 @@ class blogList {
             let blogBox = document.createElement("a");
             blogBox.classList.add("foundBlog");
             blogBox.innerText = foundBlog.name;
-            blogBox.href = `${baseURL}/${foundBlog.urlName}/`
-            
+            if (rickroll) {
+                blogBox.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
+            } else {
+                blogBox.href = `${baseURL}/${foundBlog.urlName}/`;
+            }
 
             content.appendChild(blogBox);
         }
@@ -865,7 +905,7 @@ const pastBlogs = new blogList(
             Montag_und_Dienstag: "11:30 bis 16:00",
             Mittwoch_bis_Freitag: "10:30 bis 18:00",
             Samstag_und_Sonntag: "12:30 bis 18:00"
-        }, 
+        },
         new Date("3/28/2022"),
         "Noée",
         "Das Bistro Genusswerk & Co ist ein Bistro in Münchenstein mit einem gemütlichen Aussenbereich.",
@@ -904,7 +944,7 @@ const pastBlogs = new blogList(
             Donnerstag: "11:30 bis 23:00",
             Freitag_und_Samstag: "11:30 bis 00:00",
             Sonntag: "12:00 bis 22:00"
-        }, 
+        },
         new Date("4/9/2022"),
         "Arik",
         "Das Vito ist ein Pizzaladen im Aeschengraben mit einer coolen Atmosphäre.",
@@ -941,7 +981,7 @@ const pastBlogs = new blogList(
             Montag_bis_Freitag: "9:00 bis 18:30",
             Samstag: "9:00 bis 18:00",
             Sonntag: "Geschlossen"
-        }, 
+        },
         new Date("4/16/2022"),
         "Noée",
         "Die Barfüssli ist ein Cafè in der Innenstadt mit einer guten Lage und einem Snackangebot.",
@@ -977,7 +1017,7 @@ const pastBlogs = new blogList(
         }, {
             Montag_bis_Samstag: "11:00 bis 23:00",
             Sonntag: "12:00 bis 22:00"
-        }, 
+        },
         new Date("4/28/2022"),
         "Noée",
         "Das Nooch ist ein Sushi-Restaurant in der Innenstadt mit einer coolen Atmossphäre.",
@@ -1017,7 +1057,7 @@ const pastBlogs = new blogList(
             Freitag: "11:30 bis 1:30",
             Samstag: "12:00 bis 1:30",
             Sonntag: "12:00 bis 23:00"
-        }, 
+        },
         new Date("5/8/2022"),
         "Arik",
         "Das Papa Joe's ist ein mexikanisches Restaurant mit einer grossen Auswahl und einer tollen Einrichtung.",
@@ -1054,7 +1094,7 @@ const pastBlogs = new blogList(
             Montag_bis_Freitag: "11:30 bis 14:30 / 17:30 bis 22:30",
             Samstag: "12:00 bis 15:00 / 17:30 bis 22:30",
             Sonntag: "10:00 bis 14:00 / 17:30 bis 21:30"
-        }, 
+        },
         new Date("5/12/2022"),
         "Noée",
         "Das La Manufacture ist ein Restaurant an der Hochstrasse in der Nähe vom Tellplatz bekannt für Burger.",
@@ -1087,7 +1127,7 @@ const pastBlogs = new blogList(
         }, {
             Montag_bis_Samstag: "7:00 bis 20:00",
             Sonntag: "10:00 bis 19:00"
-        }, 
+        },
         new Date("5/18/2022"),
         "Arik",
         "Das Starbucks ist wohl das bekannteste Café in Basel mit einer grossen Auswahl an Café und Snacks.",
