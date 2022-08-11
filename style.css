@@ -511,7 +511,7 @@ html {
     display: inline-block;
     border-width: 10px;
     border-style: solid;
-    border-radius: 5%;
+    border-radius: 20px;
     position: static;
     cursor: pointer;
     color: black;
