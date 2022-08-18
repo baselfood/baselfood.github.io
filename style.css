@@ -534,7 +534,7 @@ html {
 
 /*---------------------------------------------------------------------------------------------*/
 
-@media only screen, (max-width: 768px) { /*generic mobile*/
+@media (max-aspect-ratio: 3/4) { /*generic mobile*/
     
     #map {
         height: 30vh !important;
