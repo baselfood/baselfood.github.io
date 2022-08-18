@@ -493,7 +493,7 @@ html {
     margin: auto 5vw;
 }
 
-/*------------------------------Landing page stuff - ignore------------------------------------*/
+/*------------------------------Landing page stuff------------------------------------*/
 
 #content #blogs {
     display: flex;
@@ -507,8 +507,8 @@ html {
     padding: 0px 1.5vw;
     width: 27vw;
     width: max(27vw, 330px);
-    height: 70vh;
-    height: max(70vh, 550px);
+    /*height: 70vh;
+    height: max(70vh, 550px);*/
     display: inline-block;
     border-width: 10px;
     border-style: solid;
@@ -524,8 +524,7 @@ html {
 }
 
 #content .blog .blogTitle {
-    font-size: medium;
-    font-size: max(3vh, 30px);
+    font-size: xx-large;
 }
 
 #content .blogImg {
@@ -535,7 +534,7 @@ html {
 
 /*---------------------------------------------------------------------------------------------*/
 
-@media only screen and (max-width: 768px) { /*generic mobile*/
+@media only screen, (max-width: 768px) { /*generic mobile*/
     
     #map {
         height: 30vh !important;
@@ -555,7 +554,7 @@ html {
     #content .foundBlog {
         width: 90% !important;
     }
-    
+
     /*-----------------------------------------------------------------------------------------*/
     
     @keyframes sideBarInactiveMobile {
