@@ -1,5 +1,9 @@
 const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
 
+function formatDate(date) {
+    console.log(date);
+    return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+}
 class blog {
     constructor(name, urlName, text, imgs, ratings, infoBox, openingTimes, postDate, writer, shortDescription, pos, coverImg) {
         this.name = name;
@@ -270,7 +274,7 @@ class blogList {
             let containingDiv = document.createElement("a");
             containingDiv.id = pastBlog.urlName;
 
-            let blogTitle = document.createElement("h3");
+            let blogTitle = document.createElement("h2");
             blogTitle.innerText = pastBlog.name;
             blogTitle.classList.add("blogTitle");
 
@@ -289,7 +293,7 @@ class blogList {
             blogDescription.classList.add("blogDescription");
 
             let blogDate = document.createElement("p");
-            blogDate.innerText = pastBlog.postDate.toLocaleDateString("de");
+            blogDate.innerText = formatDate(pastBlog.postDate);
             blogDate.classList.add("blogDate");
 
             containingDiv.classList.add("blog");
@@ -438,7 +442,22 @@ class blogList {
         for (let foundBlog of foundBlogs) {
             let blogBox = document.createElement("a");
             blogBox.classList.add("foundBlog");
-            blogBox.innerText = foundBlog.name;
+
+            let blogBoxTitle = document.createElement("h2");
+            blogBoxTitle.innerText = foundBlog.name;
+            blogBox.appendChild(blogBoxTitle);
+
+            let blogDate = document.createElement("p");
+            blogDate.innerText = formatDate(foundBlog.postDate);
+            blogBox.appendChild(blogDate);
+
+            let line = document.createElement("hr");
+            blogBox.appendChild(line);
+
+            let blogBoxText = document.createElement("p");
+            blogBoxText.innerText = foundBlog.text.slice(0, 300).replaceAll("\n", " ") + "...";
+            blogBox.appendChild(blogBoxText);
+
             if (rickroll) {
                 blogBox.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
             } else if (schimmel) {
@@ -454,7 +473,7 @@ class blogList {
     }
 }
 
-const isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
+const isMobile = window.matchMedia("only screen, (max-width: 768px)").matches;
 const pastBlogs = new blogList(
     new blog(
         "Alchemist",
@@ -1429,7 +1448,7 @@ function makeSidebar() {
         blog.href = `${baseURL}/${pastBlog.urlName}/`;
 
         let pElem = document.createElement("p");
-        let theDate = `${pastBlog.postDate.getDate()}.${pastBlog.postDate.getMonth() + 1}`;
+        let theDate = formatDate(pastBlog.postDate);
         pElem.innerText = `${pastBlog.name} - ${theDate}`;
         blog.appendChild(pElem);
         sideBar.appendChild(blog);
