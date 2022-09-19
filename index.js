@@ -366,7 +366,7 @@ class blogList {
             setTimeout(_ => [...document.querySelectorAll("#header, #footer, #sidebar")].forEach(x => {
                 x.classList.add("pride");
             }), 100);
-        } else if (query == "rick astley" || query == "never gonna give you up" || query == "rickroll") {
+        } else if (query == "rick astley" || query == "never gonna give you up" || query == "rickroll" || query == "free vbucks" || query == "free robux") {
             rickroll = true;
         } else if (query == "dini muetter" || query == "dini mom" || query.includes("schimmel")) {
             schimmel = true;
@@ -473,7 +473,7 @@ class blogList {
     }
 }
 
-const isMobile = window.matchMedia("(max-aspect-ratio: 3/4)").matches;
+const isMobile = window.matchMedia("only screen, (max-width: 768px)").matches;
 const pastBlogs = new blogList(
     new blog(
         "Alchemist",
