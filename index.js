@@ -473,7 +473,7 @@ class blogList {
     }
 }
 
-const isMobile = window.matchMedia("only screen, (max-width: 768px)").matches;
+const isMobile = window.matchMedia("(max-aspect-ratio: 3/4)").matches;
 const pastBlogs = new blogList(
     new blog(
         "Alchemist",
