@@ -353,7 +353,7 @@ class blogList {
             return content;
         }
         if (this.findBlog(query)) {
-            location.href = `${baseURL}/${query}`;
+            location.href = `${baseURL}/${query[0].toUpperCase() + query.slice(1)}`;
         }
 
         let originalQuery = query;
