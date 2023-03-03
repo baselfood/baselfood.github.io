@@ -1,7 +1,6 @@
 const baseURL = (isURL(location.href)) ? "https://baselfood.github.io" : ((location.href.slice(0, 7) == "file://") ? "file:///Users/gian/Desktop/Foodblog" : alert("unreachable"))
 
 function formatDate(date) {
-    console.log(date);
     return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
 }
 class blog {
