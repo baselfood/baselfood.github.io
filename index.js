@@ -1222,10 +1222,13 @@ function toggleDarkmode(initial) {
             x.classList.add("dark")
         });
     } else {
-        localStorage.setItem("mode", "bright")
+        let mode = "bright";
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            mode = "dark";
+        } 
+        localStorage.setItem("mode", mode);
         elemsToSwitch.forEach(x => {
-            x.classList.remove("dark")
-            x.classList.add("bright")
+            x.classList.add(mode);
         });
     }
 }
