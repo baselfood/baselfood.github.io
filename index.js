@@ -37,6 +37,10 @@ class blog {
         }
     }
     makeBlog() {
+        if (new Date().getDate() == 1 && new Date().getMonth() == 3) {
+            this.text = this.text.replace(/(([a-zA-Z0-9]+?\s){3})[a-zA-Z0-9]+?\s/g, "$1rasch ")
+        }
+
         const pageTitle = document.createElement("title");
         pageTitle.innerText = `${this.name} | Baselfood`;
         document.head.appendChild(pageTitle);
